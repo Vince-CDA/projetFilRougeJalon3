@@ -1,5 +1,5 @@
 ----------
-## ![](https://zupimages.net/up/20/42/ly90.jpg) Bienvenue à tous ! Prenez place, suivez le guide ! ![](https://zupimages.net/up/20/42/if0a.jpg) ##
+## ![](https://zupimages.net/up/20/43/7hos.png) Bienvenue à tous ! Prenez place, suivez le guide ! ![](https://zupimages.net/up/20/43/l64a.png) ##
 
 **J**e suis Vincent Mundo, j'ai 27 ans, et je suis en formation de **c**oncepteur **d**éveloppeur d'**a**pplications dans une structure ayant pour nom AMiO et située à Millau (12), dans l'Aveyron.
 
