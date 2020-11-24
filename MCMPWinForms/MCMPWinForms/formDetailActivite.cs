@@ -13,15 +13,16 @@ namespace MCMPWinForms
 {
     public partial class formDetailActivite : Form
     {
+        #region GET/SET pour faire le lien entre la FormMain et sa fille
         public BindingSource activitebind { get; set; }
-
         public BindingSource adherentbind { set; get; }
         public long LastInsert { get; set; }
         public int IdType { get; set; }
-        public const string motifPrix = @"[0-9]{1,}[.,]{0,1}[0-9]{0,2}";
         public int IsClose { get; set; }
         public int ModifEnCours { get; set; }
         public int IdActivite { get; set; }
+        #endregion
+
         public formDetailActivite()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace MCMPWinForms
             }
 
         }
-
+        #region Ajouter
         private void buttonAjouterActivite_Click(object sender, EventArgs e)
         {
             cda27_bd2DataSet.type_activiteRow currentRow = (cda27_bd2DataSet.type_activiteRow)((DataRowView)typeactiviteBindingSource.Current).Row;
@@ -48,7 +49,10 @@ namespace MCMPWinForms
                 || String.IsNullOrWhiteSpace(textBoxTarifAdherent.Text)
                 || String.IsNullOrWhiteSpace(textBoxTarifInvite.Text))
             {
-                MessageBox.Show("Un champs n'est pas rempli.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             if (dateTimePickerDateDebut.Value < DateTime.Now 
@@ -56,14 +60,18 @@ namespace MCMPWinForms
                 && dateTimePickerDateLimite.Value < dateTimePickerDateDebut.Value
                 && dateTimePickerDateLimite.Value > dateTimePickerDateFin.Value)
             {
-                MessageBox.Show("La date de début doit être supérieur à la date d'aujourd'hui," +
-                    " la date limite doit être supérieur à la date de début ainsi qu'inférieur à la date de fin " +
-                    "et la date de fin doit être supérieur à la date limite.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_DATE_ACT_PROBLEME,
+                    Properties.Resources.STR_TITRE_DATE_ACT_PROBLEME,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsPrix(textBoxTarifAdherent.Text) || !IsPrix(textBoxTarifInvite.Text))
             {
-                MessageBox.Show("Il y a un problème avec les tarifs, merci de taper un tarif avec des chiffres et une seule virgule si besoin sans le symbole €.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_TARIF_PROBLEME,
+                    Properties.Resources.STR_TITRE_TARIF_PROBLEME,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             int nb = activiteTableAdapter.Insert(
@@ -81,17 +89,25 @@ namespace MCMPWinForms
                 );
             if (nb == 1)
             {
-                MessageBox.Show("L'activité à bien été ajoutée");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_ACTIVITE_AJOUT_SUCCESS,
+                    Properties.Resources.STR_TITRE_ACTIVITE_AJOUT_SUCCESS,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 LastInsert = activiteTableAdapter.Adapter.InsertCommand.InsertId;
                 IsClose = 1;
                 Close();
             }
             else
             {
-                MessageBox.Show("Il y a un problème pour l'ajout de cette activité");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_PROBLEME_AJOUT_ACT,
+                    Properties.Resources.STR_TITRE_PROBLEME_AJOUT_ACT,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
+        #endregion
 
+        #region Modifier
         private void buttonModifierActivite_Click(object sender, EventArgs e)
         {
             cda27_bd2DataSet.activitesRow currentRowAdh = (cda27_bd2DataSet.activitesRow)((DataRowView)activitebind.Current).Row;
@@ -102,7 +118,10 @@ namespace MCMPWinForms
                 || String.IsNullOrWhiteSpace(textBoxTarifAdherent.Text)
                 || String.IsNullOrWhiteSpace(textBoxTarifInvite.Text))
             {
-                MessageBox.Show("Un champs n'est pas rempli.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI, 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 return;
             }
             if (dateTimePickerDateDebut.Value < DateTime.Now
@@ -110,14 +129,18 @@ namespace MCMPWinForms
                 && dateTimePickerDateLimite.Value < dateTimePickerDateDebut.Value
                 && dateTimePickerDateLimite.Value > dateTimePickerDateFin.Value)
             {
-                MessageBox.Show("La date de début doit être supérieur à la date d'aujourd'hui," +
-                    " la date limite doit être supérieur à la date de début ainsi qu'inférieur à la date de fin " +
-                    "et la date de fin doit être supérieur à la date limite.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_DATE_ACT_PROBLEME, 
+                    Properties.Resources.STR_TITRE_DATE_ACT_PROBLEME, 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsPrix(textBoxTarifAdherent.Text) || !IsPrix(textBoxTarifInvite.Text))
             {
-                MessageBox.Show("Il y a un problème avec les tarifs, merci de taper un tarif avec des chiffres et une seule virgule si besoin sans le symbole €.");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_TARIF_PROBLEME, 
+                    Properties.Resources.STR_TITRE_TARIF_PROBLEME,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             int nb = activiteTableAdapter.Update(
@@ -146,23 +169,51 @@ namespace MCMPWinForms
                 );
             if (nb == 0)
             {
-                MessageBox.Show("La mise à jour ne s'est pas réalisée");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_MAJ_NON_REALISEE, 
+                    Properties.Resources.STR_TITRE_MAJ_NON_REALISEE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             LastInsert = activiteTableAdapter.Adapter.UpdateCommand.InsertId;
             IsClose = 1;
             Close();
-
         }
+        #endregion
 
-        
-
-        public static bool IsPrix(string prix)
+        #region Supprimer
+        private void buttonSupprimerActivite_Click(object sender, EventArgs e)
         {
-            if (prix != null) return Regex.IsMatch(prix, motifPrix);
-            else return false;
+            cda27_bd2DataSet.activitesRow currentRowAdh = (cda27_bd2DataSet.activitesRow)((DataRowView)activitebind.Current).Row;
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_ACTIVITE, Properties.Resources.STR_TITRE_SUPPRESSION_ACTIVITE, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (DiagResult == DialogResult.Yes)
+            {
+                int nb = activiteTableAdapter.Delete(currentRowAdh.IdActivite,
+                currentRowAdh.Intitulé,
+                currentRowAdh.Date_de_début,
+                currentRowAdh.Date_de_fin,
+                currentRowAdh.Description,
+                currentRowAdh.Tarif_adhérent,
+                currentRowAdh.Tarif_invité,
+                currentRowAdh._Date_limite_d_inscription,
+                currentRowAdh.IdAdherent,
+                currentRowAdh.IdType,
+                currentRowAdh.Publié);
+                if (nb == 0)
+                {
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL, 
+                        Properties.Resources.STR_TITRE_SUPPRESSION_FAIL,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                return;
+            } 
         }
+        #endregion
 
+        #region Bouton annuler
         private void buttonAnnulerActivite_Click(object sender, EventArgs e)
         {
             DialogResult DiagResult = MessageBox.Show("Voulez-vous vraiment annuler et fermer cette fenêtre ?", "Annuler", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
@@ -175,10 +226,15 @@ namespace MCMPWinForms
                 return;
             }
         }
+        #endregion
 
-        private void formDetailActivite_FormClosing(object sender, FormClosingEventArgs e)
+        #region Expression régulière
+        public static bool IsPrix(string prix)
         {
-            
+            if (prix != null) return Regex.IsMatch(prix, Properties.Resources.STR_MOTIF_PRIX);
+            else return false;
         }
+        #endregion
+
     }
 }

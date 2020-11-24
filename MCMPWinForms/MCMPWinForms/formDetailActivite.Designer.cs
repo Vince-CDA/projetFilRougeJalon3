@@ -46,8 +46,12 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonAnnulerActivite = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxNomResp = new System.Windows.Forms.TextBox();
+            this.lblPrenomResp = new System.Windows.Forms.Label();
+            this.lblNomResp = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
+            this.textBoxPrenomResp = new System.Windows.Forms.TextBox();
             this.dateTimePickerDateDebut = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDateFin = new System.Windows.Forms.DateTimePicker();
             this.lblTypeAct = new System.Windows.Forms.Label();
@@ -81,10 +85,6 @@
             this.type_activiteTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.type_activiteTableAdapter();
             this.activiteTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activiteTableAdapter();
             this.activitesTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activitesTableAdapter();
-            this.textBoxNomResp = new System.Windows.Forms.TextBox();
-            this.lblNomResp = new System.Windows.Forms.Label();
-            this.textBoxPrenomResp = new System.Windows.Forms.TextBox();
-            this.lblPrenomResp = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -259,6 +259,7 @@
             this.buttonSupprimerActivite.Text = "&Supprimer activité";
             this.buttonSupprimerActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSupprimerActivite.UseVisualStyleBackColor = false;
+            this.buttonSupprimerActivite.Click += new System.EventHandler(this.buttonSupprimerActivite_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -329,6 +330,37 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(974, 554);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // textBoxNomResp
+            // 
+            this.textBoxNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomResp.Location = new System.Drawing.Point(676, 81);
+            this.textBoxNomResp.Name = "textBoxNomResp";
+            this.textBoxNomResp.Size = new System.Drawing.Size(295, 29);
+            this.textBoxNomResp.TabIndex = 25;
+            // 
+            // lblPrenomResp
+            // 
+            this.lblPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrenomResp.AutoSize = true;
+            this.lblPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrenomResp.Location = new System.Drawing.Point(3, 71);
+            this.lblPrenomResp.Name = "lblPrenomResp";
+            this.lblPrenomResp.Size = new System.Drawing.Size(210, 50);
+            this.lblPrenomResp.TabIndex = 6;
+            this.lblPrenomResp.Text = "Prénom du responsable :";
+            // 
+            // lblNomResp
+            // 
+            this.lblNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNomResp.AutoSize = true;
+            this.lblNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomResp.Location = new System.Drawing.Point(488, 71);
+            this.lblNomResp.Name = "lblNomResp";
+            this.lblNomResp.Size = new System.Drawing.Size(182, 50);
+            this.lblNomResp.TabIndex = 8;
+            this.lblNomResp.Text = "Nom du responsable :";
+            // 
             // lblDateDebut
             // 
             this.lblDateDebut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -350,6 +382,15 @@
             this.lblDateFin.Size = new System.Drawing.Size(182, 25);
             this.lblDateFin.TabIndex = 9;
             this.lblDateFin.Text = "Date de fin :";
+            // 
+            // textBoxPrenomResp
+            // 
+            this.textBoxPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPrenomResp.Location = new System.Drawing.Point(219, 81);
+            this.textBoxPrenomResp.Name = "textBoxPrenomResp";
+            this.textBoxPrenomResp.Size = new System.Drawing.Size(263, 29);
+            this.textBoxPrenomResp.TabIndex = 27;
             // 
             // dateTimePickerDateDebut
             // 
@@ -618,46 +659,6 @@
             // 
             this.activitesTableAdapter.ClearBeforeFill = true;
             // 
-            // textBoxNomResp
-            // 
-            this.textBoxNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNomResp.Location = new System.Drawing.Point(676, 81);
-            this.textBoxNomResp.Name = "textBoxNomResp";
-            this.textBoxNomResp.Size = new System.Drawing.Size(295, 29);
-            this.textBoxNomResp.TabIndex = 25;
-            // 
-            // lblNomResp
-            // 
-            this.lblNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNomResp.AutoSize = true;
-            this.lblNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomResp.Location = new System.Drawing.Point(488, 71);
-            this.lblNomResp.Name = "lblNomResp";
-            this.lblNomResp.Size = new System.Drawing.Size(182, 50);
-            this.lblNomResp.TabIndex = 8;
-            this.lblNomResp.Text = "Nom du responsable :";
-            // 
-            // textBoxPrenomResp
-            // 
-            this.textBoxPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrenomResp.Location = new System.Drawing.Point(219, 81);
-            this.textBoxPrenomResp.Name = "textBoxPrenomResp";
-            this.textBoxPrenomResp.Size = new System.Drawing.Size(263, 29);
-            this.textBoxPrenomResp.TabIndex = 27;
-            // 
-            // lblPrenomResp
-            // 
-            this.lblPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrenomResp.AutoSize = true;
-            this.lblPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenomResp.Location = new System.Drawing.Point(3, 71);
-            this.lblPrenomResp.Name = "lblPrenomResp";
-            this.lblPrenomResp.Size = new System.Drawing.Size(210, 50);
-            this.lblPrenomResp.TabIndex = 6;
-            this.lblPrenomResp.Text = "Prénom du responsable :";
-            // 
             // formDetailActivite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,7 +670,6 @@
             this.MinimumSize = new System.Drawing.Size(996, 679);
             this.Name = "formDetailActivite";
             this.Text = "Activité - Moto Club Millau Passion";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDetailActivite_FormClosing);
             this.Load += new System.EventHandler(this.formDetailActivite_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

@@ -68,6 +68,13 @@
             this.lblAvatar = new System.Windows.Forms.Label();
             this.lblInscritsAuxActivites = new System.Windows.Forms.Label();
             this.dataGridViewFormDetailAdherentInscrits = new System.Windows.Forms.DataGridView();
+            this.dateTimePickerDateDeNaissance = new System.Windows.Forms.DateTimePicker();
+            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
+            this.lblDateAdhesion = new System.Windows.Forms.Label();
+            this.dateTimePickerDateAdhesion = new System.Windows.Forms.DateTimePicker();
+            this.lblOrganisateur = new System.Windows.Forms.Label();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.checkBoxOrganisateur = new System.Windows.Forms.CheckBox();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prénomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intituléDeLactivitéDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,13 +87,6 @@
             this.idActiviteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inscriptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cda27_bd2DataSet = new MCMPWinForms.cda27_bd2DataSet();
-            this.dateTimePickerDateDeNaissance = new System.Windows.Forms.DateTimePicker();
-            this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
-            this.lblDateAdhesion = new System.Windows.Forms.Label();
-            this.dateTimePickerDateAdhesion = new System.Windows.Forms.DateTimePicker();
-            this.lblOrganisateur = new System.Windows.Forms.Label();
-            this.checkBoxActive = new System.Windows.Forms.CheckBox();
-            this.checkBoxOrganisateur = new System.Windows.Forms.CheckBox();
             this.inscriptionsTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.inscriptionsTableAdapter();
             this.adherentsTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.adherentsTableAdapter();
             this.adherentTableAdapter1 = new MCMPWinForms.cda27_bd2DataSetTableAdapters.adherentTableAdapter();
@@ -97,9 +97,9 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFormDetailAdherentInscrits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inscriptionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cda27_bd2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -244,7 +244,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel3.Controls.Add(this.textBoxCylindree, 4, 7);
             this.tableLayoutPanel3.Controls.Add(this.textBoxAPropos, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.textBoxLogin, 1, 5);
@@ -299,7 +299,7 @@
             // 
             this.textBoxCylindree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCylindree.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCylindree.Location = new System.Drawing.Point(641, 308);
+            this.textBoxCylindree.Location = new System.Drawing.Point(639, 308);
             this.textBoxCylindree.Name = "textBoxCylindree";
             this.textBoxCylindree.Size = new System.Drawing.Size(308, 29);
             this.textBoxCylindree.TabIndex = 49;
@@ -308,25 +308,25 @@
             // 
             this.textBoxAPropos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAPropos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAPropos.Location = new System.Drawing.Point(212, 308);
+            this.textBoxAPropos.Location = new System.Drawing.Point(211, 308);
             this.textBoxAPropos.Name = "textBoxAPropos";
-            this.textBoxAPropos.Size = new System.Drawing.Size(241, 29);
+            this.textBoxAPropos.Size = new System.Drawing.Size(240, 29);
             this.textBoxAPropos.TabIndex = 47;
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLogin.Location = new System.Drawing.Point(212, 222);
+            this.textBoxLogin.Location = new System.Drawing.Point(211, 222);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(241, 29);
+            this.textBoxLogin.Size = new System.Drawing.Size(240, 29);
             this.textBoxLogin.TabIndex = 39;
             // 
             // textBoxTelephone
             // 
             this.textBoxTelephone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTelephone.Location = new System.Drawing.Point(641, 179);
+            this.textBoxTelephone.Location = new System.Drawing.Point(639, 179);
             this.textBoxTelephone.Name = "textBoxTelephone";
             this.textBoxTelephone.Size = new System.Drawing.Size(308, 29);
             this.textBoxTelephone.TabIndex = 37;
@@ -335,25 +335,25 @@
             // 
             this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(212, 179);
+            this.textBoxEmail.Location = new System.Drawing.Point(211, 179);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(241, 29);
+            this.textBoxEmail.Size = new System.Drawing.Size(240, 29);
             this.textBoxEmail.TabIndex = 35;
             // 
             // textBoxVille
             // 
             this.textBoxVille.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxVille.Location = new System.Drawing.Point(212, 136);
+            this.textBoxVille.Location = new System.Drawing.Point(211, 136);
             this.textBoxVille.Name = "textBoxVille";
-            this.textBoxVille.Size = new System.Drawing.Size(241, 29);
+            this.textBoxVille.Size = new System.Drawing.Size(240, 29);
             this.textBoxVille.TabIndex = 31;
             // 
             // textBoxCodePostale
             // 
             this.textBoxCodePostale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCodePostale.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCodePostale.Location = new System.Drawing.Point(641, 93);
+            this.textBoxCodePostale.Location = new System.Drawing.Point(639, 93);
             this.textBoxCodePostale.Name = "textBoxCodePostale";
             this.textBoxCodePostale.Size = new System.Drawing.Size(308, 29);
             this.textBoxCodePostale.TabIndex = 29;
@@ -362,16 +362,16 @@
             // 
             this.textBoxAdresse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAdresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAdresse.Location = new System.Drawing.Point(212, 93);
+            this.textBoxAdresse.Location = new System.Drawing.Point(211, 93);
             this.textBoxAdresse.Name = "textBoxAdresse";
-            this.textBoxAdresse.Size = new System.Drawing.Size(241, 29);
+            this.textBoxAdresse.Size = new System.Drawing.Size(240, 29);
             this.textBoxAdresse.TabIndex = 27;
             // 
             // textBoxAge
             // 
             this.textBoxAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAge.Location = new System.Drawing.Point(641, 50);
+            this.textBoxAge.Location = new System.Drawing.Point(639, 50);
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(308, 29);
             this.textBoxAge.TabIndex = 25;
@@ -381,9 +381,9 @@
             this.lblDateDeNaissance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDateDeNaissance.AutoSize = true;
             this.lblDateDeNaissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDeNaissance.Location = new System.Drawing.Point(3, 52);
+            this.lblDateDeNaissance.Location = new System.Drawing.Point(3, 43);
             this.lblDateDeNaissance.Name = "lblDateDeNaissance";
-            this.lblDateDeNaissance.Size = new System.Drawing.Size(203, 25);
+            this.lblDateDeNaissance.Size = new System.Drawing.Size(202, 43);
             this.lblDateDeNaissance.TabIndex = 6;
             this.lblDateDeNaissance.Text = "Date de naissance :";
             // 
@@ -391,7 +391,7 @@
             // 
             this.textBoxPrenom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrenom.Location = new System.Drawing.Point(641, 7);
+            this.textBoxPrenom.Location = new System.Drawing.Point(639, 7);
             this.textBoxPrenom.Name = "textBoxPrenom";
             this.textBoxPrenom.Size = new System.Drawing.Size(308, 29);
             this.textBoxPrenom.TabIndex = 4;
@@ -401,7 +401,7 @@
             this.lblPrenom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrenom.AutoSize = true;
             this.lblPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenom.Location = new System.Drawing.Point(468, 9);
+            this.lblPrenom.Location = new System.Drawing.Point(466, 9);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(167, 25);
             this.lblPrenom.TabIndex = 3;
@@ -414,7 +414,7 @@
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.Location = new System.Drawing.Point(3, 9);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(203, 25);
+            this.lblNom.Size = new System.Drawing.Size(202, 25);
             this.lblNom.TabIndex = 0;
             this.lblNom.Text = "Nom :";
             // 
@@ -422,9 +422,9 @@
             // 
             this.textBoxNom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNom.Location = new System.Drawing.Point(212, 7);
+            this.textBoxNom.Location = new System.Drawing.Point(211, 7);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(241, 29);
+            this.textBoxNom.Size = new System.Drawing.Size(240, 29);
             this.textBoxNom.TabIndex = 1;
             // 
             // lblAdresse
@@ -434,7 +434,7 @@
             this.lblAdresse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdresse.Location = new System.Drawing.Point(3, 95);
             this.lblAdresse.Name = "lblAdresse";
-            this.lblAdresse.Size = new System.Drawing.Size(203, 25);
+            this.lblAdresse.Size = new System.Drawing.Size(202, 25);
             this.lblAdresse.TabIndex = 7;
             this.lblAdresse.Text = "Adresse :";
             // 
@@ -443,7 +443,7 @@
             this.lblAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(468, 52);
+            this.lblAge.Location = new System.Drawing.Point(466, 52);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(167, 25);
             this.lblAge.TabIndex = 8;
@@ -454,7 +454,7 @@
             this.lblCodePostale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCodePostale.AutoSize = true;
             this.lblCodePostale.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodePostale.Location = new System.Drawing.Point(468, 95);
+            this.lblCodePostale.Location = new System.Drawing.Point(466, 95);
             this.lblCodePostale.Name = "lblCodePostale";
             this.lblCodePostale.Size = new System.Drawing.Size(167, 25);
             this.lblCodePostale.TabIndex = 5;
@@ -467,7 +467,7 @@
             this.lblVille.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVille.Location = new System.Drawing.Point(3, 138);
             this.lblVille.Name = "lblVille";
-            this.lblVille.Size = new System.Drawing.Size(203, 25);
+            this.lblVille.Size = new System.Drawing.Size(202, 25);
             this.lblVille.TabIndex = 10;
             this.lblVille.Text = "Ville :";
             // 
@@ -478,7 +478,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(3, 181);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(203, 25);
+            this.lblEmail.Size = new System.Drawing.Size(202, 25);
             this.lblEmail.TabIndex = 11;
             this.lblEmail.Text = "Adresse e-mail :";
             // 
@@ -489,7 +489,7 @@
             this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.Location = new System.Drawing.Point(3, 224);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(203, 25);
+            this.lblLogin.Size = new System.Drawing.Size(202, 25);
             this.lblLogin.TabIndex = 13;
             this.lblLogin.Text = "Nom d\'utilisateur :";
             // 
@@ -500,7 +500,7 @@
             this.lblActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActive.Location = new System.Drawing.Point(3, 267);
             this.lblActive.Name = "lblActive";
-            this.lblActive.Size = new System.Drawing.Size(203, 25);
+            this.lblActive.Size = new System.Drawing.Size(202, 25);
             this.lblActive.TabIndex = 16;
             this.lblActive.Text = "Activé :";
             // 
@@ -509,7 +509,7 @@
             this.lblTelephone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTelephone.AutoSize = true;
             this.lblTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone.Location = new System.Drawing.Point(468, 181);
+            this.lblTelephone.Location = new System.Drawing.Point(466, 181);
             this.lblTelephone.Name = "lblTelephone";
             this.lblTelephone.Size = new System.Drawing.Size(167, 25);
             this.lblTelephone.TabIndex = 15;
@@ -522,7 +522,7 @@
             this.lblApropos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApropos.Location = new System.Drawing.Point(3, 310);
             this.lblApropos.Name = "lblApropos";
-            this.lblApropos.Size = new System.Drawing.Size(203, 25);
+            this.lblApropos.Size = new System.Drawing.Size(202, 25);
             this.lblApropos.TabIndex = 18;
             this.lblApropos.Text = "A propos :";
             // 
@@ -531,7 +531,7 @@
             this.lblCylindree.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCylindree.AutoSize = true;
             this.lblCylindree.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCylindree.Location = new System.Drawing.Point(468, 310);
+            this.lblCylindree.Location = new System.Drawing.Point(466, 310);
             this.lblCylindree.Name = "lblCylindree";
             this.lblCylindree.Size = new System.Drawing.Size(167, 25);
             this.lblCylindree.TabIndex = 21;
@@ -544,7 +544,7 @@
             this.lblAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAvatar.Location = new System.Drawing.Point(3, 436);
             this.lblAvatar.Name = "lblAvatar";
-            this.lblAvatar.Size = new System.Drawing.Size(203, 25);
+            this.lblAvatar.Size = new System.Drawing.Size(202, 25);
             this.lblAvatar.TabIndex = 19;
             this.lblAvatar.Text = "Avatar :";
             // 
@@ -553,7 +553,7 @@
             this.lblInscritsAuxActivites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInscritsAuxActivites.AutoSize = true;
             this.lblInscritsAuxActivites.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscritsAuxActivites.Location = new System.Drawing.Point(468, 424);
+            this.lblInscritsAuxActivites.Location = new System.Drawing.Point(466, 424);
             this.lblInscritsAuxActivites.Name = "lblInscritsAuxActivites";
             this.lblInscritsAuxActivites.Size = new System.Drawing.Size(167, 50);
             this.lblInscritsAuxActivites.TabIndex = 50;
@@ -580,7 +580,7 @@
             this.idActiviteDataGridViewTextBoxColumn});
             this.dataGridViewFormDetailAdherentInscrits.DataSource = this.inscriptionsBindingSource;
             this.dataGridViewFormDetailAdherentInscrits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewFormDetailAdherentInscrits.Location = new System.Drawing.Point(641, 347);
+            this.dataGridViewFormDetailAdherentInscrits.Location = new System.Drawing.Point(639, 347);
             this.dataGridViewFormDetailAdherentInscrits.Name = "dataGridViewFormDetailAdherentInscrits";
             this.dataGridViewFormDetailAdherentInscrits.ReadOnly = true;
             this.dataGridViewFormDetailAdherentInscrits.RowHeadersVisible = false;
@@ -591,6 +591,78 @@
             this.dataGridViewFormDetailAdherentInscrits.Size = new System.Drawing.Size(308, 204);
             this.dataGridViewFormDetailAdherentInscrits.StandardTab = true;
             this.dataGridViewFormDetailAdherentInscrits.TabIndex = 51;
+            // 
+            // dateTimePickerDateDeNaissance
+            // 
+            this.dateTimePickerDateDeNaissance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerDateDeNaissance.Location = new System.Drawing.Point(211, 54);
+            this.dateTimePickerDateDeNaissance.Name = "dateTimePickerDateDeNaissance";
+            this.dateTimePickerDateDeNaissance.Size = new System.Drawing.Size(240, 20);
+            this.dateTimePickerDateDeNaissance.TabIndex = 53;
+            // 
+            // pictureBoxAvatar
+            // 
+            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(211, 347);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(240, 204);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxAvatar.TabIndex = 54;
+            this.pictureBoxAvatar.TabStop = false;
+            // 
+            // lblDateAdhesion
+            // 
+            this.lblDateAdhesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDateAdhesion.AutoSize = true;
+            this.lblDateAdhesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAdhesion.Location = new System.Drawing.Point(466, 224);
+            this.lblDateAdhesion.Name = "lblDateAdhesion";
+            this.lblDateAdhesion.Size = new System.Drawing.Size(167, 25);
+            this.lblDateAdhesion.TabIndex = 14;
+            this.lblDateAdhesion.Text = "Adhésion :";
+            // 
+            // dateTimePickerDateAdhesion
+            // 
+            this.dateTimePickerDateAdhesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerDateAdhesion.Location = new System.Drawing.Point(639, 226);
+            this.dateTimePickerDateAdhesion.Name = "dateTimePickerDateAdhesion";
+            this.dateTimePickerDateAdhesion.Size = new System.Drawing.Size(308, 20);
+            this.dateTimePickerDateAdhesion.TabIndex = 52;
+            // 
+            // lblOrganisateur
+            // 
+            this.lblOrganisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOrganisateur.AutoSize = true;
+            this.lblOrganisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrganisateur.Location = new System.Drawing.Point(466, 267);
+            this.lblOrganisateur.Name = "lblOrganisateur";
+            this.lblOrganisateur.Size = new System.Drawing.Size(167, 25);
+            this.lblOrganisateur.TabIndex = 9;
+            this.lblOrganisateur.Text = "Organisateur :";
+            // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActive.Location = new System.Drawing.Point(211, 265);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(240, 28);
+            this.checkBoxActive.TabIndex = 55;
+            this.checkBoxActive.Text = "Est activé";
+            this.checkBoxActive.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxOrganisateur
+            // 
+            this.checkBoxOrganisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxOrganisateur.AutoSize = true;
+            this.checkBoxOrganisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxOrganisateur.Location = new System.Drawing.Point(639, 265);
+            this.checkBoxOrganisateur.Name = "checkBoxOrganisateur";
+            this.checkBoxOrganisateur.Size = new System.Drawing.Size(308, 28);
+            this.checkBoxOrganisateur.TabIndex = 56;
+            this.checkBoxOrganisateur.Text = "Est un organisateur";
+            this.checkBoxOrganisateur.UseVisualStyleBackColor = true;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -688,78 +760,6 @@
             this.cda27_bd2DataSet.DataSetName = "cda27_bd2DataSet";
             this.cda27_bd2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dateTimePickerDateDeNaissance
-            // 
-            this.dateTimePickerDateDeNaissance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerDateDeNaissance.Location = new System.Drawing.Point(212, 54);
-            this.dateTimePickerDateDeNaissance.Name = "dateTimePickerDateDeNaissance";
-            this.dateTimePickerDateDeNaissance.Size = new System.Drawing.Size(241, 20);
-            this.dateTimePickerDateDeNaissance.TabIndex = 53;
-            // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(212, 347);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(241, 204);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxAvatar.TabIndex = 54;
-            this.pictureBoxAvatar.TabStop = false;
-            // 
-            // lblDateAdhesion
-            // 
-            this.lblDateAdhesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateAdhesion.AutoSize = true;
-            this.lblDateAdhesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAdhesion.Location = new System.Drawing.Point(468, 224);
-            this.lblDateAdhesion.Name = "lblDateAdhesion";
-            this.lblDateAdhesion.Size = new System.Drawing.Size(167, 25);
-            this.lblDateAdhesion.TabIndex = 14;
-            this.lblDateAdhesion.Text = "Adhésion :";
-            // 
-            // dateTimePickerDateAdhesion
-            // 
-            this.dateTimePickerDateAdhesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerDateAdhesion.Location = new System.Drawing.Point(641, 226);
-            this.dateTimePickerDateAdhesion.Name = "dateTimePickerDateAdhesion";
-            this.dateTimePickerDateAdhesion.Size = new System.Drawing.Size(308, 20);
-            this.dateTimePickerDateAdhesion.TabIndex = 52;
-            // 
-            // lblOrganisateur
-            // 
-            this.lblOrganisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblOrganisateur.AutoSize = true;
-            this.lblOrganisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrganisateur.Location = new System.Drawing.Point(468, 267);
-            this.lblOrganisateur.Name = "lblOrganisateur";
-            this.lblOrganisateur.Size = new System.Drawing.Size(167, 25);
-            this.lblOrganisateur.TabIndex = 9;
-            this.lblOrganisateur.Text = "Organisateur :";
-            // 
-            // checkBoxActive
-            // 
-            this.checkBoxActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxActive.AutoSize = true;
-            this.checkBoxActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxActive.Location = new System.Drawing.Point(212, 265);
-            this.checkBoxActive.Name = "checkBoxActive";
-            this.checkBoxActive.Size = new System.Drawing.Size(241, 28);
-            this.checkBoxActive.TabIndex = 55;
-            this.checkBoxActive.Text = "Est activé";
-            this.checkBoxActive.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxOrganisateur
-            // 
-            this.checkBoxOrganisateur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxOrganisateur.AutoSize = true;
-            this.checkBoxOrganisateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOrganisateur.Location = new System.Drawing.Point(641, 265);
-            this.checkBoxOrganisateur.Name = "checkBoxOrganisateur";
-            this.checkBoxOrganisateur.Size = new System.Drawing.Size(308, 28);
-            this.checkBoxOrganisateur.TabIndex = 56;
-            this.checkBoxOrganisateur.Text = "Est un organisateur";
-            this.checkBoxOrganisateur.UseVisualStyleBackColor = true;
-            // 
             // inscriptionsTableAdapter
             // 
             this.inscriptionsTableAdapter.ClearBeforeFill = true;
@@ -787,7 +787,6 @@
             this.MinimumSize = new System.Drawing.Size(996, 679);
             this.Name = "formDetailAdherent";
             this.Text = "Adhérent - Moto Club Millau Passion";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDetailAdherent_FormClosing);
             this.Load += new System.EventHandler(this.formDetailAdherent_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -796,9 +795,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFormDetailAdherentInscrits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inscriptionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cda27_bd2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -667,7 +667,6 @@
             this.dataGridViewActiviteRelationAdherent.Size = new System.Drawing.Size(954, 194);
             this.dataGridViewActiviteRelationAdherent.StandardTab = true;
             this.dataGridViewActiviteRelationAdherent.TabIndex = 7;
-            this.dataGridViewActiviteRelationAdherent.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewActiviteRelationAdherent_RowEnter);
             // 
             // nomDataGridViewTextBoxColumn1
             // 

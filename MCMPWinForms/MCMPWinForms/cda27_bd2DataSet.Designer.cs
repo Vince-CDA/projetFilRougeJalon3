@@ -11646,7 +11646,7 @@ namespace MCMPWinForms.cda27_bd2DataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[2];
+            this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[3];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdAdherent, Nom, Prénom, `Date de naissance`, Adresse, Adresse2, `Code pos" +
@@ -11655,14 +11655,25 @@ namespace MCMPWinForms.cda27_bd2DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT IdAdherent, Nom, Prénom, `Date de naissance`, Adresse, Adresse2, `Code postale`, Ville, Email, Téléphone, `Date d'adhésion`, Organisateur, Admin, Login, `Password`, Cylindrée, Avatar, Activé, `A propos` FROM cda27_bd2.adherents
-WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite = :IdActivite))";
+            this._commandCollection[1].CommandText = "SELECT COUNT(*) FROM cda27_bd2.adherents\r\nWHERE (Login = :login)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "login";
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.VarChar;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "Login";
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::Devart.Data.MySql.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT IdAdherent, Nom, Prénom, `Date de naissance`, Adresse, Adresse2, `Code postale`, Ville, Email, Téléphone, `Date d'adhésion`, Organisateur, Admin, Login, `Password`, Cylindrée, Avatar, Activé, `A propos` FROM cda27_bd2.adherents
+WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite = :IdActivite))";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "IdActivite";
             param.DbType = global::System.Data.DbType.Int32;
             param.IsNullable = true;
-            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11694,7 +11705,7 @@ WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByNonInscrits(cda27_bd2DataSet.adherentsDataTable dataTable, int IdActivite) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdActivite));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11708,11 +11719,45 @@ WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual cda27_bd2DataSet.adherentsDataTable GetDataBy(int IdActivite) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdActivite));
             cda27_bd2DataSet.adherentsDataTable dataTable = new cda27_bd2DataSet.adherentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object Count(string login) {
+            global::Devart.Data.MySql.MySqlCommand command = this.CommandCollection[1];
+            if ((login == null)) {
+                throw new global::System.ArgumentNullException("login");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(login));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

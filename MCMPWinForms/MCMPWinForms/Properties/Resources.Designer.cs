@@ -199,11 +199,47 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;activité à bien été ajoutée.
+        /// </summary>
+        internal static string STR_MESSAGE_ACTIVITE_AJOUT_SUCCESS {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ACTIVITE_AJOUT_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment annuler et fermer cette fenêtre ?.
+        /// </summary>
+        internal static string STR_MESSAGE_ANNULER_ET_FERMER {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ANNULER_ET_FERMER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Un champs n&apos;est pas rempli.
+        /// </summary>
+        internal static string STR_MESSAGE_CHAMPS_NON_REMPLI {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_CHAMPS_NON_REMPLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment désinscrire {1} de l&apos;activité ?.
         /// </summary>
         internal static string STR_MESSAGE_CONFIRMATION_SUPPRESSION {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_CONFIRMATION_SUPPRESSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La date de début doit être supérieur à la date d&apos;aujourd&apos;hui, la date limite doit être supérieur à la date de début ainsi qu&apos;inférieur à la date de fin et la date de fin doit être supérieur à la date limite..
+        /// </summary>
+        internal static string STR_MESSAGE_DATE_ACT_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_DATE_ACT_PROBLEME", resourceCulture);
             }
         }
         
@@ -226,11 +262,56 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;inscription ne s&apos;est pas réalisée.
+        /// </summary>
+        internal static string STR_MESSAGE_INSCRIPTION_FAIL {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_INSCRIPTION_FAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La mise à jour ne s&apos;est pas réalisée.
+        /// </summary>
+        internal static string STR_MESSAGE_MAJ_NON_REALISEE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le nombre d&apos;invité(s) n&apos;est pas valide.
+        /// </summary>
+        internal static string STR_MESSAGE_NBINVITE_NONVALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_NBINVITE_NONVALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Il y a un problème pour l&apos;ajout de cette activité.
+        /// </summary>
+        internal static string STR_MESSAGE_PROBLEME_AJOUT_ACT {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_PROBLEME_AJOUT_ACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Il y a un problème pour la suppression de l&apos;inscription.
         /// </summary>
         internal static string STR_MESSAGE_PROBLEME_SUPPRESSION_INSCRIPTION {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_PROBLEME_SUPPRESSION_INSCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment supprimer cette activité ?.
+        /// </summary>
+        internal static string STR_MESSAGE_SUPPRESSION_ACTIVITE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_SUPPRESSION_ACTIVITE", resourceCulture);
             }
         }
         
@@ -262,11 +343,128 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Il y a un problème avec les tarifs, merci de taper un tarif avec des chiffres et une seule virgule si besoin sans le symbole €..
+        /// </summary>
+        internal static string STR_MESSAGE_TARIF_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_TARIF_PROBLEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^[A-Za-zéèàê0-9]+(?:\s[A-Za-zéèàê0-9&apos;_-]+)+$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_ADRESSE {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_ADRESSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^\d{5}$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_CODEPOSTALE {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_CODEPOSTALE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^[0-9]{1,5}$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_CYLINDREE {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_CYLINDREE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$.
+        /// </summary>
+        internal static string STR_MOTIF_MAIL {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_MAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^[\p{L}\p{M}&apos; \.\-]+$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_NAME {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;[0-9]&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_PRIX {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_PRIX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_TEL {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_TEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à @&quot;^\p{Lu}\p{L}*(?:[\s-]\p{Lu}\p{L}*)*$&quot;.
+        /// </summary>
+        internal static string STR_MOTIF_VILLE {
+            get {
+                return ResourceManager.GetString("STR_MOTIF_VILLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Succès.
+        /// </summary>
+        internal static string STR_TITRE_ACTIVITE_AJOUT_SUCCESS {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ACTIVITE_AJOUT_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annuler et fermer ?.
+        /// </summary>
+        internal static string STR_TITRE_ANNULER_ET_FERMER {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ANNULER_ET_FERMER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Champs non-rempli.
+        /// </summary>
+        internal static string STR_TITRE_CHAMPS_NON_REMPLI {
+            get {
+                return ResourceManager.GetString("STR_TITRE_CHAMPS_NON_REMPLI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Désinscription de {1} {2}.
         /// </summary>
         internal static string STR_TITRE_CONFIRMATION_SUPPRESSION {
             get {
                 return ResourceManager.GetString("STR_TITRE_CONFIRMATION_SUPPRESSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème dans les dates.
+        /// </summary>
+        internal static string STR_TITRE_DATE_ACT_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_TITRE_DATE_ACT_PROBLEME", resourceCulture);
             }
         }
         
@@ -289,11 +487,56 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        internal static string STR_TITRE_INSCRIPTION_FAIL {
+            get {
+                return ResourceManager.GetString("STR_TITRE_INSCRIPTION_FAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Echec.
+        /// </summary>
+        internal static string STR_TITRE_MAJ_NON_REALISEE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème dans le nombre d&apos;invité(s).
+        /// </summary>
+        internal static string STR_TITRE_NBINVITE_NONVALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_NBINVITE_NONVALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème d&apos;ajout.
+        /// </summary>
+        internal static string STR_TITRE_PROBLEME_AJOUT_ACT {
+            get {
+                return ResourceManager.GetString("STR_TITRE_PROBLEME_AJOUT_ACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Problème de suppression.
         /// </summary>
         internal static string STR_TITRE_PROBLEME_SUPPRESSION_INSCRIPTION {
             get {
                 return ResourceManager.GetString("STR_TITRE_PROBLEME_SUPPRESSION_INSCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression de l&apos;activité.
+        /// </summary>
+        internal static string STR_TITRE_SUPPRESSION_ACTIVITE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_SUPPRESSION_ACTIVITE", resourceCulture);
             }
         }
         
@@ -321,6 +564,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_TITRE_SUPPRIMER_INSCRIPTION {
             get {
                 return ResourceManager.GetString("STR_TITRE_SUPPRIMER_INSCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème dans les tarifs.
+        /// </summary>
+        internal static string STR_TITRE_TARIF_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_TITRE_TARIF_PROBLEME", resourceCulture);
             }
         }
         

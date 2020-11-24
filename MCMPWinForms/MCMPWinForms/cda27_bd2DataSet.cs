@@ -4,6 +4,9 @@
 
     partial class cda27_bd2DataSet
     {
+        partial class adherentsDataTable
+        {
+        }
     }
 }
 

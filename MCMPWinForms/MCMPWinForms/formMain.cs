@@ -24,7 +24,6 @@ namespace MCMPWinForms
             else
             {
                 buttonDesinscrireAdherent.Enabled = true;
-
             }
         }
 
@@ -33,32 +32,43 @@ namespace MCMPWinForms
 
         }
 
-        private void adherentsBindingSource_CurrentChanged(object sender, EventArgs e)
+        #region Boutons rafraîchir
+        private void buttonRafraichirActivite_Click(object sender, EventArgs e)
         {
-            
-
-
-
-            if (adherentsBindingSource.Current != null)
-            {
-
-                cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
-                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet.activite'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-                this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow.IdAdherent);
-
-            }
-            if (inscriptionsBindingSource.Count != 0)
-            {
-                buttonDesinscrireAdherent.Enabled = true;
-            }
-            else
-            {
-                buttonDesinscrireAdherent.Enabled = false;
-
-            }
-
+            FillIntegral();
         }
 
+        private void buttonRafraichirAdherent_Click(object sender, EventArgs e)
+        {
+            FillIntegral();
+        }
+        #endregion
+
+        #region Adhérents
+        #region Ajout adhérent
+
+        private void buttonAjouterAdherent_Click(object sender, EventArgs e)
+        {
+            using (formDetailAdherent frmDetailAdherent = new formDetailAdherent())
+            {
+                frmDetailAdherent.dataGridViewFormDetailAdherentInscrits.Visible = false;
+                frmDetailAdherent.lblInscritsAuxActivites.Visible = false;
+                frmDetailAdherent.dateTimePickerDateAdhesion.Enabled = false;
+                frmDetailAdherent.btModifier.Visible = false;
+                frmDetailAdherent.btSupprimer.Visible = false;
+                frmDetailAdherent.btDesinscrireAdherent.Visible = false;
+                frmDetailAdherent.ShowDialog();
+                if (frmDetailAdherent.IsClose == 1)
+                {
+                    FillIntegral();
+                    adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", frmDetailAdherent.LastInsert);
+                    frmDetailAdherent.IsClose = 0;
+                }
+            }
+        }
+        #endregion
+
+        #region Modification adhérent
         private void btModifier_Click(object sender, EventArgs e)
         {
             using (formDetailAdherent formDetailAdherent = new formDetailAdherent())
@@ -75,6 +85,7 @@ namespace MCMPWinForms
                 formDetailAdherent.textBoxEmail.Text = currentRow.Email;
                 formDetailAdherent.textBoxTelephone.Text = currentRow.Téléphone;
                 formDetailAdherent.textBoxLogin.Text = currentRow.Login;
+                formDetailAdherent.Login = currentRow.Login;
                 if (currentRow.Organisateur == 1)
                 {
                     formDetailAdherent.checkBoxOrganisateur.Checked = true;
@@ -108,11 +119,76 @@ namespace MCMPWinForms
                     formDetailAdherent.IsClose = 0;
                 }
             }
-
-
         }
+        #endregion
 
+        #region Suppression adhérent
+        private void buttonSupprimerAdherent_Click(object sender, EventArgs e)
+        {
+            cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
+            DialogResult DiagResult = MessageBox.Show(String.Format(Properties.Resources.STR_MESSAGE_SUPPRESSION_ADHERENT), String.Format(Properties.Resources.STR_TITRE_SUPPRESSION_ADHERENT), MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (DiagResult == DialogResult.Yes)
+            {
+                int nb = adherentTableAdapter.Delete(currentRow.IdAdherent, currentRow.Nom, currentRow.Prénom, currentRow.Date_de_naissance, currentRow.Adresse,
+                    null, currentRow.Code_postale, currentRow.Ville, currentRow.Email, currentRow.Téléphone, currentRow._Date_d_adhésion, currentRow.Organisateur,
+                    currentRow.Admin, currentRow.Login, currentRow.Password, currentRow.Cylindrée, currentRow.Activé);
+                if (nb == 0)
+                {
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL, Properties.Resources.STR_TITRE_SUPPRESSION_FAIL, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                FillIntegral();
+            }
+        }
+        #endregion
 
+        #region Désinscrire adhérent depuis adhérent
+        private void buttonDesinscrireAdherent_Click(object sender, EventArgs e)
+        {
+            cda27_bd2DataSet.inscriptionsRow currentRow = (cda27_bd2DataSet.inscriptionsRow)((DataRowView)inscriptionsBindingSource.Current).Row;
+            int IdAdherent = currentRow.IdAdherent;
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRIMER_INSCRIPTION, Properties.Resources.STR_TITRE_SUPPRIMER_INSCRIPTION, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (DiagResult == DialogResult.No)
+            {
+                return;
+            }
+            int nb = inscriptionTableAdapter1.Delete(currentRow.IdInscription,
+                currentRow._Date_d_inscription,
+                currentRow._Nombre_d_invités,
+                currentRow.IdAdherent,
+                currentRow.IdActivite);
+            if (nb == 0)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_PROBLEME_SUPPRESSION_INSCRIPTION, Properties.Resources.STR_TITRE_PROBLEME_SUPPRESSION_INSCRIPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            FillIntegral();
+            adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", IdAdherent);
+        }
+        #endregion
+        #endregion
+
+        #region Activité
+        #region Ajout activité
+        private void buttonAjouterActivite_Click(object sender, EventArgs e)
+        {
+            using (formDetailActivite frmDetailActivite = new formDetailActivite())
+            {
+                frmDetailActivite.buttonModifierActivite.Visible = false;
+                frmDetailActivite.buttonSupprimerActivite.Visible = false;
+                frmDetailActivite.lblInscrits.Visible = false;
+                frmDetailActivite.dataGridViewInscrits.Visible = false;
+                frmDetailActivite.ShowDialog();
+                if (frmDetailActivite.IsClose == 1)
+                {
+                    FillIntegral();
+                    activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", frmDetailActivite.LastInsert);
+                    frmDetailActivite.IsClose = 0;
+                }
+            }
+        }
+        #endregion
+
+        #region Modification activité
         private void buttonModifierActivite_Click(object sender, EventArgs e)
         {
             using (formDetailActivite frmDetailActivite = new formDetailActivite())
@@ -141,174 +217,29 @@ namespace MCMPWinForms
                     frmDetailActivite.ModifEnCours = 0;
                 }
             }
-
         }
+        #endregion
 
-        private void buttonRafraichirActivite_Click(object sender, EventArgs e)
+        #region Suppression activité
+        private void buttonSupprimerActivite_Click(object sender, EventArgs e)
         {
-            FillIntegral();
-        }
-
-        private void buttonRafraichirAdherent_Click(object sender, EventArgs e)
-        {
-            FillIntegral();
-        }
-
-        private void buttonAjouterAdherent_Click(object sender, EventArgs e)
-        {
-            using (formDetailAdherent frmDetailAdherent = new formDetailAdherent())
-            {
-                frmDetailAdherent.dataGridViewFormDetailAdherentInscrits.Visible = false;
-                frmDetailAdherent.lblInscritsAuxActivites.Visible = false;
-                frmDetailAdherent.dateTimePickerDateAdhesion.Enabled = false;
-                frmDetailAdherent.btModifier.Visible = false;
-                frmDetailAdherent.btSupprimer.Visible = false;
-                frmDetailAdherent.btDesinscrireAdherent.Visible = false;
-                frmDetailAdherent.ShowDialog();
-                if (frmDetailAdherent.IsClose == 1)
-                {
-                    FillIntegral();
-                    adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", frmDetailAdherent.LastInsert);
-                    frmDetailAdherent.IsClose = 0;
-                }
-            }
-        }
-
-        private void buttonAjouterActivite_Click(object sender, EventArgs e)
-        {
-            using (formDetailActivite frmDetailActivite = new formDetailActivite())
-            {
-                frmDetailActivite.buttonModifierActivite.Visible = false;
-                frmDetailActivite.buttonSupprimerActivite.Visible = false;
-                frmDetailActivite.lblInscrits.Visible = false;
-                frmDetailActivite.dataGridViewInscrits.Visible = false;
-                frmDetailActivite.ShowDialog();
-                if (frmDetailActivite.IsClose == 1)
-                {
-                    FillIntegral();
-                    activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", frmDetailActivite.LastInsert);
-                    frmDetailActivite.IsClose = 0;
-                }
-            }
-        }
-
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_FERMER, Properties.Resources.STR_TITRE_FERMER, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (DiagResult == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void buttonFermerActivite_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        private void buttonFermerAdherent_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-        public void FillIntegral()
-        {
-            if (checkBoxChoisirDate.Checked)
-            {
-                this.activitesTableAdapter.FillByDate(this.cda27_bd2DataSet.activites, dateTimePickerFirstDate.Value, dateTimePickerSecondDate.Value); ;
-
-            }
-            else
-            {
-                this.activitesTableAdapter.Fill(this.cda27_bd2DataSet.activites);
-            }
             cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
-
-            // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherentinscription'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
-            // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherents2'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
-
-            this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
-            cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
-            this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
-            dataGridViewNonInscrits.ClearSelection();
-            dataGridViewInscrits.ClearSelection();
-        }
-
-
-        private void checkBoxChoisirDate_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxChoisirDate.Checked)
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_ACTIVITE, Properties.Resources.STR_TITRE_SUPPRESSION_ACTIVITE, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (DiagResult == DialogResult.Yes)
             {
-                dateTimePickerFirstDate.Enabled = true;
-                dateTimePickerSecondDate.Enabled = true;
-                buttonSearch.Enabled = true;
-            }
-            else
-            {
-                dateTimePickerFirstDate.Enabled = false;
-                dateTimePickerSecondDate.Enabled = false;
-                buttonSearch.Enabled = false;
+                int nb = activiteTableAdapter1.Delete(currentRow.IdActivite, currentRow.Intitulé, currentRow.Date_de_début,
+                    currentRow.Date_de_fin, currentRow.Description, currentRow.Tarif_adhérent, currentRow.Tarif_invité,
+                    currentRow._Date_limite_d_inscription, currentRow.IdAdherent, currentRow.IdType, currentRow.Publié);
+                if (nb == 0)
+                {
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL, Properties.Resources.STR_TITRE_SUPPRESSION_FAIL, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 FillIntegral();
             }
         }
+        #endregion
 
-        private void buttonSearch_Click(object sender, EventArgs e)
-        {
-            FillIntegral();
-        }
-
-        private void dataGridViewNonInscrits_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridViewInscrits.ClearSelection();
-            buttonInscrireAdherentActivite.Enabled = true;
-            buttonDesinscrireAdherentActivite.Enabled = false;
-
-        }
-
-        private void dataGridViewInscrits_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridViewNonInscrits.ClearSelection();
-            buttonInscrireAdherentActivite.Enabled = false;
-            buttonDesinscrireAdherentActivite.Enabled = true;
-        }
-
-        private void activitesBindingSourceListeAct_CurrentChanged_1(object sender, EventArgs e)
-        {
-            if (activitesBindingSourceListeAct.Current != null)
-            {
-                cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
-
-                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherentinscription'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-                this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
-                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherents2'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-                this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
-
-            }
-        }
-
-        private void buttonDesinscrireAdherent_Click(object sender, EventArgs e)
-        {
-            cda27_bd2DataSet.inscriptionsRow currentRow = (cda27_bd2DataSet.inscriptionsRow)((DataRowView)inscriptionsBindingSource.Current).Row;
-            int IdAdherent = currentRow.IdAdherent;
-            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRIMER_INSCRIPTION, Properties.Resources.STR_TITRE_SUPPRIMER_INSCRIPTION, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (DiagResult == DialogResult.No)
-            {
-                return;
-            }
-            int nb = inscriptionTableAdapter1.Delete(currentRow.IdInscription,
-                currentRow._Date_d_inscription,
-                currentRow._Nombre_d_invités,
-                currentRow.IdAdherent,
-                currentRow.IdActivite);
-            if (nb == 0)
-            {
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_PROBLEME_SUPPRESSION_INSCRIPTION, Properties.Resources.STR_TITRE_PROBLEME_SUPPRESSION_INSCRIPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            FillIntegral();
-            adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", IdAdherent);
-        }
-
+        #region Inscrire/Desinscrire un adhérent depuis Activité
         private void buttonInscrireAdherentActivite_Click(object sender, EventArgs e)
         {
             cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
@@ -336,9 +267,7 @@ namespace MCMPWinForms
                     FillIntegral();
                     frmInscriptionActivite.InscriptionFinie = 0;
                     activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", IdActivite);
-
                 }
-
             }
         }
 
@@ -369,44 +298,127 @@ namespace MCMPWinForms
             FillIntegral();
             activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", IdActivite);
         }
+        #endregion
 
-        private void buttonSupprimerAdherent_Click(object sender, EventArgs e)
+        #region Gestion du checkbox de tri des activités par date
+        private void checkBoxChoisirDate_CheckedChanged(object sender, EventArgs e)
         {
-            cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
-            DialogResult DiagResult = MessageBox.Show(String.Format(Properties.Resources.STR_MESSAGE_SUPPRESSION_ADHERENT), String.Format(Properties.Resources.STR_TITRE_SUPPRESSION_ADHERENT), MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (DiagResult == DialogResult.Yes)
+            if (checkBoxChoisirDate.Checked)
             {
-                int nb = adherentTableAdapter.Delete(currentRow.IdAdherent, currentRow.Nom, currentRow.Prénom, currentRow.Date_de_naissance, currentRow.Adresse,
-                    null, currentRow.Code_postale, currentRow.Ville, currentRow.Email, currentRow.Téléphone, currentRow._Date_d_adhésion, currentRow.Organisateur,
-                    currentRow.Admin, currentRow.Login, currentRow.Password, currentRow.Cylindrée, currentRow.Activé);
-                if (nb == 0)
-                {
-                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL, Properties.Resources.STR_TITRE_SUPPRESSION_FAIL, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                dateTimePickerFirstDate.Enabled = true;
+                dateTimePickerSecondDate.Enabled = true;
+                buttonSearch.Enabled = true;
+            }
+            else
+            {
+                dateTimePickerFirstDate.Enabled = false;
+                dateTimePickerSecondDate.Enabled = false;
+                buttonSearch.Enabled = false;
                 FillIntegral();
             }
         }
+        #endregion
 
-        private void dataGridViewActiviteRelationAdherent_RowEnter(object sender, DataGridViewCellEventArgs e)
+        #region Gestion des RowEnter pour les inscrits/non-inscrits
+        private void dataGridViewNonInscrits_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridViewInscrits.ClearSelection();
+            buttonInscrireAdherentActivite.Enabled = true;
+            buttonDesinscrireAdherentActivite.Enabled = false;
 
         }
 
-        private void buttonSupprimerActivite_Click(object sender, EventArgs e)
+        private void dataGridViewInscrits_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridViewNonInscrits.ClearSelection();
+            buttonInscrireAdherentActivite.Enabled = false;
+            buttonDesinscrireAdherentActivite.Enabled = true;
+        }
+        #endregion
+        #endregion
+
+        #region CurrentChanged
+        private void adherentsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (adherentsBindingSource.Current != null)
+            {
+                cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
+                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet.activite'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+                this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow.IdAdherent);
+            }
+            if (inscriptionsBindingSource.Count != 0)
+            {
+                buttonDesinscrireAdherent.Enabled = true;
+            }
+            else
+            {
+                buttonDesinscrireAdherent.Enabled = false;
+
+            }
+        }
+        private void activitesBindingSourceListeAct_CurrentChanged_1(object sender, EventArgs e)
+        {
+            if (activitesBindingSourceListeAct.Current != null)
+            {
+                cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
+                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherentinscription'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+                this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
+                // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherents2'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+                this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
+            }
+        }
+        #endregion
+
+        #region Boutons fermeture
+        private void buttonFermerActivite_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void buttonFermerAdherent_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        #endregion
+
+        #region FormClosing
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_FERMER, Properties.Resources.STR_TITRE_FERMER, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (DiagResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+        #endregion
+
+        #region Fonction Fill et bouton Search
+        public void FillIntegral()
+        {
+            if (checkBoxChoisirDate.Checked)
+            {
+                this.activitesTableAdapter.FillByDate(this.cda27_bd2DataSet.activites, dateTimePickerFirstDate.Value, dateTimePickerSecondDate.Value); ;
+
+            }
+            else
+            {
+                this.activitesTableAdapter.Fill(this.cda27_bd2DataSet.activites);
+            }
             cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
-            DialogResult DiagResult = MessageBox.Show("Voulez-vous vraiment supprimer cette activité ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            if (DiagResult == DialogResult.Yes)
-            {
-                int nb = activiteTableAdapter1.Delete(currentRow.IdActivite, currentRow.Intitulé, currentRow.Date_de_début,
-                    currentRow.Date_de_fin, currentRow.Description, currentRow.Tarif_adhérent, currentRow.Tarif_invité,
-                    currentRow._Date_limite_d_inscription, currentRow.IdAdherent, currentRow.IdType, currentRow.Publié);
-                if (nb == 0)
-                {
-                    MessageBox.Show("La suppression ne s'est pas effectuée");
-                }
-                FillIntegral();
-            }
+
+            // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherentinscription'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
+            // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet1.adherents2'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
+            this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
+            cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
+            this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
+            dataGridViewNonInscrits.ClearSelection();
+            dataGridViewInscrits.ClearSelection();
         }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            FillIntegral();
+        }
+        #endregion
     }
 }
