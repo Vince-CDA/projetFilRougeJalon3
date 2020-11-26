@@ -163,14 +163,29 @@
   <data name="STR_MESSAGE_ACTIVITE_AJOUT_SUCCESS" xml:space="preserve">
     <value>L'activité à bien été ajoutée</value>
   </data>
+  <data name="STR_MESSAGE_ADHERENT_BIEN_AJOUTE" xml:space="preserve">
+    <value>L'adhérent {0} {1} a bien été ajouté</value>
+  </data>
+  <data name="STR_MESSAGE_ADRESSE_MAIL_NON_VALIDE" xml:space="preserve">
+    <value>L'adresse mail saisie n'est pas valide</value>
+  </data>
+  <data name="STR_MESSAGE_ADRESSE_NON_VALIDE" xml:space="preserve">
+    <value>L'adresse saisie est invalide</value>
+  </data>
   <data name="STR_MESSAGE_ANNULER_ET_FERMER" xml:space="preserve">
     <value>Voulez-vous vraiment annuler et fermer cette fenêtre ?</value>
   </data>
   <data name="STR_MESSAGE_CHAMPS_NON_REMPLI" xml:space="preserve">
     <value>Un champs n'est pas rempli</value>
   </data>
+  <data name="STR_MESSAGE_CODEPOSTALE_NON_VALIDE" xml:space="preserve">
+    <value>Le code postale saisie n'est pas valide</value>
+  </data>
   <data name="STR_MESSAGE_CONFIRMATION_SUPPRESSION" xml:space="preserve">
-    <value>Voulez-vous vraiment désinscrire {1} de l'activité ?</value>
+    <value>Voulez-vous vraiment désinscrire {0} de l'activité ?</value>
+  </data>
+  <data name="STR_MESSAGE_CYLINDREE_NON_VALIDE" xml:space="preserve">
+    <value>La cylindrée saisie n'est pas correcte (Seulement de 0 à 9999.)</value>
   </data>
   <data name="STR_MESSAGE_DATE_ACT_PROBLEME" xml:space="preserve">
     <value>La date de début doit être supérieur à la date d'aujourd'hui, la date limite doit être supérieur à la date de début ainsi qu'inférieur à la date de fin et la date de fin doit être supérieur à la date limite.</value>
@@ -178,20 +193,41 @@
   <data name="STR_MESSAGE_DESINSCRIPTION_ERREUR" xml:space="preserve">
     <value>La désinscription n'a pas été réalisée</value>
   </data>
+  <data name="STR_MESSAGE_EMAIL_NON_VALIDE" xml:space="preserve">
+    <value>L'adresse saisie est invalide</value>
+  </data>
   <data name="STR_MESSAGE_FERMER" xml:space="preserve">
     <value>Voulez-vous vraiment fermer le programme ?</value>
   </data>
   <data name="STR_MESSAGE_INSCRIPTION_FAIL" xml:space="preserve">
     <value>L'inscription ne s'est pas réalisée</value>
   </data>
+  <data name="STR_MESSAGE_LOGIN_EXISTANT" xml:space="preserve">
+    <value>Un adhérent porte déjà ce login</value>
+  </data>
   <data name="STR_MESSAGE_MAJ_NON_REALISEE" xml:space="preserve">
     <value>La mise à jour ne s'est pas réalisée</value>
+  </data>
+  <data name="STR_MESSAGE_MODIFICATION_SUCCES" xml:space="preserve">
+    <value>La modification a été réalisée</value>
   </data>
   <data name="STR_MESSAGE_NBINVITE_NONVALIDE" xml:space="preserve">
     <value>Le nombre d'invité(s) n'est pas valide</value>
   </data>
+  <data name="STR_MESSAGE_NOM_NON_VALIDE" xml:space="preserve">
+    <value>Le nom ou le prénom n'est pas valide</value>
+  </data>
+  <data name="STR_MESSAGE_NUMERO_NON_VALIDE" xml:space="preserve">
+    <value>Le numéro de téléphone saisie n'est pas valide (0XXXXXXXXX souhaité)</value>
+  </data>
   <data name="STR_MESSAGE_PROBLEME_AJOUT_ACT" xml:space="preserve">
     <value>Il y a un problème pour l'ajout de cette activité</value>
+  </data>
+  <data name="STR_MESSAGE_PROBLEME_AJOUT_ADHERENT" xml:space="preserve">
+    <value>Il y a un problème pour l'ajout de l'adhérent...</value>
+  </data>
+  <data name="STR_MESSAGE_PROBLEME_MODIF_ADHERENT" xml:space="preserve">
+    <value>Problème dans la modification de l'adhérent</value>
   </data>
   <data name="STR_MESSAGE_PROBLEME_SUPPRESSION_INSCRIPTION" xml:space="preserve">
     <value>Il y a un problème pour la suppression de l'inscription</value>
@@ -200,7 +236,7 @@
     <value>Voulez-vous vraiment supprimer cette activité ?</value>
   </data>
   <data name="STR_MESSAGE_SUPPRESSION_ADHERENT" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {1} ?</value>
+    <value>Voulez-vous vraiment supprimer {0} ?</value>
   </data>
   <data name="STR_MESSAGE_SUPPRESSION_FAIL" xml:space="preserve">
     <value>La suppression ne s'est pas effectuée</value>
@@ -211,32 +247,20 @@
   <data name="STR_MESSAGE_TARIF_PROBLEME" xml:space="preserve">
     <value>Il y a un problème avec les tarifs, merci de taper un tarif avec des chiffres et une seule virgule si besoin sans le symbole €.</value>
   </data>
-  <data name="STR_MOTIF_ADRESSE" xml:space="preserve">
-    <value>@"^[A-Za-zéèàê0-9]+(?:\s[A-Za-zéèàê0-9'_-]+)+$"</value>
-  </data>
-  <data name="STR_MOTIF_CODEPOSTALE" xml:space="preserve">
-    <value>@"^\d{5}$"</value>
-  </data>
-  <data name="STR_MOTIF_CYLINDREE" xml:space="preserve">
-    <value>@"^[0-9]{1,5}$"</value>
-  </data>
-  <data name="STR_MOTIF_MAIL" xml:space="preserve">
-    <value>@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$</value>
-  </data>
-  <data name="STR_MOTIF_NAME" xml:space="preserve">
-    <value>@"^[\p{L}\p{M}' \.\-]+$"</value>
-  </data>
-  <data name="STR_MOTIF_PRIX" xml:space="preserve">
-    <value>@"[0-9]"</value>
-  </data>
-  <data name="STR_MOTIF_TEL" xml:space="preserve">
-    <value>@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"</value>
-  </data>
-  <data name="STR_MOTIF_VILLE" xml:space="preserve">
-    <value>@"^\p{Lu}\p{L}*(?:[\s-]\p{Lu}\p{L}*)*$"</value>
+  <data name="STR_MESSAGE_VILLE_NON_VALIDE" xml:space="preserve">
+    <value>La ville saisie est invalide</value>
   </data>
   <data name="STR_TITRE_ACTIVITE_AJOUT_SUCCESS" xml:space="preserve">
     <value>Succès</value>
+  </data>
+  <data name="STR_TITRE_ADHERENT_BIEN_AJOUTE" xml:space="preserve">
+    <value>Adhérent ajouté !</value>
+  </data>
+  <data name="STR_TITRE_ADRESSE_MAIL_NON_VALIDE" xml:space="preserve">
+    <value>Erreur adresse email</value>
+  </data>
+  <data name="STR_TITRE_ADRESSE_NON_VALIDE" xml:space="preserve">
+    <value>Adresse postale non valide</value>
   </data>
   <data name="STR_TITRE_ANNULER_ET_FERMER" xml:space="preserve">
     <value>Annuler et fermer ?</value>
@@ -244,8 +268,14 @@
   <data name="STR_TITRE_CHAMPS_NON_REMPLI" xml:space="preserve">
     <value>Champs non-rempli</value>
   </data>
+  <data name="STR_TITRE_CODEPOSTALE_NON_VALIDE" xml:space="preserve">
+    <value>Erreur code postale</value>
+  </data>
   <data name="STR_TITRE_CONFIRMATION_SUPPRESSION" xml:space="preserve">
-    <value>Désinscription de {1} {2}</value>
+    <value>Désinscription de {0} {1}</value>
+  </data>
+  <data name="STR_TITRE_CYLINDREE_NON_VALIDE" xml:space="preserve">
+    <value>Erreur cylindrée</value>
   </data>
   <data name="STR_TITRE_DATE_ACT_PROBLEME" xml:space="preserve">
     <value>Problème dans les dates</value>
@@ -253,20 +283,41 @@
   <data name="STR_TITRE_DESINSCRIPTION_ERREUR" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="STR_TITRE_EMAIL_NON_VALIDE" xml:space="preserve">
+    <value>Erreur adresse mail</value>
+  </data>
   <data name="STR_TITRE_FERMER" xml:space="preserve">
     <value>Fermer</value>
   </data>
   <data name="STR_TITRE_INSCRIPTION_FAIL" xml:space="preserve">
     <value>Erreur</value>
   </data>
+  <data name="STR_TITRE_LOGIN_EXISTANT" xml:space="preserve">
+    <value>Login existant</value>
+  </data>
   <data name="STR_TITRE_MAJ_NON_REALISEE" xml:space="preserve">
     <value>Echec</value>
+  </data>
+  <data name="STR_TITRE_MODIFICATION_SUCCES" xml:space="preserve">
+    <value>Modification avec succès</value>
   </data>
   <data name="STR_TITRE_NBINVITE_NONVALIDE" xml:space="preserve">
     <value>Problème dans le nombre d'invité(s)</value>
   </data>
+  <data name="STR_TITRE_NOM_NON_VALIDE" xml:space="preserve">
+    <value>Erreur nom ou prénom</value>
+  </data>
+  <data name="STR_TITRE_NUMERO_NON_VALIDE" xml:space="preserve">
+    <value>Erreur numéro de téléphone</value>
+  </data>
   <data name="STR_TITRE_PROBLEME_AJOUT_ACT" xml:space="preserve">
     <value>Problème d'ajout</value>
+  </data>
+  <data name="STR_TITRE_PROBLEME_AJOUT_ADHERENT" xml:space="preserve">
+    <value>Problème d'ajout</value>
+  </data>
+  <data name="STR_TITRE_PROBLEME_MODIF_ADHERENT" xml:space="preserve">
+    <value>Problème de modification</value>
   </data>
   <data name="STR_TITRE_PROBLEME_SUPPRESSION_INSCRIPTION" xml:space="preserve">
     <value>Problème de suppression</value>
@@ -275,7 +326,7 @@
     <value>Suppression de l'activité</value>
   </data>
   <data name="STR_TITRE_SUPPRESSION_ADHERENT" xml:space="preserve">
-    <value>Suppression de {1} {2}</value>
+    <value>Suppression de {0} {1}</value>
   </data>
   <data name="STR_TITRE_SUPPRESSION_FAIL" xml:space="preserve">
     <value>Erreur</value>
@@ -285,6 +336,9 @@
   </data>
   <data name="STR_TITRE_TARIF_PROBLEME" xml:space="preserve">
     <value>Problème dans les tarifs</value>
+  </data>
+  <data name="STR_TITRE_VILLE_NON_VALIDE" xml:space="preserve">
+    <value>Erreur ville</value>
   </data>
   <data name="supprimer_act" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\supprimer act.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -46,12 +46,8 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonAnnulerActivite = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxNomResp = new System.Windows.Forms.TextBox();
-            this.lblPrenomResp = new System.Windows.Forms.Label();
-            this.lblNomResp = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
-            this.textBoxPrenomResp = new System.Windows.Forms.TextBox();
             this.dateTimePickerDateDebut = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDateFin = new System.Windows.Forms.DateTimePicker();
             this.lblTypeAct = new System.Windows.Forms.Label();
@@ -85,6 +81,7 @@
             this.type_activiteTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.type_activiteTableAdapter();
             this.activiteTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activiteTableAdapter();
             this.activitesTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activitesTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -104,26 +101,28 @@
             // 
             this.textBoxTarifAdherent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTarifAdherent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTarifAdherent.Location = new System.Drawing.Point(219, 145);
+            this.textBoxTarifAdherent.Location = new System.Drawing.Point(219, 107);
             this.textBoxTarifAdherent.Name = "textBoxTarifAdherent";
             this.textBoxTarifAdherent.Size = new System.Drawing.Size(263, 29);
-            this.textBoxTarifAdherent.TabIndex = 33;
+            this.textBoxTarifAdherent.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.textBoxTarifAdherent, "Entrez le tarif de l\'adhérent");
             // 
             // textBoxTarifInvite
             // 
             this.textBoxTarifInvite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTarifInvite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTarifInvite.Location = new System.Drawing.Point(676, 145);
+            this.textBoxTarifInvite.Location = new System.Drawing.Point(676, 107);
             this.textBoxTarifInvite.Name = "textBoxTarifInvite";
             this.textBoxTarifInvite.Size = new System.Drawing.Size(295, 29);
-            this.textBoxTarifInvite.TabIndex = 29;
+            this.textBoxTarifInvite.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.textBoxTarifInvite, "Entrez le tarif de l\'invité");
             // 
             // lblDateLimite
             // 
             this.lblDateLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDateLimite.AutoSize = true;
             this.lblDateLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateLimite.Location = new System.Drawing.Point(3, 263);
+            this.lblDateLimite.Location = new System.Drawing.Point(3, 258);
             this.lblDateLimite.Name = "lblDateLimite";
             this.lblDateLimite.Size = new System.Drawing.Size(210, 50);
             this.lblDateLimite.TabIndex = 3;
@@ -134,7 +133,7 @@
             this.lblIntitule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIntitule.AutoSize = true;
             this.lblIntitule.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntitule.Location = new System.Drawing.Point(3, 19);
+            this.lblIntitule.Location = new System.Drawing.Point(3, 28);
             this.lblIntitule.Name = "lblIntitule";
             this.lblIntitule.Size = new System.Drawing.Size(210, 25);
             this.lblIntitule.TabIndex = 0;
@@ -144,17 +143,18 @@
             // 
             this.textBoxIntituleAct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIntituleAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIntituleAct.Location = new System.Drawing.Point(219, 17);
+            this.textBoxIntituleAct.Location = new System.Drawing.Point(219, 26);
             this.textBoxIntituleAct.Name = "textBoxIntituleAct";
             this.textBoxIntituleAct.Size = new System.Drawing.Size(263, 29);
-            this.textBoxIntituleAct.TabIndex = 1;
+            this.textBoxIntituleAct.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.textBoxIntituleAct, "Entrez l\'intitulé de l\'activité");
             // 
             // lblTarifInvite
             // 
             this.lblTarifInvite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTarifInvite.AutoSize = true;
             this.lblTarifInvite.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarifInvite.Location = new System.Drawing.Point(3, 147);
+            this.lblTarifInvite.Location = new System.Drawing.Point(3, 109);
             this.lblTarifInvite.Name = "lblTarifInvite";
             this.lblTarifInvite.Size = new System.Drawing.Size(210, 25);
             this.lblTarifInvite.TabIndex = 7;
@@ -165,7 +165,7 @@
             this.lblTarifInvit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTarifInvit.AutoSize = true;
             this.lblTarifInvit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarifInvit.Location = new System.Drawing.Point(488, 147);
+            this.lblTarifInvit.Location = new System.Drawing.Point(488, 109);
             this.lblTarifInvit.Name = "lblTarifInvit";
             this.lblTarifInvit.Size = new System.Drawing.Size(182, 25);
             this.lblTarifInvit.TabIndex = 5;
@@ -223,9 +223,10 @@
             this.buttonAjouterActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonAjouterActivite.Name = "buttonAjouterActivite";
             this.buttonAjouterActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonAjouterActivite.TabIndex = 16;
+            this.buttonAjouterActivite.TabIndex = 10;
             this.buttonAjouterActivite.Text = "&Ajouter activité";
             this.buttonAjouterActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonAjouterActivite, "Bouton pour ajouter l\'activité");
             this.buttonAjouterActivite.UseVisualStyleBackColor = false;
             this.buttonAjouterActivite.Click += new System.EventHandler(this.buttonAjouterActivite_Click);
             // 
@@ -239,9 +240,10 @@
             this.buttonModifierActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonModifierActivite.Name = "buttonModifierActivite";
             this.buttonModifierActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonModifierActivite.TabIndex = 17;
+            this.buttonModifierActivite.TabIndex = 11;
             this.buttonModifierActivite.Text = "&Modifier activité";
             this.buttonModifierActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonModifierActivite, "Bouton pour modifier l\'activité");
             this.buttonModifierActivite.UseVisualStyleBackColor = false;
             this.buttonModifierActivite.Click += new System.EventHandler(this.buttonModifierActivite_Click);
             // 
@@ -255,9 +257,10 @@
             this.buttonSupprimerActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonSupprimerActivite.Name = "buttonSupprimerActivite";
             this.buttonSupprimerActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonSupprimerActivite.TabIndex = 18;
+            this.buttonSupprimerActivite.TabIndex = 12;
             this.buttonSupprimerActivite.Text = "&Supprimer activité";
             this.buttonSupprimerActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonSupprimerActivite, "Bouton pour supprimer l\'activité");
             this.buttonSupprimerActivite.UseVisualStyleBackColor = false;
             this.buttonSupprimerActivite.Click += new System.EventHandler(this.buttonSupprimerActivite_Click);
             // 
@@ -281,9 +284,10 @@
             this.buttonAnnulerActivite.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAnnulerActivite.Name = "buttonAnnulerActivite";
             this.buttonAnnulerActivite.Size = new System.Drawing.Size(78, 64);
-            this.buttonAnnulerActivite.TabIndex = 18;
+            this.buttonAnnulerActivite.TabIndex = 13;
             this.buttonAnnulerActivite.Text = "&Annuler";
             this.buttonAnnulerActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonAnnulerActivite, "Cliquez ici pour annuler et fermer la fenêtre");
             this.buttonAnnulerActivite.UseVisualStyleBackColor = false;
             this.buttonAnnulerActivite.Click += new System.EventHandler(this.buttonAnnulerActivite_Click);
             // 
@@ -294,79 +298,44 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.64646F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.32168F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.83248F));
-            this.tableLayoutPanel3.Controls.Add(this.textBoxTarifInvite, 3, 2);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxNomResp, 3, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblPrenomResp, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxTarifInvite, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblIntitule, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBoxIntituleAct, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblTarifInvite, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblNomResp, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblTarifInvit, 2, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblDateDebut, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lblDateFin, 2, 3);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxPrenomResp, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxTarifAdherent, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateDebut, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateFin, 3, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lblDateLimite, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblTarifInvite, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblTarifInvit, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblDateDebut, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblDateFin, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxTarifAdherent, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateDebut, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateFin, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblDateLimite, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.lblTypeAct, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateLimite, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.lblInscrits, 2, 5);
-            this.tableLayoutPanel3.Controls.Add(this.dataGridViewInscrits, 3, 5);
-            this.tableLayoutPanel3.Controls.Add(this.textBoxDescription, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.lblDescription, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.checkBoxPublic, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePickerDateLimite, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblInscrits, 2, 4);
+            this.tableLayoutPanel3.Controls.Add(this.dataGridViewInscrits, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxDescription, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblDescription, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.checkBoxPublic, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.comboBox1, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowCount = 5;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(974, 554);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // textBoxNomResp
-            // 
-            this.textBoxNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNomResp.Location = new System.Drawing.Point(676, 81);
-            this.textBoxNomResp.Name = "textBoxNomResp";
-            this.textBoxNomResp.Size = new System.Drawing.Size(295, 29);
-            this.textBoxNomResp.TabIndex = 25;
-            // 
-            // lblPrenomResp
-            // 
-            this.lblPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrenomResp.AutoSize = true;
-            this.lblPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrenomResp.Location = new System.Drawing.Point(3, 71);
-            this.lblPrenomResp.Name = "lblPrenomResp";
-            this.lblPrenomResp.Size = new System.Drawing.Size(210, 50);
-            this.lblPrenomResp.TabIndex = 6;
-            this.lblPrenomResp.Text = "Prénom du responsable :";
-            // 
-            // lblNomResp
-            // 
-            this.lblNomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNomResp.AutoSize = true;
-            this.lblNomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomResp.Location = new System.Drawing.Point(488, 71);
-            this.lblNomResp.Name = "lblNomResp";
-            this.lblNomResp.Size = new System.Drawing.Size(182, 50);
-            this.lblNomResp.TabIndex = 8;
-            this.lblNomResp.Text = "Nom du responsable :";
             // 
             // lblDateDebut
             // 
             this.lblDateDebut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDebut.Location = new System.Drawing.Point(3, 211);
+            this.lblDateDebut.Location = new System.Drawing.Point(3, 190);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(210, 25);
             this.lblDateDebut.TabIndex = 10;
@@ -377,43 +346,36 @@
             this.lblDateFin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFin.Location = new System.Drawing.Point(488, 211);
+            this.lblDateFin.Location = new System.Drawing.Point(488, 190);
             this.lblDateFin.Name = "lblDateFin";
             this.lblDateFin.Size = new System.Drawing.Size(182, 25);
             this.lblDateFin.TabIndex = 9;
             this.lblDateFin.Text = "Date de fin :";
             // 
-            // textBoxPrenomResp
-            // 
-            this.textBoxPrenomResp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPrenomResp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrenomResp.Location = new System.Drawing.Point(219, 81);
-            this.textBoxPrenomResp.Name = "textBoxPrenomResp";
-            this.textBoxPrenomResp.Size = new System.Drawing.Size(263, 29);
-            this.textBoxPrenomResp.TabIndex = 27;
-            // 
             // dateTimePickerDateDebut
             // 
             this.dateTimePickerDateDebut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerDateDebut.Location = new System.Drawing.Point(219, 214);
+            this.dateTimePickerDateDebut.Location = new System.Drawing.Point(219, 192);
             this.dateTimePickerDateDebut.Name = "dateTimePickerDateDebut";
             this.dateTimePickerDateDebut.Size = new System.Drawing.Size(263, 20);
-            this.dateTimePickerDateDebut.TabIndex = 52;
+            this.dateTimePickerDateDebut.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.dateTimePickerDateDebut, "Choisissez la date de début de l\'activité");
             // 
             // dateTimePickerDateFin
             // 
             this.dateTimePickerDateFin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerDateFin.Location = new System.Drawing.Point(676, 214);
+            this.dateTimePickerDateFin.Location = new System.Drawing.Point(676, 192);
             this.dateTimePickerDateFin.Name = "dateTimePickerDateFin";
             this.dateTimePickerDateFin.Size = new System.Drawing.Size(295, 20);
-            this.dateTimePickerDateFin.TabIndex = 53;
+            this.dateTimePickerDateFin.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.dateTimePickerDateFin, "Choisissez la date de fin de l\'activité");
             // 
             // lblTypeAct
             // 
             this.lblTypeAct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTypeAct.AutoSize = true;
             this.lblTypeAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTypeAct.Location = new System.Drawing.Point(488, 19);
+            this.lblTypeAct.Location = new System.Drawing.Point(488, 28);
             this.lblTypeAct.Name = "lblTypeAct";
             this.lblTypeAct.Size = new System.Drawing.Size(182, 25);
             this.lblTypeAct.TabIndex = 11;
@@ -422,17 +384,18 @@
             // dateTimePickerDateLimite
             // 
             this.dateTimePickerDateLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(219, 278);
+            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(219, 273);
             this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
             this.dateTimePickerDateLimite.Size = new System.Drawing.Size(263, 20);
-            this.dateTimePickerDateLimite.TabIndex = 51;
+            this.dateTimePickerDateLimite.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.dateTimePickerDateLimite, "Choisissez la date d\'inscription de l\'activité");
             // 
             // lblInscrits
             // 
             this.lblInscrits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInscrits.AutoSize = true;
             this.lblInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscrits.Location = new System.Drawing.Point(488, 412);
+            this.lblInscrits.Location = new System.Drawing.Point(488, 414);
             this.lblInscrits.Name = "lblInscrits";
             this.lblInscrits.Size = new System.Drawing.Size(182, 50);
             this.lblInscrits.TabIndex = 19;
@@ -459,13 +422,13 @@
             this.idActiviteDataGridViewTextBoxColumn});
             this.dataGridViewInscrits.DataSource = this.inscriptionsBindingSource;
             this.dataGridViewInscrits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewInscrits.Location = new System.Drawing.Point(676, 323);
+            this.dataGridViewInscrits.Location = new System.Drawing.Point(676, 327);
             this.dataGridViewInscrits.Name = "dataGridViewInscrits";
             this.dataGridViewInscrits.ReadOnly = true;
             this.dataGridViewInscrits.RowHeadersVisible = false;
             this.dataGridViewInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInscrits.Size = new System.Drawing.Size(295, 228);
-            this.dataGridViewInscrits.TabIndex = 54;
+            this.dataGridViewInscrits.Size = new System.Drawing.Size(295, 224);
+            this.dataGridViewInscrits.TabIndex = 9;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -566,18 +529,19 @@
             // textBoxDescription
             // 
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(219, 323);
+            this.textBoxDescription.Location = new System.Drawing.Point(219, 327);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(263, 228);
-            this.textBoxDescription.TabIndex = 57;
+            this.textBoxDescription.Size = new System.Drawing.Size(263, 224);
+            this.textBoxDescription.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.textBoxDescription, "Entrez la description de l\'activité");
             // 
             // lblDescription
             // 
             this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(3, 424);
+            this.lblDescription.Location = new System.Drawing.Point(3, 426);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(210, 25);
             this.lblDescription.TabIndex = 50;
@@ -589,12 +553,13 @@
             this.checkBoxPublic.AutoSize = true;
             this.checkBoxPublic.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.checkBoxPublic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPublic.Location = new System.Drawing.Point(676, 267);
+            this.checkBoxPublic.Location = new System.Drawing.Point(676, 262);
             this.checkBoxPublic.Name = "checkBoxPublic";
             this.checkBoxPublic.Size = new System.Drawing.Size(295, 42);
-            this.checkBoxPublic.TabIndex = 59;
+            this.checkBoxPublic.TabIndex = 7;
             this.checkBoxPublic.Text = "Publié";
             this.checkBoxPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.checkBoxPublic, "Cochez pour publier");
             this.checkBoxPublic.UseVisualStyleBackColor = true;
             // 
             // comboBox1
@@ -604,10 +569,11 @@
             this.comboBox1.DisplayMember = "IntituleType";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(676, 16);
+            this.comboBox1.Location = new System.Drawing.Point(676, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(295, 32);
-            this.comboBox1.TabIndex = 60;
+            this.comboBox1.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.comboBox1, "Choisissez le type d\'activité");
             this.comboBox1.ValueMember = "IdType";
             // 
             // typeactiviteBindingSource
@@ -741,9 +707,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private cda27_bd2DataSet cda27_bd2DataSet2;
         internal System.Windows.Forms.BindingSource typeactiviteBindingSource;
-        internal System.Windows.Forms.TextBox textBoxNomResp;
-        private System.Windows.Forms.Label lblPrenomResp;
-        private System.Windows.Forms.Label lblNomResp;
-        internal System.Windows.Forms.TextBox textBoxPrenomResp;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

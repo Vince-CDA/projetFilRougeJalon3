@@ -14,6 +14,9 @@ namespace MCMPWinForms
     public partial class formDetailAdherent : Form
     {
         #region Les Get/Set pour faire le lien avec la FormMain et sa fille
+        /// <summary>
+        /// Ces get, set me permettrons de faire passer des informations du FormMain à cette fille ou inversement
+        /// </summary>
         public BindingSource adherentbind { set; get; }
         public int IsClose { get; set; }
         public long LastInsert { get; set; }
@@ -21,6 +24,10 @@ namespace MCMPWinForms
         #endregion
 
         #region Motif pour expression régulière
+        /// <summary>
+        /// Les motifs qui me permettrons de tester les champs saisis
+        /// Un mail correctement formé, un téléphone, nom, prénom, code postale, adresse, ville et cylindrée
+        /// </summary>
         public const string motifMail = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
         public const string motifTel = @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
         public const string motifName = @"^[\p{L}\p{M}' \.\-]+$";
@@ -30,23 +37,39 @@ namespace MCMPWinForms
         public const string motifCylindree = @"^[0-9]{1,5}$";
 
         #endregion
+
+        /// <summary>
+        /// Initialisation des composants (contrôles etc...)
+        /// </summary>
         public formDetailAdherent()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Au chargement de la fenêtre (ShowDialog)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void formDetailAdherent_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'cda27_bd2DataSet.adherents'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
+            /// L'image Avatar sera par défaut chargée
             this.pictureBoxAvatar.ImageLocation = Properties.Resources.STR_ADRESSE_AVATAR + Properties.Resources.STR_AVATAR_PAR_DEFAUT;
         }
 
         #region Ajouter
+        /// <summary>
+        /// Au bouton "Ajouter" (Ajouter l'adhérent)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAjouter_Click(object sender, EventArgs e)
         {
+            /// Active sera à 1 ou 0 suivant la case cochée ou non
             int active = checkBoxActive.Checked ? 1 : 0;
+            /// La même chose pour organisateur
             int organisateur = checkBoxOrganisateur.Checked ? 1 : 0;
+            /// Vérification des champs : Si ils sont à null ou comportent seulement des espaces
             if (String.IsNullOrWhiteSpace(textBoxNom.Text) ||
                 String.IsNullOrWhiteSpace(textBoxPrenom.Text) ||
                 String.IsNullOrWhiteSpace(textBoxAdresse.Text) ||
@@ -58,54 +81,86 @@ namespace MCMPWinForms
                 String.IsNullOrWhiteSpace(textBoxEmail.Text) ||
                 String.IsNullOrWhiteSpace(textBoxAPropos.Text))
             {
-                MessageBox.Show("Un champs n'est pas saisie");
+                /// Message indiquant qu'un champs n'est pas saisie
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI, 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Information);
+                /// Je quitte l'évenement
                 return;
             }
+            /// Vérification de chaque champs avec les fonctions Regex (expressions régulière)
+            /// Suivi d'un message d'erreur et d'une sortie d'évenement
             else if (!IsEmail(textBoxEmail.Text))
             {
-                MessageBox.Show("L'adresse mail saisie n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_ADRESSE_MAIL_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_ADRESSE_MAIL_NON_VALIDE,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (!IsPhoneNbr(textBoxTelephone.Text))
             {
-                MessageBox.Show("Le numéro de téléphone saisie n'est pas valide (0XXXXXXXXX souhaité)");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_NUMERO_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_NUMERO_NON_VALIDE, MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsName(textBoxNom.Text) || !IsName(textBoxNom.Text))
             {
-                MessageBox.Show("Le nom ou le prénom n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_NOM_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_NOM_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsCodePostale(textBoxCodePostale.Text))
             {
-                MessageBox.Show("Le code postale saisie n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CODEPOSTALE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_CODEPOSTALE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsAdresse(textBoxAdresse.Text))
             {
-                MessageBox.Show("L'adresse saisie est invalide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_EMAIL_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_EMAIL_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsVille(textBoxVille.Text))
             {
-                MessageBox.Show("La ville saisie est invalide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_VILLE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_VILLE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsCylindree(textBoxCylindree.Text))
             {
-                MessageBox.Show("La cylindrée saisie n'est pas correcte (Seulement de 0 à 9999.)");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CYLINDREE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_CYLINDREE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             int countNb = Convert.ToInt32(adherentsTableAdapter.Count(textBoxLogin.Text));
             if (countNb == 1)
             {
-                MessageBox.Show("Un adhérent porte déjà ce login");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_LOGIN_EXISTANT,
+                    Properties.Resources.STR_TITRE_LOGIN_EXISTANT,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
             }
+            /// Fin de vérification de chaque champs avec les fonctions Regex (expressions régulière)
+            ///Sinon, si toutes les vérifications ont réussis
             else
             {
-
-            int nb = adherentTableAdapter1.Insert(
+                /// J'insert tous les champs dans la table adhérent en insérant le résultat de la requête dans une variable nb
+                /// Si nb vaut 1, la requête a donné un résultat, sinon, la requête a échoué
+                int nb = adherentTableAdapter1.Insert(
                                                     textBoxNom.Text,
                                                     textBoxPrenom.Text,
                                                     dateTimePickerDateDeNaissance.Value,
@@ -124,45 +179,70 @@ namespace MCMPWinForms
                                                     null,
                                                     active,
                                                     textBoxAPropos.Text);
-            if (nb == 1)
-            {
-                MessageBox.Show("L'adhérent "+textBoxNom.Text+" "+textBoxPrenom.Text+" a bien été ajouté");
-                LastInsert = adherentTableAdapter1.Adapter.InsertCommand.InsertId;
-                IsClose = 1;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Il y a un problème pour l'ajout de l'adhérent...");
-            }
+                /// Si la requête à réussi
+                if (nb == 1)
+                {
+                    /// Message de succès
+                    MessageBox.Show(String.Format(Properties.Resources.STR_MESSAGE_ADHERENT_BIEN_AJOUTE, textBoxNom.Text, textBoxPrenom.Text),
+                        Properties.Resources.STR_TITRE_ADHERENT_BIEN_AJOUTE,
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Information);
+                    /// Mise en variable du LastInsert pour un positionnage dans le formMain (on transfert la variable chez la fenêtre mère)
+                    LastInsert = adherentTableAdapter1.Adapter.InsertCommand.InsertId;
+                    /// IsClose est à 1, la FormMain va intéragir avec cela
+                    IsClose = 1;
+                    /// Je close la fenêtre
+                    Close();
+                }
+                /// La requête n'a pas réussi
+                else
+                {
+                    /// Affichage d'un message d'erreur
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_PROBLEME_AJOUT_ADHERENT,
+                        Properties.Resources.STR_TITRE_PROBLEME_AJOUT_ADHERENT,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
 
         }
         #endregion
 
         #region Modifier
+        /// <summary>
+        /// Au bouton "Modifier" (Modifier l'adhérent)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btModifier_Click(object sender, EventArgs e)
         {
+            /// Je récupère la ligne courante de l'adhérent de la fenêtre MainForm par une variable transférée (adherentbind)
             cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentbind.Current).Row;
-
+            /// J'initialise l'organisateur en short? (type short nullable
             short? Organisateur;
+            /// Si le checkBox organisateur est coché alors Organisateur vaut 1
             if (checkBoxOrganisateur.Checked == true)
             {
                 Organisateur = 1;
             }
+            /// Sinon il vaut 0
             else
             {
                 Organisateur = 0;
             }
+            /// J'initialise Active en int
             int Active;
+            /// Si Activé est coché alors Active vaut 1
             if (checkBoxActive.Checked == true)
             {
                 Active = 1;
             }
+            /// Sinon il vaut 0
             else
             {
                 Active = 0;
             }
+            /// Vérification de mes champs, si ils sont null ou comportent des espaces
             if (String.IsNullOrWhiteSpace(textBoxNom.Text) ||
                 String.IsNullOrWhiteSpace(textBoxPrenom.Text) ||
                 String.IsNullOrWhiteSpace(textBoxAdresse.Text) ||
@@ -174,51 +254,88 @@ namespace MCMPWinForms
                 String.IsNullOrWhiteSpace(textBoxEmail.Text) ||
                 String.IsNullOrWhiteSpace(textBoxAPropos.Text))
             {
-                MessageBox.Show("Un champs n'est pas saisie");
+                // Messsage d'erreur, un champs n'est pas saisie puis je quitte l'évenement
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI,
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
+            /// Vérification de mes champs avec des Regex (expressions régulières)
+            /// Message d'erreur si ils ne sont pas valides
             else if (!IsEmail(textBoxEmail.Text))
             {
-                MessageBox.Show("L'adresse mail saisie n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_EMAIL_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_EMAIL_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsPhoneNbr(textBoxTelephone.Text))
             {
-                MessageBox.Show("Le numéro de téléphone saisie n'est pas valide (0XXXXXXXXX souhaité)");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_NUMERO_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_NUMERO_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsName(textBoxNom.Text) || !IsName(textBoxNom.Text))
             {
-                MessageBox.Show("Le nom ou le prénom n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_NOM_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_NOM_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsCodePostale(textBoxCodePostale.Text))
             {
-                MessageBox.Show("Le code postale saisie n'est pas valide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CODEPOSTALE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_CODEPOSTALE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsAdresse(textBoxAdresse.Text))
             {
-                MessageBox.Show("L'adresse saisie est invalide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_ADRESSE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_ADRESSE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsVille(textBoxVille.Text))
             {
-                MessageBox.Show("La ville saisie est invalide");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_VILLE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_VILLE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (!IsCylindree(textBoxCylindree.Text))
             {
-                MessageBox.Show("La cylindrée saisie n'est pas correcte (Seulement de 0 à 9999.)");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CYLINDREE_NON_VALIDE,
+                    Properties.Resources.STR_TITRE_CYLINDREE_NON_VALIDE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
+            /// Fin de vérification de mes champs avec des Regex (expressions régulières)
+            /// Mise en variable de la requête de Count du Login
             int countNb = Convert.ToInt32(adherentsTableAdapter.Count(textBoxLogin.Text));
+            /// Si il existe déjà et qu'il n'est pas le login current
             if (countNb == 1 && textBoxLogin.Text != Login)
             {
-                MessageBox.Show("Un adhérent porte déjà ce login");
+                /// Message d'erreur, un adhérent a déjà ce login
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_LOGIN_EXISTANT,
+                    Properties.Resources.STR_TITRE_LOGIN_EXISTANT,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            /// Si toutes les vérifications sont OK
             else
             { 
+                /// Je fais la mise à jour en utilisant tous les champs 
+                /// Comme anciennes valeurs j'utilise le currentRow du BindingSource précédemment transféré de la fenêtre MainForm
                 int nb = adherentTableAdapter.Update(textBoxNom.Text,
                     textBoxPrenom.Text,
                     dateTimePickerDateDeNaissance.Value,
@@ -254,25 +371,45 @@ namespace MCMPWinForms
                     currentRow.Password,
                     currentRow.Cylindrée,
                     currentRow.Activé);
+                /// Si la requête réussi
                 if (nb == 1)
                 {
-                    MessageBox.Show("La modification a été réalisée");
+                    /// Message de succès
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_MODIFICATION_SUCCES,
+                        Properties.Resources.STR_TITRE_MODIFICATION_SUCCES,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    /// Récupération du LastInsert pour une récupération dans la fenêtre main pour un repositionnage sur l'adhérent
                     LastInsert = adherentTableAdapter.Adapter.UpdateCommand.InsertId;
+                    /// La fenêtre va se fermer, la variable sera utilisée dans une condition dans le FormMain
                     IsClose = 1;
+                    /// Je ferme la fenêtre
                     Close();
                 }
+                /// Sinon, il y a un problème dans l'ajout
                 else
                 {
-                    MessageBox.Show("Problème dans la modification de l'adhérent");
+                    /// Message d'erreur : Problème dans la modification de l'adhérent
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_PROBLEME_MODIF_ADHERENT,
+                        Properties.Resources.STR_TITRE_PROBLEME_MODIF_ADHERENT,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
             }
         }
         #endregion
 
         #region Supprimer
+        /// <summary>
+        /// Au bouton "Supprimer" (Supprimer l'adhérent)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btSupprimer_Click(object sender, EventArgs e)
         {
+            /// Je récupère la ligne adhérent du FormMain avec la variable BindingSource précédemment transférée (adherentbind)
             cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentbind.Current).Row;
+            /// Je supprime l'adhérent avec les valeurs de la ligne séléctionnée
             int nb = adherentTableAdapter.Delete(currentRow.IdAdherent,
                                         currentRow.Nom,
                                         currentRow.Prénom,
@@ -290,31 +427,56 @@ namespace MCMPWinForms
                                         currentRow.Password,
                                         currentRow.Cylindrée,
                                         currentRow.Activé);
+            /// Si la requête n'a pas réussi
             if (nb == 0)
             {
-                MessageBox.Show("La suppression n'a pas été effectuée");
+                /// Message d'erreur
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL,
+                    Properties.Resources.STR_TITRE_SUPPRESSION_FAIL,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            /// Si la requête a réussi
             else
             {
+                /// Variable IsClose est à 1, elle me servira dans le FormMain
                 IsClose = 1;
+                /// Je close la fenêtre
                 Close();
             }
         }
         #endregion
 
         #region Annuler
+        /// <summary>
+        /// Action du bouton Annuler (Annuler l'ajout, la modification de l'adhérent)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAnnulerDetailAdherent_Click(object sender, EventArgs e)
         {
-            DialogResult DiagResult = MessageBox.Show("Voulez-vous vraiment annuler et fermer cette fenêtre ?", "Annuler", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            /// Message de confirmation d'annulation
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_ANNULER_ET_FERMER,
+                Properties.Resources.STR_TITRE_ANNULER_ET_FERMER,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button2);
+            /// Bouton Non séléctionné
             if (DiagResult == DialogResult.No)
             {
+                /// Je quitte l'évenement sans fermer la fenêtre
                 return;
             }
+            /// Sinon je ferme la fenêtre
             Close();
         }
         #endregion
 
         #region Fonctions d'expression régulières
+        /// <summary>
+        /// Regex (expressions régulières correspondant à toutes les vérifications possibles pour un type de champs)
+        /// </summary>
+        /// <returns>True ou False</returns>
         public static bool IsEmail(string email)
         {
             if (email != null) return Regex.IsMatch(email, motifMail);
@@ -352,6 +514,9 @@ namespace MCMPWinForms
             if (codePostale != null) return regex.IsMatch(codePostale);
             else return false;
         }
+        /// Fin des expressions régulières
         #endregion
+
+
     }
 }

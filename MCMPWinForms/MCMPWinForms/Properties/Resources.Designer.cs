@@ -208,6 +208,33 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;adhérent {0} {1} a bien été ajouté.
+        /// </summary>
+        internal static string STR_MESSAGE_ADHERENT_BIEN_AJOUTE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ADHERENT_BIEN_AJOUTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;adresse mail saisie n&apos;est pas valide.
+        /// </summary>
+        internal static string STR_MESSAGE_ADRESSE_MAIL_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ADRESSE_MAIL_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;adresse saisie est invalide.
+        /// </summary>
+        internal static string STR_MESSAGE_ADRESSE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ADRESSE_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment annuler et fermer cette fenêtre ?.
         /// </summary>
         internal static string STR_MESSAGE_ANNULER_ET_FERMER {
@@ -226,11 +253,29 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment désinscrire {1} de l&apos;activité ?.
+        ///   Recherche une chaîne localisée semblable à Le code postale saisie n&apos;est pas valide.
+        /// </summary>
+        internal static string STR_MESSAGE_CODEPOSTALE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_CODEPOSTALE_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment désinscrire {0} de l&apos;activité ?.
         /// </summary>
         internal static string STR_MESSAGE_CONFIRMATION_SUPPRESSION {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_CONFIRMATION_SUPPRESSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La cylindrée saisie n&apos;est pas correcte (Seulement de 0 à 9999.).
+        /// </summary>
+        internal static string STR_MESSAGE_CYLINDREE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_CYLINDREE_NON_VALIDE", resourceCulture);
             }
         }
         
@@ -253,6 +298,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;adresse saisie est invalide.
+        /// </summary>
+        internal static string STR_MESSAGE_EMAIL_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_EMAIL_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment fermer le programme ?.
         /// </summary>
         internal static string STR_MESSAGE_FERMER {
@@ -271,11 +325,29 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Un adhérent porte déjà ce login.
+        /// </summary>
+        internal static string STR_MESSAGE_LOGIN_EXISTANT {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_LOGIN_EXISTANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à La mise à jour ne s&apos;est pas réalisée.
         /// </summary>
         internal static string STR_MESSAGE_MAJ_NON_REALISEE {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La modification a été réalisée.
+        /// </summary>
+        internal static string STR_MESSAGE_MODIFICATION_SUCCES {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_MODIFICATION_SUCCES", resourceCulture);
             }
         }
         
@@ -289,11 +361,47 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le nom ou le prénom n&apos;est pas valide.
+        /// </summary>
+        internal static string STR_MESSAGE_NOM_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_NOM_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le numéro de téléphone saisie n&apos;est pas valide (0XXXXXXXXX souhaité).
+        /// </summary>
+        internal static string STR_MESSAGE_NUMERO_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_NUMERO_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Il y a un problème pour l&apos;ajout de cette activité.
         /// </summary>
         internal static string STR_MESSAGE_PROBLEME_AJOUT_ACT {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_PROBLEME_AJOUT_ACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Il y a un problème pour l&apos;ajout de l&apos;adhérent....
+        /// </summary>
+        internal static string STR_MESSAGE_PROBLEME_AJOUT_ADHERENT {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_PROBLEME_AJOUT_ADHERENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème dans la modification de l&apos;adhérent.
+        /// </summary>
+        internal static string STR_MESSAGE_PROBLEME_MODIF_ADHERENT {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_PROBLEME_MODIF_ADHERENT", resourceCulture);
             }
         }
         
@@ -316,7 +424,7 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment supprimer {1} ?.
+        ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment supprimer {0} ?.
         /// </summary>
         internal static string STR_MESSAGE_SUPPRESSION_ADHERENT {
             get {
@@ -352,74 +460,11 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^[A-Za-zéèàê0-9]+(?:\s[A-Za-zéèàê0-9&apos;_-]+)+$&quot;.
+        ///   Recherche une chaîne localisée semblable à La ville saisie est invalide.
         /// </summary>
-        internal static string STR_MOTIF_ADRESSE {
+        internal static string STR_MESSAGE_VILLE_NON_VALIDE {
             get {
-                return ResourceManager.GetString("STR_MOTIF_ADRESSE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^\d{5}$&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_CODEPOSTALE {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_CODEPOSTALE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^[0-9]{1,5}$&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_CYLINDREE {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_CYLINDREE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$.
-        /// </summary>
-        internal static string STR_MOTIF_MAIL {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_MAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^[\p{L}\p{M}&apos; \.\-]+$&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_NAME {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_NAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;[0-9]&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_PRIX {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_PRIX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_TEL {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_TEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à @&quot;^\p{Lu}\p{L}*(?:[\s-]\p{Lu}\p{L}*)*$&quot;.
-        /// </summary>
-        internal static string STR_MOTIF_VILLE {
-            get {
-                return ResourceManager.GetString("STR_MOTIF_VILLE", resourceCulture);
+                return ResourceManager.GetString("STR_MESSAGE_VILLE_NON_VALIDE", resourceCulture);
             }
         }
         
@@ -429,6 +474,33 @@ namespace MCMPWinForms.Properties {
         internal static string STR_TITRE_ACTIVITE_AJOUT_SUCCESS {
             get {
                 return ResourceManager.GetString("STR_TITRE_ACTIVITE_AJOUT_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adhérent ajouté !.
+        /// </summary>
+        internal static string STR_TITRE_ADHERENT_BIEN_AJOUTE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ADHERENT_BIEN_AJOUTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur adresse email.
+        /// </summary>
+        internal static string STR_TITRE_ADRESSE_MAIL_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ADRESSE_MAIL_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Adresse postale non valide.
+        /// </summary>
+        internal static string STR_TITRE_ADRESSE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ADRESSE_NON_VALIDE", resourceCulture);
             }
         }
         
@@ -451,11 +523,29 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Désinscription de {1} {2}.
+        ///   Recherche une chaîne localisée semblable à Erreur code postale.
+        /// </summary>
+        internal static string STR_TITRE_CODEPOSTALE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_CODEPOSTALE_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Désinscription de {0} {1}.
         /// </summary>
         internal static string STR_TITRE_CONFIRMATION_SUPPRESSION {
             get {
                 return ResourceManager.GetString("STR_TITRE_CONFIRMATION_SUPPRESSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur cylindrée.
+        /// </summary>
+        internal static string STR_TITRE_CYLINDREE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_CYLINDREE_NON_VALIDE", resourceCulture);
             }
         }
         
@@ -478,6 +568,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur adresse mail.
+        /// </summary>
+        internal static string STR_TITRE_EMAIL_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_EMAIL_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Fermer.
         /// </summary>
         internal static string STR_TITRE_FERMER {
@@ -496,11 +595,29 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Login existant.
+        /// </summary>
+        internal static string STR_TITRE_LOGIN_EXISTANT {
+            get {
+                return ResourceManager.GetString("STR_TITRE_LOGIN_EXISTANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Echec.
         /// </summary>
         internal static string STR_TITRE_MAJ_NON_REALISEE {
             get {
                 return ResourceManager.GetString("STR_TITRE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Modification avec succès.
+        /// </summary>
+        internal static string STR_TITRE_MODIFICATION_SUCCES {
+            get {
+                return ResourceManager.GetString("STR_TITRE_MODIFICATION_SUCCES", resourceCulture);
             }
         }
         
@@ -514,11 +631,47 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur nom ou prénom.
+        /// </summary>
+        internal static string STR_TITRE_NOM_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_NOM_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur numéro de téléphone.
+        /// </summary>
+        internal static string STR_TITRE_NUMERO_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_NUMERO_NON_VALIDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Problème d&apos;ajout.
         /// </summary>
         internal static string STR_TITRE_PROBLEME_AJOUT_ACT {
             get {
                 return ResourceManager.GetString("STR_TITRE_PROBLEME_AJOUT_ACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème d&apos;ajout.
+        /// </summary>
+        internal static string STR_TITRE_PROBLEME_AJOUT_ADHERENT {
+            get {
+                return ResourceManager.GetString("STR_TITRE_PROBLEME_AJOUT_ADHERENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème de modification.
+        /// </summary>
+        internal static string STR_TITRE_PROBLEME_MODIF_ADHERENT {
+            get {
+                return ResourceManager.GetString("STR_TITRE_PROBLEME_MODIF_ADHERENT", resourceCulture);
             }
         }
         
@@ -541,7 +694,7 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Suppression de {1} {2}.
+        ///   Recherche une chaîne localisée semblable à Suppression de {0} {1}.
         /// </summary>
         internal static string STR_TITRE_SUPPRESSION_ADHERENT {
             get {
@@ -573,6 +726,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_TITRE_TARIF_PROBLEME {
             get {
                 return ResourceManager.GetString("STR_TITRE_TARIF_PROBLEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur ville.
+        /// </summary>
+        internal static string STR_TITRE_VILLE_NON_VALIDE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_VILLE_NON_VALIDE", resourceCulture);
             }
         }
         

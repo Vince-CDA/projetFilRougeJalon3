@@ -94,12 +94,68 @@
             this.buttonInscrireAdherentActivite = new System.Windows.Forms.Button();
             this.buttonDesinscrireAdherentActivite = new System.Windows.Forms.Button();
             this.dataGridViewListeActivite = new System.Windows.Forms.DataGridView();
+            this.intituléDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarifAdhérentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarifInvitéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publiéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idActiviteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAdherentDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDuResponsableDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDuResponsableDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichierDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activitesBindingSourceListeAct = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewInscrits = new System.Windows.Forms.DataGridView();
+            this.loginDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbInvitésDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cylindréeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idInscriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idActiviteDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAdherentDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDeNaissanceDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse2DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codePostaleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.téléphoneDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDadhésionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisateurDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activéDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aProposDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adherentinscriptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cda27_bd2DataSet1 = new MCMPWinForms.cda27_bd2DataSet();
             this.dataGridViewNonInscrits = new System.Windows.Forms.DataGridView();
+            this.loginDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prénomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cylindréeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDeNaissanceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAdherentDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codePostaleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.téléphoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDadhésionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisateurDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avatarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aProposDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adherents2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -131,63 +187,8 @@
             this.activitesTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activitesTableAdapter();
             this.adherentTableAdapter = new MCMPWinForms.cda27_bd2DataSetTableAdapters.adherentTableAdapter();
             this.inscriptionTableAdapter1 = new MCMPWinForms.cda27_bd2DataSetTableAdapters.inscriptionTableAdapter();
-            this.loginDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cylindréeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDeNaissanceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAdherentDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codePostaleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.téléphoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDadhésionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.organisateurDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aProposDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbInvitésDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cylindréeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idInscriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idActiviteDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAdherentDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDeNaissanceDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse2DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codePostaleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.téléphoneDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDadhésionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.organisateurDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.avatarDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activéDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aProposDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intituléDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tarifAdhérentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tarifInvitéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publiéDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idActiviteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAdherentDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDuResponsableDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prénomDuResponsableDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fichierDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activiteTableAdapter1 = new MCMPWinForms.cda27_bd2DataSetTableAdapters.activiteTableAdapter();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabCtrlMain.SuspendLayout();
             this.tabAdherent.SuspendLayout();
             this.tbLayoutPanelAdherent.SuspendLayout();
@@ -327,9 +328,10 @@
             this.buttonFermerAdherent.Margin = new System.Windows.Forms.Padding(0);
             this.buttonFermerAdherent.Name = "buttonFermerAdherent";
             this.buttonFermerAdherent.Size = new System.Drawing.Size(78, 64);
-            this.buttonFermerAdherent.TabIndex = 16;
+            this.buttonFermerAdherent.TabIndex = 8;
             this.buttonFermerAdherent.Text = "&Fermer";
             this.buttonFermerAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonFermerAdherent, "Bouton de fermeture de l\'application");
             this.buttonFermerAdherent.UseVisualStyleBackColor = false;
             this.buttonFermerAdherent.Click += new System.EventHandler(this.buttonFermerAdherent_Click);
             // 
@@ -343,9 +345,10 @@
             this.buttonRafraichirAdherent.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.buttonRafraichirAdherent.Name = "buttonRafraichirAdherent";
             this.buttonRafraichirAdherent.Size = new System.Drawing.Size(78, 64);
-            this.buttonRafraichirAdherent.TabIndex = 14;
+            this.buttonRafraichirAdherent.TabIndex = 7;
             this.buttonRafraichirAdherent.Text = "&Rafraichir";
             this.buttonRafraichirAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonRafraichirAdherent, "Bouton pour rafraîchir les données");
             this.buttonRafraichirAdherent.UseVisualStyleBackColor = false;
             this.buttonRafraichirAdherent.Click += new System.EventHandler(this.buttonRafraichirAdherent_Click);
             // 
@@ -371,9 +374,10 @@
             this.buttonAjouterAdherent.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonAjouterAdherent.Name = "buttonAjouterAdherent";
             this.buttonAjouterAdherent.Size = new System.Drawing.Size(168, 64);
-            this.buttonAjouterAdherent.TabIndex = 11;
+            this.buttonAjouterAdherent.TabIndex = 3;
             this.buttonAjouterAdherent.Text = "&Ajouter un adhérent";
             this.buttonAjouterAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonAjouterAdherent, "Bouton d\'ajout d\'un adhérent");
             this.buttonAjouterAdherent.UseVisualStyleBackColor = false;
             this.buttonAjouterAdherent.Click += new System.EventHandler(this.buttonAjouterAdherent_Click);
             // 
@@ -387,9 +391,10 @@
             this.buttonModifierAdherent.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonModifierAdherent.Name = "buttonModifierAdherent";
             this.buttonModifierAdherent.Size = new System.Drawing.Size(168, 64);
-            this.buttonModifierAdherent.TabIndex = 12;
+            this.buttonModifierAdherent.TabIndex = 4;
             this.buttonModifierAdherent.Text = "&Modifier un adhérent";
             this.buttonModifierAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonModifierAdherent, "Bouton de modification d\'un adhérent");
             this.buttonModifierAdherent.UseVisualStyleBackColor = false;
             this.buttonModifierAdherent.Click += new System.EventHandler(this.btModifier_Click);
             // 
@@ -403,9 +408,10 @@
             this.buttonSupprimerAdherent.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonSupprimerAdherent.Name = "buttonSupprimerAdherent";
             this.buttonSupprimerAdherent.Size = new System.Drawing.Size(168, 64);
-            this.buttonSupprimerAdherent.TabIndex = 13;
+            this.buttonSupprimerAdherent.TabIndex = 5;
             this.buttonSupprimerAdherent.Text = "&Supprimer un adhérent";
             this.buttonSupprimerAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonSupprimerAdherent, "Bouton de suppression d\'un adhérent");
             this.buttonSupprimerAdherent.UseVisualStyleBackColor = false;
             this.buttonSupprimerAdherent.Click += new System.EventHandler(this.buttonSupprimerAdherent_Click);
             // 
@@ -419,9 +425,10 @@
             this.buttonDesinscrireAdherent.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonDesinscrireAdherent.Name = "buttonDesinscrireAdherent";
             this.buttonDesinscrireAdherent.Size = new System.Drawing.Size(168, 64);
-            this.buttonDesinscrireAdherent.TabIndex = 14;
+            this.buttonDesinscrireAdherent.TabIndex = 6;
             this.buttonDesinscrireAdherent.Text = "&Désinscrire un adhérent";
             this.buttonDesinscrireAdherent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonDesinscrireAdherent, "Bouton pour désinscrire un adhérent d\'une activité");
             this.buttonDesinscrireAdherent.UseVisualStyleBackColor = false;
             this.buttonDesinscrireAdherent.Click += new System.EventHandler(this.buttonDesinscrireAdherent_Click);
             // 
@@ -666,7 +673,7 @@
             this.dataGridViewActiviteRelationAdherent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewActiviteRelationAdherent.Size = new System.Drawing.Size(954, 194);
             this.dataGridViewActiviteRelationAdherent.StandardTab = true;
-            this.dataGridViewActiviteRelationAdherent.TabIndex = 7;
+            this.dataGridViewActiviteRelationAdherent.TabIndex = 1;
             // 
             // nomDataGridViewTextBoxColumn1
             // 
@@ -816,9 +823,10 @@
             this.buttonFermerActivite.Margin = new System.Windows.Forms.Padding(0);
             this.buttonFermerActivite.Name = "buttonFermerActivite";
             this.buttonFermerActivite.Size = new System.Drawing.Size(78, 64);
-            this.buttonFermerActivite.TabIndex = 16;
+            this.buttonFermerActivite.TabIndex = 13;
             this.buttonFermerActivite.Text = "&Fermer";
             this.buttonFermerActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonFermerActivite, "Bouton pour fermer l\'application");
             this.buttonFermerActivite.UseVisualStyleBackColor = false;
             this.buttonFermerActivite.Click += new System.EventHandler(this.buttonFermerActivite_Click);
             // 
@@ -832,9 +840,10 @@
             this.buttonRafraichirActivite.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.buttonRafraichirActivite.Name = "buttonRafraichirActivite";
             this.buttonRafraichirActivite.Size = new System.Drawing.Size(78, 64);
-            this.buttonRafraichirActivite.TabIndex = 14;
+            this.buttonRafraichirActivite.TabIndex = 12;
             this.buttonRafraichirActivite.Text = "&Rafraichir";
             this.buttonRafraichirActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonRafraichirActivite, "Bouton pour rafraîchir les données");
             this.buttonRafraichirActivite.UseVisualStyleBackColor = false;
             this.buttonRafraichirActivite.Click += new System.EventHandler(this.buttonRafraichirActivite_Click);
             // 
@@ -861,9 +870,10 @@
             this.buttonAjouterActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonAjouterActivite.Name = "buttonAjouterActivite";
             this.buttonAjouterActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonAjouterActivite.TabIndex = 11;
+            this.buttonAjouterActivite.TabIndex = 7;
             this.buttonAjouterActivite.Text = "&Ajouter activité";
             this.buttonAjouterActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonAjouterActivite, "Bouton pour ajouter une activité");
             this.buttonAjouterActivite.UseVisualStyleBackColor = false;
             this.buttonAjouterActivite.Click += new System.EventHandler(this.buttonAjouterActivite_Click);
             // 
@@ -877,9 +887,10 @@
             this.buttonModifierActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonModifierActivite.Name = "buttonModifierActivite";
             this.buttonModifierActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonModifierActivite.TabIndex = 12;
+            this.buttonModifierActivite.TabIndex = 8;
             this.buttonModifierActivite.Text = "&Modifier activité";
             this.buttonModifierActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonModifierActivite, "Bouton pour modifier une activité");
             this.buttonModifierActivite.UseVisualStyleBackColor = false;
             this.buttonModifierActivite.Click += new System.EventHandler(this.buttonModifierActivite_Click);
             // 
@@ -893,9 +904,10 @@
             this.buttonSupprimerActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonSupprimerActivite.Name = "buttonSupprimerActivite";
             this.buttonSupprimerActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonSupprimerActivite.TabIndex = 13;
+            this.buttonSupprimerActivite.TabIndex = 9;
             this.buttonSupprimerActivite.Text = "&Supprimer activité";
             this.buttonSupprimerActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonSupprimerActivite, "Bouton pour supprimer une activité");
             this.buttonSupprimerActivite.UseVisualStyleBackColor = false;
             this.buttonSupprimerActivite.Click += new System.EventHandler(this.buttonSupprimerActivite_Click);
             // 
@@ -909,9 +921,10 @@
             this.buttonInscrireAdherentActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonInscrireAdherentActivite.Name = "buttonInscrireAdherentActivite";
             this.buttonInscrireAdherentActivite.Size = new System.Drawing.Size(131, 64);
-            this.buttonInscrireAdherentActivite.TabIndex = 14;
+            this.buttonInscrireAdherentActivite.TabIndex = 10;
             this.buttonInscrireAdherentActivite.Text = "&Inscrire l\'adhérent";
             this.buttonInscrireAdherentActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonInscrireAdherentActivite, "Bouton pour inscrire un adhérent à l\'activité");
             this.buttonInscrireAdherentActivite.UseVisualStyleBackColor = false;
             this.buttonInscrireAdherentActivite.Click += new System.EventHandler(this.buttonInscrireAdherentActivite_Click);
             // 
@@ -925,9 +938,10 @@
             this.buttonDesinscrireAdherentActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.buttonDesinscrireAdherentActivite.Name = "buttonDesinscrireAdherentActivite";
             this.buttonDesinscrireAdherentActivite.Size = new System.Drawing.Size(144, 64);
-            this.buttonDesinscrireAdherentActivite.TabIndex = 15;
+            this.buttonDesinscrireAdherentActivite.TabIndex = 11;
             this.buttonDesinscrireAdherentActivite.Text = "&Désinscrire l\'adhérent";
             this.buttonDesinscrireAdherentActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonDesinscrireAdherentActivite, "Bouton pour désinscrire un adhérent de l\'activité");
             this.buttonDesinscrireAdherentActivite.UseVisualStyleBackColor = false;
             this.buttonDesinscrireAdherentActivite.Click += new System.EventHandler(this.buttonDesinscrireAdherentActivite_Click);
             // 
@@ -961,7 +975,126 @@
             this.dataGridViewListeActivite.RowHeadersVisible = false;
             this.dataGridViewListeActivite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListeActivite.Size = new System.Drawing.Size(954, 256);
-            this.dataGridViewListeActivite.TabIndex = 7;
+            this.dataGridViewListeActivite.TabIndex = 4;
+            // 
+            // intituléDataGridViewTextBoxColumn1
+            // 
+            this.intituléDataGridViewTextBoxColumn1.DataPropertyName = "Intitulé";
+            this.intituléDataGridViewTextBoxColumn1.HeaderText = "Intitulé";
+            this.intituléDataGridViewTextBoxColumn1.Name = "intituléDataGridViewTextBoxColumn1";
+            this.intituléDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.intituléDataGridViewTextBoxColumn1.Width = 63;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Date de début";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Date de début";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Date de fin";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Date de fin";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 84;
+            // 
+            // dateLimiteDinscriptionDataGridViewTextBoxColumn1
+            // 
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.DataPropertyName = "Date limite d\'inscription";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.HeaderText = "Date limite d\'inscription";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.Name = "dateLimiteDinscriptionDataGridViewTextBoxColumn1";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.Width = 139;
+            // 
+            // tarifAdhérentDataGridViewTextBoxColumn1
+            // 
+            this.tarifAdhérentDataGridViewTextBoxColumn1.DataPropertyName = "Tarif adhérent";
+            this.tarifAdhérentDataGridViewTextBoxColumn1.HeaderText = "Tarif adhérent";
+            this.tarifAdhérentDataGridViewTextBoxColumn1.Name = "tarifAdhérentDataGridViewTextBoxColumn1";
+            this.tarifAdhérentDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tarifAdhérentDataGridViewTextBoxColumn1.Width = 98;
+            // 
+            // tarifInvitéDataGridViewTextBoxColumn1
+            // 
+            this.tarifInvitéDataGridViewTextBoxColumn1.DataPropertyName = "Tarif invité";
+            this.tarifInvitéDataGridViewTextBoxColumn1.HeaderText = "Tarif invité";
+            this.tarifInvitéDataGridViewTextBoxColumn1.Name = "tarifInvitéDataGridViewTextBoxColumn1";
+            this.tarifInvitéDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tarifInvitéDataGridViewTextBoxColumn1.Width = 81;
+            // 
+            // publiéDataGridViewTextBoxColumn1
+            // 
+            this.publiéDataGridViewTextBoxColumn1.DataPropertyName = "Publié";
+            this.publiéDataGridViewTextBoxColumn1.HeaderText = "Publié";
+            this.publiéDataGridViewTextBoxColumn1.Name = "publiéDataGridViewTextBoxColumn1";
+            this.publiéDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.publiéDataGridViewTextBoxColumn1.Visible = false;
+            this.publiéDataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // idActiviteDataGridViewTextBoxColumn1
+            // 
+            this.idActiviteDataGridViewTextBoxColumn1.DataPropertyName = "IdActivite";
+            this.idActiviteDataGridViewTextBoxColumn1.HeaderText = "IdActivite";
+            this.idActiviteDataGridViewTextBoxColumn1.Name = "idActiviteDataGridViewTextBoxColumn1";
+            this.idActiviteDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idActiviteDataGridViewTextBoxColumn1.Visible = false;
+            this.idActiviteDataGridViewTextBoxColumn1.Width = 76;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            this.descriptionDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // idAdherentDataGridViewTextBoxColumn4
+            // 
+            this.idAdherentDataGridViewTextBoxColumn4.DataPropertyName = "IdAdherent";
+            this.idAdherentDataGridViewTextBoxColumn4.HeaderText = "IdAdherent";
+            this.idAdherentDataGridViewTextBoxColumn4.Name = "idAdherentDataGridViewTextBoxColumn4";
+            this.idAdherentDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.idAdherentDataGridViewTextBoxColumn4.Visible = false;
+            this.idAdherentDataGridViewTextBoxColumn4.Width = 84;
+            // 
+            // nomDuResponsableDataGridViewTextBoxColumn1
+            // 
+            this.nomDuResponsableDataGridViewTextBoxColumn1.DataPropertyName = "Nom du responsable";
+            this.nomDuResponsableDataGridViewTextBoxColumn1.HeaderText = "Nom du responsable";
+            this.nomDuResponsableDataGridViewTextBoxColumn1.Name = "nomDuResponsableDataGridViewTextBoxColumn1";
+            this.nomDuResponsableDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nomDuResponsableDataGridViewTextBoxColumn1.Visible = false;
+            this.nomDuResponsableDataGridViewTextBoxColumn1.Width = 129;
+            // 
+            // prénomDuResponsableDataGridViewTextBoxColumn1
+            // 
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.DataPropertyName = "Prénom du responsable";
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.HeaderText = "Prénom du responsable";
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.Name = "prénomDuResponsableDataGridViewTextBoxColumn1";
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.Visible = false;
+            this.prénomDuResponsableDataGridViewTextBoxColumn1.Width = 143;
+            // 
+            // idTypeDataGridViewTextBoxColumn1
+            // 
+            this.idTypeDataGridViewTextBoxColumn1.DataPropertyName = "IdType";
+            this.idTypeDataGridViewTextBoxColumn1.HeaderText = "IdType";
+            this.idTypeDataGridViewTextBoxColumn1.Name = "idTypeDataGridViewTextBoxColumn1";
+            this.idTypeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idTypeDataGridViewTextBoxColumn1.Visible = false;
+            this.idTypeDataGridViewTextBoxColumn1.Width = 65;
+            // 
+            // fichierDataGridViewTextBoxColumn1
+            // 
+            this.fichierDataGridViewTextBoxColumn1.DataPropertyName = "Fichier";
+            this.fichierDataGridViewTextBoxColumn1.HeaderText = "Fichier";
+            this.fichierDataGridViewTextBoxColumn1.Name = "fichierDataGridViewTextBoxColumn1";
+            this.fichierDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.fichierDataGridViewTextBoxColumn1.Visible = false;
+            this.fichierDataGridViewTextBoxColumn1.Width = 63;
             // 
             // activitesBindingSourceListeAct
             // 
@@ -1025,476 +1158,8 @@
             this.dataGridViewInscrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInscrits.Size = new System.Drawing.Size(471, 188);
-            this.dataGridViewInscrits.TabIndex = 0;
+            this.dataGridViewInscrits.TabIndex = 5;
             this.dataGridViewInscrits.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInscrits_RowEnter);
-            // 
-            // adherentinscriptionBindingSource
-            // 
-            this.adherentinscriptionBindingSource.DataMember = "adherentinscription";
-            this.adherentinscriptionBindingSource.DataSource = this.cda27_bd2DataSet1;
-            // 
-            // cda27_bd2DataSet1
-            // 
-            this.cda27_bd2DataSet1.DataSetName = "cda27_bd2DataSet";
-            this.cda27_bd2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewNonInscrits
-            // 
-            this.dataGridViewNonInscrits.AllowUserToAddRows = false;
-            this.dataGridViewNonInscrits.AllowUserToDeleteRows = false;
-            this.dataGridViewNonInscrits.AutoGenerateColumns = false;
-            this.dataGridViewNonInscrits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewNonInscrits.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewNonInscrits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNonInscrits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.loginDataGridViewTextBoxColumn1,
-            this.nomDataGridViewTextBoxColumn2,
-            this.prénomDataGridViewTextBoxColumn2,
-            this.cylindréeDataGridViewTextBoxColumn1,
-            this.dateDeNaissanceDataGridViewTextBoxColumn1,
-            this.adresseDataGridViewTextBoxColumn1,
-            this.idAdherentDataGridViewTextBoxColumn5,
-            this.adresse2DataGridViewTextBoxColumn1,
-            this.codePostaleDataGridViewTextBoxColumn1,
-            this.villeDataGridViewTextBoxColumn1,
-            this.emailDataGridViewTextBoxColumn1,
-            this.téléphoneDataGridViewTextBoxColumn1,
-            this.dateDadhésionDataGridViewTextBoxColumn1,
-            this.organisateurDataGridViewTextBoxColumn1,
-            this.adminDataGridViewTextBoxColumn1,
-            this.passwordDataGridViewTextBoxColumn1,
-            this.avatarDataGridViewTextBoxColumn1,
-            this.activéDataGridViewTextBoxColumn1,
-            this.aProposDataGridViewTextBoxColumn1});
-            this.dataGridViewNonInscrits.DataSource = this.adherents2BindingSource;
-            this.dataGridViewNonInscrits.Location = new System.Drawing.Point(480, 3);
-            this.dataGridViewNonInscrits.MultiSelect = false;
-            this.dataGridViewNonInscrits.Name = "dataGridViewNonInscrits";
-            this.dataGridViewNonInscrits.ReadOnly = true;
-            this.dataGridViewNonInscrits.RowHeadersVisible = false;
-            this.dataGridViewNonInscrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewNonInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewNonInscrits.Size = new System.Drawing.Size(471, 188);
-            this.dataGridViewNonInscrits.TabIndex = 1;
-            this.dataGridViewNonInscrits.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNonInscrits_RowEnter);
-            // 
-            // adherents2BindingSource
-            // 
-            this.adherents2BindingSource.DataMember = "adherents2";
-            this.adherents2BindingSource.DataSource = this.cda27_bd2DataSet1;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label3, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 295);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 24);
-            this.tableLayoutPanel5.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(480, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(471, 24);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Non-inscrit(s)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Inscrit(s) ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.Controls.Add(this.label2);
-            this.flowLayoutPanel5.Controls.Add(this.checkBoxChoisirDate);
-            this.flowLayoutPanel5.Controls.Add(this.dateTimePickerFirstDate);
-            this.flowLayoutPanel5.Controls.Add(this.lbla);
-            this.flowLayoutPanel5.Controls.Add(this.dateTimePickerSecondDate);
-            this.flowLayoutPanel5.Controls.Add(this.buttonSearch);
-            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(954, 24);
-            this.flowLayoutPanel5.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Liste des activités de Moto Club Millau Passion";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // checkBoxChoisirDate
-            // 
-            this.checkBoxChoisirDate.AutoSize = true;
-            this.checkBoxChoisirDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxChoisirDate.Location = new System.Drawing.Point(326, 3);
-            this.checkBoxChoisirDate.Name = "checkBoxChoisirDate";
-            this.checkBoxChoisirDate.Size = new System.Drawing.Size(160, 22);
-            this.checkBoxChoisirDate.TabIndex = 6;
-            this.checkBoxChoisirDate.Text = "choisir une période :";
-            this.checkBoxChoisirDate.UseVisualStyleBackColor = true;
-            this.checkBoxChoisirDate.CheckedChanged += new System.EventHandler(this.checkBoxChoisirDate_CheckedChanged);
-            // 
-            // dateTimePickerFirstDate
-            // 
-            this.dateTimePickerFirstDate.Enabled = false;
-            this.dateTimePickerFirstDate.Location = new System.Drawing.Point(492, 3);
-            this.dateTimePickerFirstDate.Name = "dateTimePickerFirstDate";
-            this.dateTimePickerFirstDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerFirstDate.TabIndex = 7;
-            // 
-            // lbla
-            // 
-            this.lbla.AutoSize = true;
-            this.lbla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbla.Location = new System.Drawing.Point(698, 0);
-            this.lbla.Name = "lbla";
-            this.lbla.Size = new System.Drawing.Size(18, 20);
-            this.lbla.TabIndex = 8;
-            this.lbla.Text = "à";
-            // 
-            // dateTimePickerSecondDate
-            // 
-            this.dateTimePickerSecondDate.Enabled = false;
-            this.dateTimePickerSecondDate.Location = new System.Drawing.Point(722, 3);
-            this.dateTimePickerSecondDate.Name = "dateTimePickerSecondDate";
-            this.dateTimePickerSecondDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerSecondDate.TabIndex = 9;
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Enabled = false;
-            this.buttonSearch.Image = global::MCMPWinForms.Properties.Resources.search;
-            this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(928, 3);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(23, 23);
-            this.buttonSearch.TabIndex = 10;
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tabCtrlMain, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 640);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // publiéDataGridViewTextBoxColumn
-            // 
-            this.publiéDataGridViewTextBoxColumn.DataPropertyName = "Publié";
-            this.publiéDataGridViewTextBoxColumn.HeaderText = "Publié";
-            this.publiéDataGridViewTextBoxColumn.Name = "publiéDataGridViewTextBoxColumn";
-            this.publiéDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fichierDataGridViewTextBoxColumn
-            // 
-            this.fichierDataGridViewTextBoxColumn.DataPropertyName = "Fichier";
-            this.fichierDataGridViewTextBoxColumn.HeaderText = "Fichier";
-            this.fichierDataGridViewTextBoxColumn.Name = "fichierDataGridViewTextBoxColumn";
-            this.fichierDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fichierDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idTypeDataGridViewTextBoxColumn
-            // 
-            this.idTypeDataGridViewTextBoxColumn.DataPropertyName = "IdType";
-            this.idTypeDataGridViewTextBoxColumn.HeaderText = "IdType";
-            this.idTypeDataGridViewTextBoxColumn.Name = "idTypeDataGridViewTextBoxColumn";
-            this.idTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idTypeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prénomDuResponsableDataGridViewTextBoxColumn
-            // 
-            this.prénomDuResponsableDataGridViewTextBoxColumn.DataPropertyName = "Prénom du responsable";
-            this.prénomDuResponsableDataGridViewTextBoxColumn.HeaderText = "Prénom du responsable";
-            this.prénomDuResponsableDataGridViewTextBoxColumn.Name = "prénomDuResponsableDataGridViewTextBoxColumn";
-            this.prénomDuResponsableDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDuResponsableDataGridViewTextBoxColumn
-            // 
-            this.nomDuResponsableDataGridViewTextBoxColumn.DataPropertyName = "Nom du responsable";
-            this.nomDuResponsableDataGridViewTextBoxColumn.HeaderText = "Nom du responsable";
-            this.nomDuResponsableDataGridViewTextBoxColumn.Name = "nomDuResponsableDataGridViewTextBoxColumn";
-            this.nomDuResponsableDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateLimiteDinscriptionDataGridViewTextBoxColumn
-            // 
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.DataPropertyName = "Date limite d\'inscription";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.HeaderText = "Date limite d\'inscription";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.Name = "dateLimiteDinscriptionDataGridViewTextBoxColumn";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tarifInvitéDataGridViewTextBoxColumn
-            // 
-            this.tarifInvitéDataGridViewTextBoxColumn.DataPropertyName = "Tarif invité";
-            this.tarifInvitéDataGridViewTextBoxColumn.HeaderText = "Tarif invité";
-            this.tarifInvitéDataGridViewTextBoxColumn.Name = "tarifInvitéDataGridViewTextBoxColumn";
-            this.tarifInvitéDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tarifAdhérentDataGridViewTextBoxColumn
-            // 
-            this.tarifAdhérentDataGridViewTextBoxColumn.DataPropertyName = "Tarif adhérent";
-            this.tarifAdhérentDataGridViewTextBoxColumn.HeaderText = "Tarif adhérent";
-            this.tarifAdhérentDataGridViewTextBoxColumn.Name = "tarifAdhérentDataGridViewTextBoxColumn";
-            this.tarifAdhérentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewImageColumn
-            // 
-            this.descriptionDataGridViewImageColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewImageColumn.HeaderText = "Description";
-            this.descriptionDataGridViewImageColumn.Name = "descriptionDataGridViewImageColumn";
-            this.descriptionDataGridViewImageColumn.ReadOnly = true;
-            this.descriptionDataGridViewImageColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Date de fin";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Date de fin";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Date de début";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Date de début";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // intituléDataGridViewTextBoxColumn
-            // 
-            this.intituléDataGridViewTextBoxColumn.DataPropertyName = "Intitulé";
-            this.intituléDataGridViewTextBoxColumn.HeaderText = "Intitulé";
-            this.intituléDataGridViewTextBoxColumn.Name = "intituléDataGridViewTextBoxColumn";
-            this.intituléDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inscriptionsTableAdapter
-            // 
-            this.inscriptionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // adherentsTableAdapter
-            // 
-            this.adherentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // adherents2TableAdapter
-            // 
-            this.adherents2TableAdapter.ClearBeforeFill = true;
-            // 
-            // adherentinscriptionTableAdapter
-            // 
-            this.adherentinscriptionTableAdapter.ClearBeforeFill = true;
-            // 
-            // activitesTableAdapter
-            // 
-            this.activitesTableAdapter.ClearBeforeFill = true;
-            // 
-            // adherentTableAdapter
-            // 
-            this.adherentTableAdapter.ClearBeforeFill = true;
-            // 
-            // inscriptionTableAdapter1
-            // 
-            this.inscriptionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // loginDataGridViewTextBoxColumn1
-            // 
-            this.loginDataGridViewTextBoxColumn1.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn1.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn1.Name = "loginDataGridViewTextBoxColumn1";
-            this.loginDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn1.Width = 58;
-            // 
-            // nomDataGridViewTextBoxColumn2
-            // 
-            this.nomDataGridViewTextBoxColumn2.DataPropertyName = "Nom";
-            this.nomDataGridViewTextBoxColumn2.FillWeight = 34.61539F;
-            this.nomDataGridViewTextBoxColumn2.HeaderText = "Nom";
-            this.nomDataGridViewTextBoxColumn2.Name = "nomDataGridViewTextBoxColumn2";
-            this.nomDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.nomDataGridViewTextBoxColumn2.Width = 54;
-            // 
-            // prénomDataGridViewTextBoxColumn2
-            // 
-            this.prénomDataGridViewTextBoxColumn2.DataPropertyName = "Prénom";
-            this.prénomDataGridViewTextBoxColumn2.FillWeight = 101.1005F;
-            this.prénomDataGridViewTextBoxColumn2.HeaderText = "Prénom";
-            this.prénomDataGridViewTextBoxColumn2.Name = "prénomDataGridViewTextBoxColumn2";
-            this.prénomDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.prénomDataGridViewTextBoxColumn2.Width = 68;
-            // 
-            // cylindréeDataGridViewTextBoxColumn1
-            // 
-            this.cylindréeDataGridViewTextBoxColumn1.DataPropertyName = "Cylindrée";
-            this.cylindréeDataGridViewTextBoxColumn1.FillWeight = 164.2841F;
-            this.cylindréeDataGridViewTextBoxColumn1.HeaderText = "Cylindrée";
-            this.cylindréeDataGridViewTextBoxColumn1.Name = "cylindréeDataGridViewTextBoxColumn1";
-            this.cylindréeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.cylindréeDataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // dateDeNaissanceDataGridViewTextBoxColumn1
-            // 
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.DataPropertyName = "Date de naissance";
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.HeaderText = "Date de naissance";
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.Name = "dateDeNaissanceDataGridViewTextBoxColumn1";
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.Visible = false;
-            this.dateDeNaissanceDataGridViewTextBoxColumn1.Width = 121;
-            // 
-            // adresseDataGridViewTextBoxColumn1
-            // 
-            this.adresseDataGridViewTextBoxColumn1.DataPropertyName = "Adresse";
-            this.adresseDataGridViewTextBoxColumn1.HeaderText = "Adresse";
-            this.adresseDataGridViewTextBoxColumn1.Name = "adresseDataGridViewTextBoxColumn1";
-            this.adresseDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.adresseDataGridViewTextBoxColumn1.Visible = false;
-            this.adresseDataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // idAdherentDataGridViewTextBoxColumn5
-            // 
-            this.idAdherentDataGridViewTextBoxColumn5.DataPropertyName = "IdAdherent";
-            this.idAdherentDataGridViewTextBoxColumn5.HeaderText = "IdAdherent";
-            this.idAdherentDataGridViewTextBoxColumn5.Name = "idAdherentDataGridViewTextBoxColumn5";
-            this.idAdherentDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.idAdherentDataGridViewTextBoxColumn5.Visible = false;
-            this.idAdherentDataGridViewTextBoxColumn5.Width = 84;
-            // 
-            // adresse2DataGridViewTextBoxColumn1
-            // 
-            this.adresse2DataGridViewTextBoxColumn1.DataPropertyName = "Adresse2";
-            this.adresse2DataGridViewTextBoxColumn1.HeaderText = "Adresse2";
-            this.adresse2DataGridViewTextBoxColumn1.Name = "adresse2DataGridViewTextBoxColumn1";
-            this.adresse2DataGridViewTextBoxColumn1.ReadOnly = true;
-            this.adresse2DataGridViewTextBoxColumn1.Visible = false;
-            this.adresse2DataGridViewTextBoxColumn1.Width = 76;
-            // 
-            // codePostaleDataGridViewTextBoxColumn1
-            // 
-            this.codePostaleDataGridViewTextBoxColumn1.DataPropertyName = "Code postale";
-            this.codePostaleDataGridViewTextBoxColumn1.HeaderText = "Code postale";
-            this.codePostaleDataGridViewTextBoxColumn1.Name = "codePostaleDataGridViewTextBoxColumn1";
-            this.codePostaleDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.codePostaleDataGridViewTextBoxColumn1.Visible = false;
-            this.codePostaleDataGridViewTextBoxColumn1.Width = 94;
-            // 
-            // villeDataGridViewTextBoxColumn1
-            // 
-            this.villeDataGridViewTextBoxColumn1.DataPropertyName = "Ville";
-            this.villeDataGridViewTextBoxColumn1.HeaderText = "Ville";
-            this.villeDataGridViewTextBoxColumn1.Name = "villeDataGridViewTextBoxColumn1";
-            this.villeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.villeDataGridViewTextBoxColumn1.Visible = false;
-            this.villeDataGridViewTextBoxColumn1.Width = 51;
-            // 
-            // emailDataGridViewTextBoxColumn1
-            // 
-            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
-            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn1.Visible = false;
-            this.emailDataGridViewTextBoxColumn1.Width = 57;
-            // 
-            // téléphoneDataGridViewTextBoxColumn1
-            // 
-            this.téléphoneDataGridViewTextBoxColumn1.DataPropertyName = "Téléphone";
-            this.téléphoneDataGridViewTextBoxColumn1.HeaderText = "Téléphone";
-            this.téléphoneDataGridViewTextBoxColumn1.Name = "téléphoneDataGridViewTextBoxColumn1";
-            this.téléphoneDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.téléphoneDataGridViewTextBoxColumn1.Visible = false;
-            this.téléphoneDataGridViewTextBoxColumn1.Width = 83;
-            // 
-            // dateDadhésionDataGridViewTextBoxColumn1
-            // 
-            this.dateDadhésionDataGridViewTextBoxColumn1.DataPropertyName = "Date d\'adhésion";
-            this.dateDadhésionDataGridViewTextBoxColumn1.HeaderText = "Date d\'adhésion";
-            this.dateDadhésionDataGridViewTextBoxColumn1.Name = "dateDadhésionDataGridViewTextBoxColumn1";
-            this.dateDadhésionDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dateDadhésionDataGridViewTextBoxColumn1.Visible = false;
-            this.dateDadhésionDataGridViewTextBoxColumn1.Width = 109;
-            // 
-            // organisateurDataGridViewTextBoxColumn1
-            // 
-            this.organisateurDataGridViewTextBoxColumn1.DataPropertyName = "Organisateur";
-            this.organisateurDataGridViewTextBoxColumn1.HeaderText = "Organisateur";
-            this.organisateurDataGridViewTextBoxColumn1.Name = "organisateurDataGridViewTextBoxColumn1";
-            this.organisateurDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.organisateurDataGridViewTextBoxColumn1.Visible = false;
-            this.organisateurDataGridViewTextBoxColumn1.Width = 92;
-            // 
-            // adminDataGridViewTextBoxColumn1
-            // 
-            this.adminDataGridViewTextBoxColumn1.DataPropertyName = "Admin";
-            this.adminDataGridViewTextBoxColumn1.HeaderText = "Admin";
-            this.adminDataGridViewTextBoxColumn1.Name = "adminDataGridViewTextBoxColumn1";
-            this.adminDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.adminDataGridViewTextBoxColumn1.Visible = false;
-            this.adminDataGridViewTextBoxColumn1.Width = 61;
-            // 
-            // passwordDataGridViewTextBoxColumn1
-            // 
-            this.passwordDataGridViewTextBoxColumn1.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn1.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn1.Name = "passwordDataGridViewTextBoxColumn1";
-            this.passwordDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.passwordDataGridViewTextBoxColumn1.Visible = false;
-            this.passwordDataGridViewTextBoxColumn1.Width = 78;
-            // 
-            // avatarDataGridViewTextBoxColumn1
-            // 
-            this.avatarDataGridViewTextBoxColumn1.DataPropertyName = "Avatar";
-            this.avatarDataGridViewTextBoxColumn1.HeaderText = "Avatar";
-            this.avatarDataGridViewTextBoxColumn1.Name = "avatarDataGridViewTextBoxColumn1";
-            this.avatarDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.avatarDataGridViewTextBoxColumn1.Visible = false;
-            this.avatarDataGridViewTextBoxColumn1.Width = 63;
-            // 
-            // activéDataGridViewTextBoxColumn1
-            // 
-            this.activéDataGridViewTextBoxColumn1.DataPropertyName = "Activé";
-            this.activéDataGridViewTextBoxColumn1.HeaderText = "Activé";
-            this.activéDataGridViewTextBoxColumn1.Name = "activéDataGridViewTextBoxColumn1";
-            this.activéDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.activéDataGridViewTextBoxColumn1.Visible = false;
-            this.activéDataGridViewTextBoxColumn1.Width = 62;
-            // 
-            // aProposDataGridViewTextBoxColumn1
-            // 
-            this.aProposDataGridViewTextBoxColumn1.DataPropertyName = "A propos";
-            this.aProposDataGridViewTextBoxColumn1.HeaderText = "A propos";
-            this.aProposDataGridViewTextBoxColumn1.Name = "aProposDataGridViewTextBoxColumn1";
-            this.aProposDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.aProposDataGridViewTextBoxColumn1.Visible = false;
-            this.aProposDataGridViewTextBoxColumn1.Width = 74;
             // 
             // loginDataGridViewTextBoxColumn2
             // 
@@ -1701,124 +1366,477 @@
             this.aProposDataGridViewTextBoxColumn2.Visible = false;
             this.aProposDataGridViewTextBoxColumn2.Width = 69;
             // 
-            // intituléDataGridViewTextBoxColumn1
+            // adherentinscriptionBindingSource
             // 
-            this.intituléDataGridViewTextBoxColumn1.DataPropertyName = "Intitulé";
-            this.intituléDataGridViewTextBoxColumn1.HeaderText = "Intitulé";
-            this.intituléDataGridViewTextBoxColumn1.Name = "intituléDataGridViewTextBoxColumn1";
-            this.intituléDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.intituléDataGridViewTextBoxColumn1.Width = 63;
+            this.adherentinscriptionBindingSource.DataMember = "adherentinscription";
+            this.adherentinscriptionBindingSource.DataSource = this.cda27_bd2DataSet1;
             // 
-            // dataGridViewTextBoxColumn8
+            // cda27_bd2DataSet1
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Date de début";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Date de début";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.cda27_bd2DataSet1.DataSetName = "cda27_bd2DataSet";
+            this.cda27_bd2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewNonInscrits
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Date de fin";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Date de fin";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 84;
+            this.dataGridViewNonInscrits.AllowUserToAddRows = false;
+            this.dataGridViewNonInscrits.AllowUserToDeleteRows = false;
+            this.dataGridViewNonInscrits.AutoGenerateColumns = false;
+            this.dataGridViewNonInscrits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewNonInscrits.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewNonInscrits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNonInscrits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.loginDataGridViewTextBoxColumn1,
+            this.nomDataGridViewTextBoxColumn2,
+            this.prénomDataGridViewTextBoxColumn2,
+            this.cylindréeDataGridViewTextBoxColumn1,
+            this.dateDeNaissanceDataGridViewTextBoxColumn1,
+            this.adresseDataGridViewTextBoxColumn1,
+            this.idAdherentDataGridViewTextBoxColumn5,
+            this.adresse2DataGridViewTextBoxColumn1,
+            this.codePostaleDataGridViewTextBoxColumn1,
+            this.villeDataGridViewTextBoxColumn1,
+            this.emailDataGridViewTextBoxColumn1,
+            this.téléphoneDataGridViewTextBoxColumn1,
+            this.dateDadhésionDataGridViewTextBoxColumn1,
+            this.organisateurDataGridViewTextBoxColumn1,
+            this.adminDataGridViewTextBoxColumn1,
+            this.passwordDataGridViewTextBoxColumn1,
+            this.avatarDataGridViewTextBoxColumn1,
+            this.activéDataGridViewTextBoxColumn1,
+            this.aProposDataGridViewTextBoxColumn1});
+            this.dataGridViewNonInscrits.DataSource = this.adherents2BindingSource;
+            this.dataGridViewNonInscrits.Location = new System.Drawing.Point(480, 3);
+            this.dataGridViewNonInscrits.MultiSelect = false;
+            this.dataGridViewNonInscrits.Name = "dataGridViewNonInscrits";
+            this.dataGridViewNonInscrits.ReadOnly = true;
+            this.dataGridViewNonInscrits.RowHeadersVisible = false;
+            this.dataGridViewNonInscrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewNonInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewNonInscrits.Size = new System.Drawing.Size(471, 188);
+            this.dataGridViewNonInscrits.TabIndex = 6;
+            this.dataGridViewNonInscrits.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNonInscrits_RowEnter);
             // 
-            // dateLimiteDinscriptionDataGridViewTextBoxColumn1
+            // loginDataGridViewTextBoxColumn1
             // 
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.DataPropertyName = "Date limite d\'inscription";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.HeaderText = "Date limite d\'inscription";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.Name = "dateLimiteDinscriptionDataGridViewTextBoxColumn1";
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dateLimiteDinscriptionDataGridViewTextBoxColumn1.Width = 139;
+            this.loginDataGridViewTextBoxColumn1.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn1.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn1.Name = "loginDataGridViewTextBoxColumn1";
+            this.loginDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn1.Width = 58;
             // 
-            // tarifAdhérentDataGridViewTextBoxColumn1
+            // nomDataGridViewTextBoxColumn2
             // 
-            this.tarifAdhérentDataGridViewTextBoxColumn1.DataPropertyName = "Tarif adhérent";
-            this.tarifAdhérentDataGridViewTextBoxColumn1.HeaderText = "Tarif adhérent";
-            this.tarifAdhérentDataGridViewTextBoxColumn1.Name = "tarifAdhérentDataGridViewTextBoxColumn1";
-            this.tarifAdhérentDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tarifAdhérentDataGridViewTextBoxColumn1.Width = 98;
+            this.nomDataGridViewTextBoxColumn2.DataPropertyName = "Nom";
+            this.nomDataGridViewTextBoxColumn2.FillWeight = 34.61539F;
+            this.nomDataGridViewTextBoxColumn2.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn2.Name = "nomDataGridViewTextBoxColumn2";
+            this.nomDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn2.Width = 54;
             // 
-            // tarifInvitéDataGridViewTextBoxColumn1
+            // prénomDataGridViewTextBoxColumn2
             // 
-            this.tarifInvitéDataGridViewTextBoxColumn1.DataPropertyName = "Tarif invité";
-            this.tarifInvitéDataGridViewTextBoxColumn1.HeaderText = "Tarif invité";
-            this.tarifInvitéDataGridViewTextBoxColumn1.Name = "tarifInvitéDataGridViewTextBoxColumn1";
-            this.tarifInvitéDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.tarifInvitéDataGridViewTextBoxColumn1.Width = 81;
+            this.prénomDataGridViewTextBoxColumn2.DataPropertyName = "Prénom";
+            this.prénomDataGridViewTextBoxColumn2.FillWeight = 101.1005F;
+            this.prénomDataGridViewTextBoxColumn2.HeaderText = "Prénom";
+            this.prénomDataGridViewTextBoxColumn2.Name = "prénomDataGridViewTextBoxColumn2";
+            this.prénomDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.prénomDataGridViewTextBoxColumn2.Width = 68;
             // 
-            // publiéDataGridViewTextBoxColumn1
+            // cylindréeDataGridViewTextBoxColumn1
             // 
-            this.publiéDataGridViewTextBoxColumn1.DataPropertyName = "Publié";
-            this.publiéDataGridViewTextBoxColumn1.HeaderText = "Publié";
-            this.publiéDataGridViewTextBoxColumn1.Name = "publiéDataGridViewTextBoxColumn1";
-            this.publiéDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.publiéDataGridViewTextBoxColumn1.Visible = false;
-            this.publiéDataGridViewTextBoxColumn1.Width = 61;
+            this.cylindréeDataGridViewTextBoxColumn1.DataPropertyName = "Cylindrée";
+            this.cylindréeDataGridViewTextBoxColumn1.FillWeight = 164.2841F;
+            this.cylindréeDataGridViewTextBoxColumn1.HeaderText = "Cylindrée";
+            this.cylindréeDataGridViewTextBoxColumn1.Name = "cylindréeDataGridViewTextBoxColumn1";
+            this.cylindréeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.cylindréeDataGridViewTextBoxColumn1.Width = 75;
             // 
-            // idActiviteDataGridViewTextBoxColumn1
+            // dateDeNaissanceDataGridViewTextBoxColumn1
             // 
-            this.idActiviteDataGridViewTextBoxColumn1.DataPropertyName = "IdActivite";
-            this.idActiviteDataGridViewTextBoxColumn1.HeaderText = "IdActivite";
-            this.idActiviteDataGridViewTextBoxColumn1.Name = "idActiviteDataGridViewTextBoxColumn1";
-            this.idActiviteDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idActiviteDataGridViewTextBoxColumn1.Visible = false;
-            this.idActiviteDataGridViewTextBoxColumn1.Width = 76;
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.DataPropertyName = "Date de naissance";
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.HeaderText = "Date de naissance";
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.Name = "dateDeNaissanceDataGridViewTextBoxColumn1";
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.Visible = false;
+            this.dateDeNaissanceDataGridViewTextBoxColumn1.Width = 121;
             // 
-            // descriptionDataGridViewTextBoxColumn
+            // adresseDataGridViewTextBoxColumn1
             // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Visible = false;
-            this.descriptionDataGridViewTextBoxColumn.Width = 85;
+            this.adresseDataGridViewTextBoxColumn1.DataPropertyName = "Adresse";
+            this.adresseDataGridViewTextBoxColumn1.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn1.Name = "adresseDataGridViewTextBoxColumn1";
+            this.adresseDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn1.Visible = false;
+            this.adresseDataGridViewTextBoxColumn1.Width = 70;
             // 
-            // idAdherentDataGridViewTextBoxColumn4
+            // idAdherentDataGridViewTextBoxColumn5
             // 
-            this.idAdherentDataGridViewTextBoxColumn4.DataPropertyName = "IdAdherent";
-            this.idAdherentDataGridViewTextBoxColumn4.HeaderText = "IdAdherent";
-            this.idAdherentDataGridViewTextBoxColumn4.Name = "idAdherentDataGridViewTextBoxColumn4";
-            this.idAdherentDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.idAdherentDataGridViewTextBoxColumn4.Visible = false;
-            this.idAdherentDataGridViewTextBoxColumn4.Width = 84;
+            this.idAdherentDataGridViewTextBoxColumn5.DataPropertyName = "IdAdherent";
+            this.idAdherentDataGridViewTextBoxColumn5.HeaderText = "IdAdherent";
+            this.idAdherentDataGridViewTextBoxColumn5.Name = "idAdherentDataGridViewTextBoxColumn5";
+            this.idAdherentDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.idAdherentDataGridViewTextBoxColumn5.Visible = false;
+            this.idAdherentDataGridViewTextBoxColumn5.Width = 84;
             // 
-            // nomDuResponsableDataGridViewTextBoxColumn1
+            // adresse2DataGridViewTextBoxColumn1
             // 
-            this.nomDuResponsableDataGridViewTextBoxColumn1.DataPropertyName = "Nom du responsable";
-            this.nomDuResponsableDataGridViewTextBoxColumn1.HeaderText = "Nom du responsable";
-            this.nomDuResponsableDataGridViewTextBoxColumn1.Name = "nomDuResponsableDataGridViewTextBoxColumn1";
-            this.nomDuResponsableDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nomDuResponsableDataGridViewTextBoxColumn1.Visible = false;
-            this.nomDuResponsableDataGridViewTextBoxColumn1.Width = 129;
+            this.adresse2DataGridViewTextBoxColumn1.DataPropertyName = "Adresse2";
+            this.adresse2DataGridViewTextBoxColumn1.HeaderText = "Adresse2";
+            this.adresse2DataGridViewTextBoxColumn1.Name = "adresse2DataGridViewTextBoxColumn1";
+            this.adresse2DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.adresse2DataGridViewTextBoxColumn1.Visible = false;
+            this.adresse2DataGridViewTextBoxColumn1.Width = 76;
             // 
-            // prénomDuResponsableDataGridViewTextBoxColumn1
+            // codePostaleDataGridViewTextBoxColumn1
             // 
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.DataPropertyName = "Prénom du responsable";
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.HeaderText = "Prénom du responsable";
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.Name = "prénomDuResponsableDataGridViewTextBoxColumn1";
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.Visible = false;
-            this.prénomDuResponsableDataGridViewTextBoxColumn1.Width = 143;
+            this.codePostaleDataGridViewTextBoxColumn1.DataPropertyName = "Code postale";
+            this.codePostaleDataGridViewTextBoxColumn1.HeaderText = "Code postale";
+            this.codePostaleDataGridViewTextBoxColumn1.Name = "codePostaleDataGridViewTextBoxColumn1";
+            this.codePostaleDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.codePostaleDataGridViewTextBoxColumn1.Visible = false;
+            this.codePostaleDataGridViewTextBoxColumn1.Width = 94;
             // 
-            // idTypeDataGridViewTextBoxColumn1
+            // villeDataGridViewTextBoxColumn1
             // 
-            this.idTypeDataGridViewTextBoxColumn1.DataPropertyName = "IdType";
-            this.idTypeDataGridViewTextBoxColumn1.HeaderText = "IdType";
-            this.idTypeDataGridViewTextBoxColumn1.Name = "idTypeDataGridViewTextBoxColumn1";
-            this.idTypeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idTypeDataGridViewTextBoxColumn1.Visible = false;
-            this.idTypeDataGridViewTextBoxColumn1.Width = 65;
+            this.villeDataGridViewTextBoxColumn1.DataPropertyName = "Ville";
+            this.villeDataGridViewTextBoxColumn1.HeaderText = "Ville";
+            this.villeDataGridViewTextBoxColumn1.Name = "villeDataGridViewTextBoxColumn1";
+            this.villeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.villeDataGridViewTextBoxColumn1.Visible = false;
+            this.villeDataGridViewTextBoxColumn1.Width = 51;
             // 
-            // fichierDataGridViewTextBoxColumn1
+            // emailDataGridViewTextBoxColumn1
             // 
-            this.fichierDataGridViewTextBoxColumn1.DataPropertyName = "Fichier";
-            this.fichierDataGridViewTextBoxColumn1.HeaderText = "Fichier";
-            this.fichierDataGridViewTextBoxColumn1.Name = "fichierDataGridViewTextBoxColumn1";
-            this.fichierDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fichierDataGridViewTextBoxColumn1.Visible = false;
-            this.fichierDataGridViewTextBoxColumn1.Width = 63;
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn1.Visible = false;
+            this.emailDataGridViewTextBoxColumn1.Width = 57;
+            // 
+            // téléphoneDataGridViewTextBoxColumn1
+            // 
+            this.téléphoneDataGridViewTextBoxColumn1.DataPropertyName = "Téléphone";
+            this.téléphoneDataGridViewTextBoxColumn1.HeaderText = "Téléphone";
+            this.téléphoneDataGridViewTextBoxColumn1.Name = "téléphoneDataGridViewTextBoxColumn1";
+            this.téléphoneDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.téléphoneDataGridViewTextBoxColumn1.Visible = false;
+            this.téléphoneDataGridViewTextBoxColumn1.Width = 83;
+            // 
+            // dateDadhésionDataGridViewTextBoxColumn1
+            // 
+            this.dateDadhésionDataGridViewTextBoxColumn1.DataPropertyName = "Date d\'adhésion";
+            this.dateDadhésionDataGridViewTextBoxColumn1.HeaderText = "Date d\'adhésion";
+            this.dateDadhésionDataGridViewTextBoxColumn1.Name = "dateDadhésionDataGridViewTextBoxColumn1";
+            this.dateDadhésionDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dateDadhésionDataGridViewTextBoxColumn1.Visible = false;
+            this.dateDadhésionDataGridViewTextBoxColumn1.Width = 109;
+            // 
+            // organisateurDataGridViewTextBoxColumn1
+            // 
+            this.organisateurDataGridViewTextBoxColumn1.DataPropertyName = "Organisateur";
+            this.organisateurDataGridViewTextBoxColumn1.HeaderText = "Organisateur";
+            this.organisateurDataGridViewTextBoxColumn1.Name = "organisateurDataGridViewTextBoxColumn1";
+            this.organisateurDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.organisateurDataGridViewTextBoxColumn1.Visible = false;
+            this.organisateurDataGridViewTextBoxColumn1.Width = 92;
+            // 
+            // adminDataGridViewTextBoxColumn1
+            // 
+            this.adminDataGridViewTextBoxColumn1.DataPropertyName = "Admin";
+            this.adminDataGridViewTextBoxColumn1.HeaderText = "Admin";
+            this.adminDataGridViewTextBoxColumn1.Name = "adminDataGridViewTextBoxColumn1";
+            this.adminDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.adminDataGridViewTextBoxColumn1.Visible = false;
+            this.adminDataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // passwordDataGridViewTextBoxColumn1
+            // 
+            this.passwordDataGridViewTextBoxColumn1.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn1.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn1.Name = "passwordDataGridViewTextBoxColumn1";
+            this.passwordDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.passwordDataGridViewTextBoxColumn1.Visible = false;
+            this.passwordDataGridViewTextBoxColumn1.Width = 78;
+            // 
+            // avatarDataGridViewTextBoxColumn1
+            // 
+            this.avatarDataGridViewTextBoxColumn1.DataPropertyName = "Avatar";
+            this.avatarDataGridViewTextBoxColumn1.HeaderText = "Avatar";
+            this.avatarDataGridViewTextBoxColumn1.Name = "avatarDataGridViewTextBoxColumn1";
+            this.avatarDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.avatarDataGridViewTextBoxColumn1.Visible = false;
+            this.avatarDataGridViewTextBoxColumn1.Width = 63;
+            // 
+            // activéDataGridViewTextBoxColumn1
+            // 
+            this.activéDataGridViewTextBoxColumn1.DataPropertyName = "Activé";
+            this.activéDataGridViewTextBoxColumn1.HeaderText = "Activé";
+            this.activéDataGridViewTextBoxColumn1.Name = "activéDataGridViewTextBoxColumn1";
+            this.activéDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.activéDataGridViewTextBoxColumn1.Visible = false;
+            this.activéDataGridViewTextBoxColumn1.Width = 62;
+            // 
+            // aProposDataGridViewTextBoxColumn1
+            // 
+            this.aProposDataGridViewTextBoxColumn1.DataPropertyName = "A propos";
+            this.aProposDataGridViewTextBoxColumn1.HeaderText = "A propos";
+            this.aProposDataGridViewTextBoxColumn1.Name = "aProposDataGridViewTextBoxColumn1";
+            this.aProposDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.aProposDataGridViewTextBoxColumn1.Visible = false;
+            this.aProposDataGridViewTextBoxColumn1.Width = 74;
+            // 
+            // adherents2BindingSource
+            // 
+            this.adherents2BindingSource.DataMember = "adherents2";
+            this.adherents2BindingSource.DataSource = this.cda27_bd2DataSet1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label3, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 295);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 24);
+            this.tableLayoutPanel5.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(480, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(471, 24);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Non-inscrit(s)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(471, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Inscrit(s) ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.label2);
+            this.flowLayoutPanel5.Controls.Add(this.checkBoxChoisirDate);
+            this.flowLayoutPanel5.Controls.Add(this.dateTimePickerFirstDate);
+            this.flowLayoutPanel5.Controls.Add(this.lbla);
+            this.flowLayoutPanel5.Controls.Add(this.dateTimePickerSecondDate);
+            this.flowLayoutPanel5.Controls.Add(this.buttonSearch);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(954, 24);
+            this.flowLayoutPanel5.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Liste des activités de Moto Club Millau Passion";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // checkBoxChoisirDate
+            // 
+            this.checkBoxChoisirDate.AutoSize = true;
+            this.checkBoxChoisirDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxChoisirDate.Location = new System.Drawing.Point(326, 3);
+            this.checkBoxChoisirDate.Name = "checkBoxChoisirDate";
+            this.checkBoxChoisirDate.Size = new System.Drawing.Size(160, 22);
+            this.checkBoxChoisirDate.TabIndex = 0;
+            this.checkBoxChoisirDate.Text = "choisir une période :";
+            this.toolTip1.SetToolTip(this.checkBoxChoisirDate, "Cocher pour filtrer les activités par date");
+            this.checkBoxChoisirDate.UseVisualStyleBackColor = true;
+            this.checkBoxChoisirDate.CheckedChanged += new System.EventHandler(this.checkBoxChoisirDate_CheckedChanged);
+            // 
+            // dateTimePickerFirstDate
+            // 
+            this.dateTimePickerFirstDate.Enabled = false;
+            this.dateTimePickerFirstDate.Location = new System.Drawing.Point(492, 3);
+            this.dateTimePickerFirstDate.Name = "dateTimePickerFirstDate";
+            this.dateTimePickerFirstDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFirstDate.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.dateTimePickerFirstDate, "Date de début du filtre");
+            // 
+            // lbla
+            // 
+            this.lbla.AutoSize = true;
+            this.lbla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbla.Location = new System.Drawing.Point(698, 0);
+            this.lbla.Name = "lbla";
+            this.lbla.Size = new System.Drawing.Size(18, 20);
+            this.lbla.TabIndex = 8;
+            this.lbla.Text = "à";
+            // 
+            // dateTimePickerSecondDate
+            // 
+            this.dateTimePickerSecondDate.Enabled = false;
+            this.dateTimePickerSecondDate.Location = new System.Drawing.Point(722, 3);
+            this.dateTimePickerSecondDate.Name = "dateTimePickerSecondDate";
+            this.dateTimePickerSecondDate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerSecondDate.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.dateTimePickerSecondDate, "Date de fin du filtre");
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Enabled = false;
+            this.buttonSearch.Image = global::MCMPWinForms.Properties.Resources.search;
+            this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSearch.Location = new System.Drawing.Point(928, 3);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(23, 23);
+            this.buttonSearch.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.buttonSearch, "Rafraîchir en prenant compte du filtre");
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.tabCtrlMain, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 640);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // publiéDataGridViewTextBoxColumn
+            // 
+            this.publiéDataGridViewTextBoxColumn.DataPropertyName = "Publié";
+            this.publiéDataGridViewTextBoxColumn.HeaderText = "Publié";
+            this.publiéDataGridViewTextBoxColumn.Name = "publiéDataGridViewTextBoxColumn";
+            this.publiéDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fichierDataGridViewTextBoxColumn
+            // 
+            this.fichierDataGridViewTextBoxColumn.DataPropertyName = "Fichier";
+            this.fichierDataGridViewTextBoxColumn.HeaderText = "Fichier";
+            this.fichierDataGridViewTextBoxColumn.Name = "fichierDataGridViewTextBoxColumn";
+            this.fichierDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fichierDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idTypeDataGridViewTextBoxColumn
+            // 
+            this.idTypeDataGridViewTextBoxColumn.DataPropertyName = "IdType";
+            this.idTypeDataGridViewTextBoxColumn.HeaderText = "IdType";
+            this.idTypeDataGridViewTextBoxColumn.Name = "idTypeDataGridViewTextBoxColumn";
+            this.idTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prénomDuResponsableDataGridViewTextBoxColumn
+            // 
+            this.prénomDuResponsableDataGridViewTextBoxColumn.DataPropertyName = "Prénom du responsable";
+            this.prénomDuResponsableDataGridViewTextBoxColumn.HeaderText = "Prénom du responsable";
+            this.prénomDuResponsableDataGridViewTextBoxColumn.Name = "prénomDuResponsableDataGridViewTextBoxColumn";
+            this.prénomDuResponsableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomDuResponsableDataGridViewTextBoxColumn
+            // 
+            this.nomDuResponsableDataGridViewTextBoxColumn.DataPropertyName = "Nom du responsable";
+            this.nomDuResponsableDataGridViewTextBoxColumn.HeaderText = "Nom du responsable";
+            this.nomDuResponsableDataGridViewTextBoxColumn.Name = "nomDuResponsableDataGridViewTextBoxColumn";
+            this.nomDuResponsableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateLimiteDinscriptionDataGridViewTextBoxColumn
+            // 
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.DataPropertyName = "Date limite d\'inscription";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.HeaderText = "Date limite d\'inscription";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.Name = "dateLimiteDinscriptionDataGridViewTextBoxColumn";
+            this.dateLimiteDinscriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tarifInvitéDataGridViewTextBoxColumn
+            // 
+            this.tarifInvitéDataGridViewTextBoxColumn.DataPropertyName = "Tarif invité";
+            this.tarifInvitéDataGridViewTextBoxColumn.HeaderText = "Tarif invité";
+            this.tarifInvitéDataGridViewTextBoxColumn.Name = "tarifInvitéDataGridViewTextBoxColumn";
+            this.tarifInvitéDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tarifAdhérentDataGridViewTextBoxColumn
+            // 
+            this.tarifAdhérentDataGridViewTextBoxColumn.DataPropertyName = "Tarif adhérent";
+            this.tarifAdhérentDataGridViewTextBoxColumn.HeaderText = "Tarif adhérent";
+            this.tarifAdhérentDataGridViewTextBoxColumn.Name = "tarifAdhérentDataGridViewTextBoxColumn";
+            this.tarifAdhérentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewImageColumn
+            // 
+            this.descriptionDataGridViewImageColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewImageColumn.HeaderText = "Description";
+            this.descriptionDataGridViewImageColumn.Name = "descriptionDataGridViewImageColumn";
+            this.descriptionDataGridViewImageColumn.ReadOnly = true;
+            this.descriptionDataGridViewImageColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Date de fin";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Date de fin";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Date de début";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date de début";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // intituléDataGridViewTextBoxColumn
+            // 
+            this.intituléDataGridViewTextBoxColumn.DataPropertyName = "Intitulé";
+            this.intituléDataGridViewTextBoxColumn.HeaderText = "Intitulé";
+            this.intituléDataGridViewTextBoxColumn.Name = "intituléDataGridViewTextBoxColumn";
+            this.intituléDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // inscriptionsTableAdapter
+            // 
+            this.inscriptionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // adherentsTableAdapter
+            // 
+            this.adherentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // adherents2TableAdapter
+            // 
+            this.adherents2TableAdapter.ClearBeforeFill = true;
+            // 
+            // adherentinscriptionTableAdapter
+            // 
+            this.adherentinscriptionTableAdapter.ClearBeforeFill = true;
+            // 
+            // activitesTableAdapter
+            // 
+            this.activitesTableAdapter.ClearBeforeFill = true;
+            // 
+            // adherentTableAdapter
+            // 
+            this.adherentTableAdapter.ClearBeforeFill = true;
+            // 
+            // inscriptionTableAdapter1
+            // 
+            this.inscriptionTableAdapter1.ClearBeforeFill = true;
             // 
             // activiteTableAdapter1
             // 
@@ -2035,6 +2053,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idTypeDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fichierDataGridViewTextBoxColumn1;
         private cda27_bd2DataSetTableAdapters.activiteTableAdapter activiteTableAdapter1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
