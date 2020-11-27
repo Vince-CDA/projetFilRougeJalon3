@@ -21,9 +21,12 @@ namespace MCMPWinForms
         public BindingSource adherentbind { set; get; }
         public long LastInsert { get; set; }
         public int IdType { get; set; }
-        public int IsClose { get; set; }
-        public int ModifEnCours { get; set; }
+        public bool IsClose { get; set; }
+        public bool ModifEnCours { get; set; }
         public int IdActivite { get; set; }
+        /// Je récupère le BindingSource de l'activité de la FormMain 
+        public cda27_bd2DataSet.activitesRow currentRowAdh { get; set; }
+        public cda27_bd2DataSet.type_activiteRow currentRow { get; set; }
         #endregion
 
         #region Démarrage de la fenêtre
@@ -48,7 +51,7 @@ namespace MCMPWinForms
             /// Je Fill les types d'activités
             this.type_activiteTableAdapter.Fill(this.cda27_bd2DataSet2.type_activite);
             /// Si une modification est en cours, je me positionne sur le type d'activité de l'activité à modifier par son IdType
-            if (ModifEnCours == 1)
+            if (ModifEnCours)
             {
             typeactiviteBindingSource.Position = typeactiviteBindingSource.Find("IdType", IdType);
             }
@@ -135,7 +138,7 @@ namespace MCMPWinForms
                 /// Le LastInsert sera utilisé dans le FormMain pour le repositionnement sur l'activité qui vient de s'ajouter
                 LastInsert = activiteTableAdapter.Adapter.InsertCommand.InsertId;
                 /// IsClose servira dans le MainForm indiquant que la fenêtre va se fermer
-                IsClose = 1;
+                IsClose = true;
                 /// Je ferme la fenêtre
                 Close();
             }
@@ -159,8 +162,6 @@ namespace MCMPWinForms
         /// <param name="e"></param>
         private void buttonModifierActivite_Click(object sender, EventArgs e)
         {
-            /// Je récupère le BindingSource de l'activité de la FormMain 
-            cda27_bd2DataSet.activitesRow currentRowAdh = (cda27_bd2DataSet.activitesRow)((DataRowView)activitebind.Current).Row;
             /// Je récupère le BindingSource des types d'activité
             cda27_bd2DataSet.type_activiteRow currentRow = (cda27_bd2DataSet.type_activiteRow)((DataRowView)typeactiviteBindingSource.Current).Row;
             /// Si publier est coché alors il vaut 1 sinon il vaut 0
@@ -236,6 +237,7 @@ namespace MCMPWinForms
                 currentRowAdh.IdType, 
                 currentRowAdh.Publié
                 );
+
             /// Si la requête échoue
             if (nb == 0)
             {
@@ -247,12 +249,20 @@ namespace MCMPWinForms
                 /// Je quitte l'évenement
                 return;
             }
-            /// Je mets en variable le LastInsert pour me repositionner dans le fenêtre main sur l'activité précédemment séléctionnée
-            LastInsert = activiteTableAdapter.Adapter.UpdateCommand.InsertId;
+            else
+            {
+                /// J'affiche un message : Mise à jour non réalisée
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_MAJ_OK,
+                    Properties.Resources.STR_TITRE_MAJ_OK,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            /// Je mets en variable l'IdActivité pour me repositionner dans le fenêtre main sur l'activité précédemment séléctionnée
+            LastInsert = currentRowAdh.IdActivite;
             /// IsClose me servira pour savoir que la fenêtre va se fermer dans le FormMain
-            IsClose = 1;
+            IsClose = true;
             /// Je ferme la fenêtre
             Close();
+            }
         }
         #endregion
 
@@ -339,7 +349,7 @@ namespace MCMPWinForms
         /// <returns>true ou false</returns>
         public static bool IsPrix(string prix)
         {
-            if (prix != null) return Regex.IsMatch(prix, motifPrix);
+            if (prix != null && prix.Length < 5) return Regex.IsMatch(prix, motifPrix);
             else return false;
         }
         #endregion

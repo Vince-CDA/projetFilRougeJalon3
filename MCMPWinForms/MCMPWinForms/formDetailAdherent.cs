@@ -18,7 +18,7 @@ namespace MCMPWinForms
         /// Ces get, set me permettrons de faire passer des informations du FormMain à cette fille ou inversement
         /// </summary>
         public BindingSource adherentbind { set; get; }
-        public int IsClose { get; set; }
+        public bool IsClose { get; set; }
         public long LastInsert { get; set; }
         public string Login { get; set; }
         #endregion
@@ -33,7 +33,7 @@ namespace MCMPWinForms
         public const string motifName = @"^[\p{L}\p{M}' \.\-]+$";
         public const string motifCodePostale = @"^\d{5}$";
         public const string motifAdresse = @"^[A-Za-zéèàê0-9]+(?:\s[A-Za-zéèàê0-9'_-]+)+$";
-        public const string motifVille = @"^\p{Lu}\p{L}*(?:[\s-]\p{Lu}\p{L}*)*$";
+        public const string motifVille = @"^([a-zA-Z\u0080-\u024F]+(?:.|-||'))*[a-zA-Z\u0080-\u024F]*$";
         public const string motifCylindree = @"^[0-9]{1,5}$";
 
         #endregion
@@ -154,6 +154,14 @@ namespace MCMPWinForms
                     MessageBoxIcon.Information);
 
             }
+            else if (textBoxAPropos.Text.Length > 250)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_ERREUR_APROPOS,
+                    Properties.Resources.STR_TITRE_ERREUR_APROPOS,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
             /// Fin de vérification de chaque champs avec les fonctions Regex (expressions régulière)
             ///Sinon, si toutes les vérifications ont réussis
             else
@@ -190,7 +198,7 @@ namespace MCMPWinForms
                     /// Mise en variable du LastInsert pour un positionnage dans le formMain (on transfert la variable chez la fenêtre mère)
                     LastInsert = adherentTableAdapter1.Adapter.InsertCommand.InsertId;
                     /// IsClose est à 1, la FormMain va intéragir avec cela
-                    IsClose = 1;
+                    IsClose = true;
                     /// Je close la fenêtre
                     Close();
                 }
@@ -216,8 +224,11 @@ namespace MCMPWinForms
         /// <param name="e"></param>
         private void btModifier_Click(object sender, EventArgs e)
         {
+            string Avatar = null;
             /// Je récupère la ligne courante de l'adhérent de la fenêtre MainForm par une variable transférée (adherentbind)
             cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentbind.Current).Row;
+            /// Récupération de l'IdAdherent pour une récupération dans la fenêtre main pour un repositionnage sur l'adhérent
+            LastInsert = currentRow.IdAdherent;
             /// J'initialise l'organisateur en short? (type short nullable
             short? Organisateur;
             /// Si le checkBox organisateur est coché alors Organisateur vaut 1
@@ -319,6 +330,11 @@ namespace MCMPWinForms
                     MessageBoxIcon.Information);
                 return;
             }
+            else if (textBoxAPropos.Text.Length > 250)
+            {
+                MessageBox.Show("A propos doit être inférieur à 250 caractères");
+                return;
+            }
             /// Fin de vérification de mes champs avec des Regex (expressions régulières)
             /// Mise en variable de la requête de Count du Login
             int countNb = Convert.ToInt32(adherentsTableAdapter.Count(textBoxLogin.Text));
@@ -333,7 +349,15 @@ namespace MCMPWinForms
             }
             /// Si toutes les vérifications sont OK
             else
-            { 
+            {
+                if (currentRow.IsAvatarNull())
+                {
+                    Avatar = null;
+                }
+                else
+                {
+                    Avatar = currentRow.Avatar;
+                }
                 /// Je fais la mise à jour en utilisant tous les champs 
                 /// Comme anciennes valeurs j'utilise le currentRow du BindingSource précédemment transféré de la fenêtre MainForm
                 int nb = adherentTableAdapter.Update(textBoxNom.Text,
@@ -351,7 +375,7 @@ namespace MCMPWinForms
                     textBoxLogin.Text,
                     currentRow.Password,
                     textBoxCylindree.Text,
-                    currentRow.Avatar,
+                    Avatar,
                     Active,
                     textBoxAPropos.Text,
                     currentRow.IdAdherent,
@@ -379,10 +403,8 @@ namespace MCMPWinForms
                         Properties.Resources.STR_TITRE_MODIFICATION_SUCCES,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    /// Récupération du LastInsert pour une récupération dans la fenêtre main pour un repositionnage sur l'adhérent
-                    LastInsert = adherentTableAdapter.Adapter.UpdateCommand.InsertId;
                     /// La fenêtre va se fermer, la variable sera utilisée dans une condition dans le FormMain
-                    IsClose = 1;
+                    IsClose = true;
                     /// Je ferme la fenêtre
                     Close();
                 }
@@ -440,7 +462,7 @@ namespace MCMPWinForms
             else
             {
                 /// Variable IsClose est à 1, elle me servira dans le FormMain
-                IsClose = 1;
+                IsClose = true;
                 /// Je close la fenêtre
                 Close();
             }
@@ -479,7 +501,7 @@ namespace MCMPWinForms
         /// <returns>True ou False</returns>
         public static bool IsEmail(string email)
         {
-            if (email != null) return Regex.IsMatch(email, motifMail);
+            if (email != null && email.Length < 250) return Regex.IsMatch(email, motifMail);
             else return false;
         }
         public static bool IsPhoneNbr(string number)
@@ -489,17 +511,17 @@ namespace MCMPWinForms
         }
         public static bool IsName(string name)
         {
-            if (name != null) return Regex.IsMatch(name, motifName);
+            if (name != null && name.Length < 250) return Regex.IsMatch(name, motifName);
             else return false;
         }
         public static bool IsAdresse(string adresse)
         {
-            if (adresse != null) return Regex.IsMatch(adresse, motifAdresse);
+            if (adresse != null && adresse.Length < 250) return Regex.IsMatch(adresse, motifAdresse);
             else return false;
         }
         public static bool IsVille(string ville)
         {
-            if (ville != null) return Regex.IsMatch(ville, motifVille);
+            if (ville != null && ville.Length < 250) return Regex.IsMatch(ville, motifVille);
             else return false;
         }
         public static bool IsCylindree(string cc)

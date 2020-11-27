@@ -13,6 +13,7 @@ namespace MCMPWinForms
 {
     public partial class FormMain : Form
     {
+        bool VaSeFermer = false;
         #region Au démarrage
         /// <summary>
         /// A l'ouverture de la FormMain
@@ -91,14 +92,14 @@ namespace MCMPWinForms
                 /// J'affiche la fenêtre en mode Dialog (le using n'aurait pas été possible sans ça)
                 frmDetailAdherent.ShowDialog();
                 /// Si la fenêtre se ferme
-                if (frmDetailAdherent.IsClose == 1)
+                if (frmDetailAdherent.IsClose)
                 {
                     /// Je FillIntegral
                     FillIntegral();
                     /// Je me repositionne sur la ligne que je viens d'ajouter via l'IdAdherent
                     adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", frmDetailAdherent.LastInsert);
                     /// Je rétablie IsClose à 0
-                    frmDetailAdherent.IsClose = 0;
+                    frmDetailAdherent.IsClose = false;
                 }
             }
         }
@@ -119,7 +120,10 @@ namespace MCMPWinForms
                 cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
                 if (currentRow.IdAdherent == 100)
                 {
-                    MessageBox.Show("Impossible de modifier le compte secrétaire");
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_IMPOSSIBLE_MODIFIER_SECRETAIRE,
+                        Properties.Resources.STR_TITRE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                     return;
                 }
                 /// Mise des valeurs dans les TextBox et dateTimePicker correspondant à l'adhérent
@@ -171,13 +175,13 @@ namespace MCMPWinForms
                 /// On affiche la fenêtre en mode Dialog (Le using aurait été impossible sinon)
                 formDetailAdherent.ShowDialog();
                 /// Si la fenêtre se ferme
-                if (formDetailAdherent.IsClose == 1)
+                if (formDetailAdherent.IsClose)
                 {
                     /// Je FillIntegral et me positionne sur l'adhérent que je viens de modifier
                     FillIntegral();
                     adherentsBindingSource.Position = adherentsBindingSource.Find("IdAdherent", formDetailAdherent.LastInsert);
                     /// Je rétablie la valeur 0 à IsClose
-                    formDetailAdherent.IsClose = 0;
+                    formDetailAdherent.IsClose = false;
                 }
             }
         }
@@ -195,7 +199,10 @@ namespace MCMPWinForms
             cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
             if (currentRow.IdAdherent == 100)
             {
-                MessageBox.Show("Impossible de supprimer le compte secrétaire");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE,
+                    Properties.Resources.STR_TITRE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             /// J'affiche un message de confirmation pour cette suppression
@@ -284,14 +291,14 @@ namespace MCMPWinForms
                 /// J'affiche la fenêtre en mode Dialog (le using n'aurait pas été possible sans ça)
                 frmDetailActivite.ShowDialog();
                 /// Si la fenêtre se ferme
-                if (frmDetailActivite.IsClose == 1)
+                if (frmDetailActivite.IsClose)
                 {
                     /// Je FillIntegral
                     FillIntegral();
                     /// Je me repositionne sur l'activité ajoutée précédemment
                     activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", frmDetailActivite.LastInsert);
                     /// IsClose vaut maintenant 0
-                    frmDetailActivite.IsClose = 0;
+                    frmDetailActivite.IsClose = false;
                 }
             }
         }
@@ -310,8 +317,10 @@ namespace MCMPWinForms
             {
                 /// J'envoie à la fenêtre fille le binding de l'activité
                 frmDetailActivite.adherentbind = activitesBindingSourceListeAct;
+
                 /// Récupération de la ligne courrante pour une utilisation des valeurs de ses colonnes
                 cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
+                frmDetailActivite.currentRowAdh = currentRow;
                 /// J'envoie l'IdActivite et l'IdType à la fenêtre fille
                 frmDetailActivite.IdActivite = currentRow.IdActivite;
                 frmDetailActivite.IdType = currentRow.IdType;
@@ -326,19 +335,19 @@ namespace MCMPWinForms
                 frmDetailActivite.dateTimePickerDateLimite.Value = currentRow._Date_limite_d_inscription;
                 frmDetailActivite.textBoxDescription.Text = Convert.ToString(currentRow.Description);
                 /// J'indique à la fenêtre fille qu'une modification est en cours
-                frmDetailActivite.ModifEnCours = 1;
+                frmDetailActivite.ModifEnCours = true;
                 /// J'affiche la fenêtre en mode Dialog
                 frmDetailActivite.ShowDialog();
                 /// Si la fenêtre se ferme
-                if (frmDetailActivite.IsClose == 1)
+                if (frmDetailActivite.IsClose)
                 {
                     /// Je FillIntegral
                     FillIntegral();
                     /// Je me repositionne sur l'activité qui vient d'être modifiée précédemment
                     activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", frmDetailActivite.LastInsert);
                     /// IsClose et ModifEnCours deviennent 0
-                    frmDetailActivite.IsClose = 0;
-                    frmDetailActivite.ModifEnCours = 0;
+                    frmDetailActivite.IsClose = false;
+                    frmDetailActivite.ModifEnCours = false;
                 }
             }
         }
@@ -591,13 +600,16 @@ namespace MCMPWinForms
         /// <param name="e"></param>
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /// J'affiche un message de confirmation de fermeture
-            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_FERMER, Properties.Resources.STR_TITRE_FERMER, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            /// Si le bouton "Non" est cliqué
-            if (DiagResult == DialogResult.No)
+            if (!VaSeFermer)
             {
-                /// J'annule la fermeture
-                e.Cancel = true;
+                /// J'affiche un message de confirmation de fermeture
+                DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_FERMER, Properties.Resources.STR_TITRE_FERMER, MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+                /// Si le bouton "Non" est cliqué
+                if (DiagResult == DialogResult.No)
+                {
+                    /// J'annule la fermeture
+                    e.Cancel = true;
+                }
             }
         }
         #endregion
@@ -605,35 +617,48 @@ namespace MCMPWinForms
         #region Fonction Fill et bouton Search
         /// <summary>
         /// Rafraîchissement intégral des dataGridViews
+        /// TryCatch si la bdd est déconnectée alors on affiche un message d'erreur et on quitte le logiciel
         /// </summary>
         public void FillIntegral()
         {
-            /// Si le filtre par date est coché
-            if (checkBoxChoisirDate.Checked)
+            try
             {
-                /// Je Fill entre les deux dates la liste des activités
-                this.activitesTableAdapter.FillByDate(this.cda27_bd2DataSet.activites, dateTimePickerFirstDate.Value, dateTimePickerSecondDate.Value); ;
+                /// Si le filtre par date est coché
+                if (checkBoxChoisirDate.Checked)
+                {
+                    /// Je Fill entre les deux dates la liste des activités
+                    this.activitesTableAdapter.FillByDate(this.cda27_bd2DataSet.activites, dateTimePickerFirstDate.Value, dateTimePickerSecondDate.Value); ;
+                }
+                else
+                {
+                    /// Sinon je Fill tout court
+                    this.activitesTableAdapter.Fill(this.cda27_bd2DataSet.activites);
+                }
+                /// Je récupère la ligne d'activité séléctionnée
+                cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
+                /// Je Fill les inscriptions des adherents avec l'IdActivite de la ligne séléctionnée
+                this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
+                /// Je Fill les adhérents non-inscrits 
+                this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
+                /// Je Fill les adherents
+                this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
+                /// Je récupère la ligne séléctionnée des adhérents
+                cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
+                /// Je Fill les inscriptions pour cet adhérent
+                this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
+                /// Je Clear les selections des inscrits et non inscrits
+                dataGridViewNonInscrits.ClearSelection();
+                dataGridViewInscrits.ClearSelection();
             }
-            else
+            catch (Exception ex)
             {
-                /// Sinon je Fill tout court
-                this.activitesTableAdapter.Fill(this.cda27_bd2DataSet.activites);
+                VaSeFermer = true;
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CONNEXION_BDD_ERROR,
+                    Properties.Resources.STR_TITRE_CONNEXION_BDD_ERROR,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                this.Close();
             }
-            /// Je récupère la ligne d'activité séléctionnée
-            cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
-            /// Je Fill les inscriptions des adherents avec l'IdActivite de la ligne séléctionnée
-            this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
-            /// Je Fill les adhérents non-inscrits 
-            this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
-            /// Je Fill les adherents
-            this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
-            /// Je récupère la ligne séléctionnée des adhérents
-            cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
-            /// Je Fill les inscriptions pour cet adhérent
-            this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
-            /// Je Clear les selections des inscrits et non inscrits
-            dataGridViewNonInscrits.ClearSelection();
-            dataGridViewInscrits.ClearSelection();
         }
         /// <summary>
         /// Action de Fill au clique du bouton "Search" à côté de filtre par date des activités

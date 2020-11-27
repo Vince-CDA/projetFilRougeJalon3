@@ -271,6 +271,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible de se connecter à la base de données, veuillez rééssayer plus tard....
+        /// </summary>
+        internal static string STR_MESSAGE_CONNEXION_BDD_ERROR {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_CONNEXION_BDD_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à La cylindrée saisie n&apos;est pas correcte (Seulement de 0 à 9999.).
         /// </summary>
         internal static string STR_MESSAGE_CYLINDREE_NON_VALIDE {
@@ -307,11 +316,38 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à A propos doit être inférieur à 250 caractères.
+        /// </summary>
+        internal static string STR_MESSAGE_ERREUR_APROPOS {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_ERREUR_APROPOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Voulez-vous vraiment fermer le programme ?.
         /// </summary>
         internal static string STR_MESSAGE_FERMER {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_FERMER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible de modifier le compte secrétaire.
+        /// </summary>
+        internal static string STR_MESSAGE_IMPOSSIBLE_MODIFIER_SECRETAIRE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_IMPOSSIBLE_MODIFIER_SECRETAIRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible de supprimer le compte secrétaire.
+        /// </summary>
+        internal static string STR_MESSAGE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE", resourceCulture);
             }
         }
         
@@ -339,6 +375,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_MESSAGE_MAJ_NON_REALISEE {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à La mise à jour s&apos;est bien réalisée.
+        /// </summary>
+        internal static string STR_MESSAGE_MAJ_OK {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_MAJ_OK", resourceCulture);
             }
         }
         
@@ -541,6 +586,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Base de données injoingable.
+        /// </summary>
+        internal static string STR_TITRE_CONNEXION_BDD_ERROR {
+            get {
+                return ResourceManager.GetString("STR_TITRE_CONNEXION_BDD_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur cylindrée.
         /// </summary>
         internal static string STR_TITRE_CYLINDREE_NON_VALIDE {
@@ -577,11 +631,29 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Trop de caractères !.
+        /// </summary>
+        internal static string STR_TITRE_ERREUR_APROPOS {
+            get {
+                return ResourceManager.GetString("STR_TITRE_ERREUR_APROPOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Fermer.
         /// </summary>
         internal static string STR_TITRE_FERMER {
             get {
                 return ResourceManager.GetString("STR_TITRE_FERMER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible.
+        /// </summary>
+        internal static string STR_TITRE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE {
+            get {
+                return ResourceManager.GetString("STR_TITRE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE", resourceCulture);
             }
         }
         
@@ -609,6 +681,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_TITRE_MAJ_NON_REALISEE {
             get {
                 return ResourceManager.GetString("STR_TITRE_MAJ_NON_REALISEE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mise à jour terminée.
+        /// </summary>
+        internal static string STR_TITRE_MAJ_OK {
+            get {
+                return ResourceManager.GetString("STR_TITRE_MAJ_OK", resourceCulture);
             }
         }
         

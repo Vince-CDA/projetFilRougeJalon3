@@ -355,6 +355,8 @@
             // dateTimePickerDateDebut
             // 
             this.dateTimePickerDateDebut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerDateDebut.CustomFormat = "dd MMMM yyyy à H:mm";
+            this.dateTimePickerDateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDateDebut.Location = new System.Drawing.Point(219, 192);
             this.dateTimePickerDateDebut.Name = "dateTimePickerDateDebut";
             this.dateTimePickerDateDebut.Size = new System.Drawing.Size(263, 20);
@@ -364,6 +366,8 @@
             // dateTimePickerDateFin
             // 
             this.dateTimePickerDateFin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerDateFin.CustomFormat = "dd MMMM yyyy à H:mm";
+            this.dateTimePickerDateFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDateFin.Location = new System.Drawing.Point(676, 192);
             this.dateTimePickerDateFin.Name = "dateTimePickerDateFin";
             this.dateTimePickerDateFin.Size = new System.Drawing.Size(295, 20);
@@ -384,6 +388,8 @@
             // dateTimePickerDateLimite
             // 
             this.dateTimePickerDateLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerDateLimite.CustomFormat = "dd MMMM yyyy à H:mm";
+            this.dateTimePickerDateLimite.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDateLimite.Location = new System.Drawing.Point(219, 273);
             this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
             this.dateTimePickerDateLimite.Size = new System.Drawing.Size(263, 20);
@@ -567,6 +573,7 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DataSource = this.typeactiviteBindingSource;
             this.comboBox1.DisplayMember = "IntituleType";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(676, 24);
@@ -632,6 +639,7 @@
             this.ClientSize = new System.Drawing.Size(980, 640);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(996, 679);
             this.MinimumSize = new System.Drawing.Size(996, 679);
             this.Name = "formDetailActivite";

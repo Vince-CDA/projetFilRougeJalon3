@@ -184,6 +184,9 @@
   <data name="STR_MESSAGE_CONFIRMATION_SUPPRESSION" xml:space="preserve">
     <value>Voulez-vous vraiment désinscrire {0} de l'activité ?</value>
   </data>
+  <data name="STR_MESSAGE_CONNEXION_BDD_ERROR" xml:space="preserve">
+    <value>Impossible de se connecter à la base de données, veuillez rééssayer plus tard...</value>
+  </data>
   <data name="STR_MESSAGE_CYLINDREE_NON_VALIDE" xml:space="preserve">
     <value>La cylindrée saisie n'est pas correcte (Seulement de 0 à 9999.)</value>
   </data>
@@ -196,8 +199,17 @@
   <data name="STR_MESSAGE_EMAIL_NON_VALIDE" xml:space="preserve">
     <value>L'adresse saisie est invalide</value>
   </data>
+  <data name="STR_MESSAGE_ERREUR_APROPOS" xml:space="preserve">
+    <value>A propos doit être inférieur à 250 caractères</value>
+  </data>
   <data name="STR_MESSAGE_FERMER" xml:space="preserve">
     <value>Voulez-vous vraiment fermer le programme ?</value>
+  </data>
+  <data name="STR_MESSAGE_IMPOSSIBLE_MODIFIER_SECRETAIRE" xml:space="preserve">
+    <value>Impossible de modifier le compte secrétaire</value>
+  </data>
+  <data name="STR_MESSAGE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE" xml:space="preserve">
+    <value>Impossible de supprimer le compte secrétaire</value>
   </data>
   <data name="STR_MESSAGE_INSCRIPTION_FAIL" xml:space="preserve">
     <value>L'inscription ne s'est pas réalisée</value>
@@ -207,6 +219,9 @@
   </data>
   <data name="STR_MESSAGE_MAJ_NON_REALISEE" xml:space="preserve">
     <value>La mise à jour ne s'est pas réalisée</value>
+  </data>
+  <data name="STR_MESSAGE_MAJ_OK" xml:space="preserve">
+    <value>La mise à jour s'est bien réalisée</value>
   </data>
   <data name="STR_MESSAGE_MODIFICATION_SUCCES" xml:space="preserve">
     <value>La modification a été réalisée</value>
@@ -274,6 +289,9 @@
   <data name="STR_TITRE_CONFIRMATION_SUPPRESSION" xml:space="preserve">
     <value>Désinscription de {0} {1}</value>
   </data>
+  <data name="STR_TITRE_CONNEXION_BDD_ERROR" xml:space="preserve">
+    <value>Base de données injoingable</value>
+  </data>
   <data name="STR_TITRE_CYLINDREE_NON_VALIDE" xml:space="preserve">
     <value>Erreur cylindrée</value>
   </data>
@@ -286,8 +304,14 @@
   <data name="STR_TITRE_EMAIL_NON_VALIDE" xml:space="preserve">
     <value>Erreur adresse mail</value>
   </data>
+  <data name="STR_TITRE_ERREUR_APROPOS" xml:space="preserve">
+    <value>Trop de caractères !</value>
+  </data>
   <data name="STR_TITRE_FERMER" xml:space="preserve">
     <value>Fermer</value>
+  </data>
+  <data name="STR_TITRE_IMPOSSIBLE_SUPPRIMER_SECRETAIRE" xml:space="preserve">
+    <value>Impossible</value>
   </data>
   <data name="STR_TITRE_INSCRIPTION_FAIL" xml:space="preserve">
     <value>Erreur</value>
@@ -297,6 +321,9 @@
   </data>
   <data name="STR_TITRE_MAJ_NON_REALISEE" xml:space="preserve">
     <value>Echec</value>
+  </data>
+  <data name="STR_TITRE_MAJ_OK" xml:space="preserve">
+    <value>Mise à jour terminée</value>
   </data>
   <data name="STR_TITRE_MODIFICATION_SUCCES" xml:space="preserve">
     <value>Modification avec succès</value>
