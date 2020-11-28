@@ -298,6 +298,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à La description doit contenir moins de 15000 caractères!.
+        /// </summary>
+        internal static string STR_MESSAGE_DESCRIPTION_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_DESCRIPTION_PROBLEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à La désinscription n&apos;a pas été réalisée.
         /// </summary>
         internal static string STR_MESSAGE_DESINSCRIPTION_ERREUR {
@@ -366,6 +375,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_MESSAGE_LOGIN_EXISTANT {
             get {
                 return ResourceManager.GetString("STR_MESSAGE_LOGIN_EXISTANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le login doit être inférieur à 30 caractères.
+        /// </summary>
+        internal static string STR_MESSAGE_LOGIN_TROP_LONG {
+            get {
+                return ResourceManager.GetString("STR_MESSAGE_LOGIN_TROP_LONG", resourceCulture);
             }
         }
         
@@ -613,6 +631,15 @@ namespace MCMPWinForms.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Problème dans la description.
+        /// </summary>
+        internal static string STR_TITRE_DESCRIPTION_PROBLEME {
+            get {
+                return ResourceManager.GetString("STR_TITRE_DESCRIPTION_PROBLEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Erreur.
         /// </summary>
         internal static string STR_TITRE_DESINSCRIPTION_ERREUR {
@@ -672,6 +699,15 @@ namespace MCMPWinForms.Properties {
         internal static string STR_TITRE_LOGIN_EXISTANT {
             get {
                 return ResourceManager.GetString("STR_TITRE_LOGIN_EXISTANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Login trop long.
+        /// </summary>
+        internal static string STR_TITRE_LOGIN_TROP_LONG {
+            get {
+                return ResourceManager.GetString("STR_TITRE_LOGIN_TROP_LONG", resourceCulture);
             }
         }
         

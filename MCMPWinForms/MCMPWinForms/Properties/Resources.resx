@@ -193,6 +193,9 @@
   <data name="STR_MESSAGE_DATE_ACT_PROBLEME" xml:space="preserve">
     <value>La date de début doit être supérieur à la date d'aujourd'hui, la date limite doit être supérieur à la date de début ainsi qu'inférieur à la date de fin et la date de fin doit être supérieur à la date limite.</value>
   </data>
+  <data name="STR_MESSAGE_DESCRIPTION_PROBLEME" xml:space="preserve">
+    <value>La description doit contenir moins de 15000 caractères!</value>
+  </data>
   <data name="STR_MESSAGE_DESINSCRIPTION_ERREUR" xml:space="preserve">
     <value>La désinscription n'a pas été réalisée</value>
   </data>
@@ -297,6 +300,9 @@
   </data>
   <data name="STR_TITRE_DATE_ACT_PROBLEME" xml:space="preserve">
     <value>Problème dans les dates</value>
+  </data>
+  <data name="STR_TITRE_DESCRIPTION_PROBLEME" xml:space="preserve">
+    <value>Problème dans la description</value>
   </data>
   <data name="STR_TITRE_DESINSCRIPTION_ERREUR" xml:space="preserve">
     <value>Erreur</value>

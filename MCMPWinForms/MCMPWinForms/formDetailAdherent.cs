@@ -162,6 +162,14 @@ namespace MCMPWinForms
                     MessageBoxIcon.Information);
                 return;
             }
+            else if (textBoxLogin.Text.Length > 30)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_LOGIN_TROP_LONG,
+                    Properties.Resources.STR_TITRE_LOGIN_TROP_LONG,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
             /// Fin de vérification de chaque champs avec les fonctions Regex (expressions régulière)
             ///Sinon, si toutes les vérifications ont réussis
             else
@@ -332,7 +340,18 @@ namespace MCMPWinForms
             }
             else if (textBoxAPropos.Text.Length > 250)
             {
-                MessageBox.Show("A propos doit être inférieur à 250 caractères");
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_ERREUR_APROPOS,
+                    Properties.Resources.STR_TITRE_ERREUR_APROPOS,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information););
+                return;
+            }
+            else if (textBoxLogin.Text.Length > 30)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_LOGIN_TROP_LONG,
+                    Properties.Resources.STR_TITRE_LOGIN_TROP_LONG,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
             }
             /// Fin de vérification de mes champs avec des Regex (expressions régulières)

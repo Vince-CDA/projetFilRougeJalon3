@@ -113,6 +113,13 @@ namespace MCMPWinForms
                 /// Je quitte l'évenement
                 return;
             }
+            else if (textBoxDescription.Text.Length > 15000)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_DESCRIPTION_PROBLEME,
+                    Properties.Resources.STR_TITRE_DESCRIPTION_PROBLEME,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
             /// Si je n'ai pas quitté l'évenement avant, j'insert une activité avec les valeurs correspondantes
             /// L'IdAdherent sera celui de la secrétaire
             int nb = activiteTableAdapter.Insert(
@@ -209,6 +216,13 @@ namespace MCMPWinForms
                     MessageBoxIcon.Information);
                 /// Je quitte l'événement
                 return;
+            }
+            else if (textBoxDescription.Text.Length > 15000)
+            {
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_DESCRIPTION_PROBLEME,
+                    Properties.Resources.STR_TITRE_DESCRIPTION_PROBLEME,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             /// J'exécute la requête d'update avec les valeurs nouvelles, 
             /// l'IdAdherent sera la secrétaire, 
