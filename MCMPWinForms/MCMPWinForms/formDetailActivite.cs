@@ -84,10 +84,10 @@ namespace MCMPWinForms
                 /// Je quitte l'évenement
                 return;
             }
-            /// Si la date de début est inférieur à la date d'aujourd'hui
-            /// Et si la date de début est supérieur à la date de fin
-            /// Et si la date limite est supérieur à la date de début
-            /// Et si la date limite est supérieur à la date de fin
+            /// Si la date de début est inférieure à la date d'aujourd'hui
+            /// Et si la date de début est supérieure à la date de fin
+            /// Et si la date limite est supérieure à la date de début
+            /// Et si la date limite est supérieure à la date de fin
             /// Alors dans cet ordre : Date du jour > Date limite > Date début > date de fin
             if (dateTimePickerDateLimite.Value < DateTime.Now 
                 && dateTimePickerDateDebut.Value > dateTimePickerDateFin.Value
@@ -188,10 +188,10 @@ namespace MCMPWinForms
                 /// Je quitte l'évenement
                 return;
             }
-            /// Si la date de début est inférieur à la date d'aujourd'hui
-            /// Et si la date de début est supérieur à la date de fin
-            /// Et si la date limite est supérieur à la date de début
-            /// Et si la date limite est supérieur à la date de fin
+            /// Si la date de début est inférieure à la date d'aujourd'hui
+            /// Et si la date de début est supérieure à la date de fin
+            /// Et si la date limite est supérieure à la date de début
+            /// Et si la date limite est supérieure à la date de fin
             /// Alors dans cet ordre : Date du jour > Date limite > Date début > date de fin
             if (dateTimePickerDateLimite.Value < DateTime.Now
                 && dateTimePickerDateDebut.Value > dateTimePickerDateFin.Value

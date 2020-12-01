@@ -93,6 +93,7 @@
             this.buttonSupprimerActivite = new System.Windows.Forms.Button();
             this.buttonInscrireAdherentActivite = new System.Windows.Forms.Button();
             this.buttonDesinscrireAdherentActivite = new System.Windows.Forms.Button();
+            this.buttonModifierInscriptionActivite = new System.Windows.Forms.Button();
             this.dataGridViewListeActivite = new System.Windows.Forms.DataGridView();
             this.intituléDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -233,7 +234,7 @@
             this.tabCtrlMain.Location = new System.Drawing.Point(3, 3);
             this.tabCtrlMain.Name = "tabCtrlMain";
             this.tabCtrlMain.SelectedIndex = 0;
-            this.tabCtrlMain.Size = new System.Drawing.Size(974, 634);
+            this.tabCtrlMain.Size = new System.Drawing.Size(1130, 634);
             this.tabCtrlMain.TabIndex = 0;
             // 
             // tabAdherent
@@ -243,7 +244,7 @@
             this.tabAdherent.Location = new System.Drawing.Point(4, 22);
             this.tabAdherent.Name = "tabAdherent";
             this.tabAdherent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdherent.Size = new System.Drawing.Size(966, 608);
+            this.tabAdherent.Size = new System.Drawing.Size(1122, 608);
             this.tabAdherent.TabIndex = 0;
             this.tabAdherent.Text = "Liste des adhérents";
             // 
@@ -265,7 +266,7 @@
             this.tbLayoutPanelAdherent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tbLayoutPanelAdherent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tbLayoutPanelAdherent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tbLayoutPanelAdherent.Size = new System.Drawing.Size(960, 602);
+            this.tbLayoutPanelAdherent.Size = new System.Drawing.Size(1116, 602);
             this.tbLayoutPanelAdherent.TabIndex = 0;
             // 
             // lblTxtInscriptionActivite
@@ -275,7 +276,7 @@
             this.lblTxtInscriptionActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTxtInscriptionActivite.Location = new System.Drawing.Point(3, 292);
             this.lblTxtInscriptionActivite.Name = "lblTxtInscriptionActivite";
-            this.lblTxtInscriptionActivite.Size = new System.Drawing.Size(954, 30);
+            this.lblTxtInscriptionActivite.Size = new System.Drawing.Size(1110, 30);
             this.lblTxtInscriptionActivite.TabIndex = 6;
             this.lblTxtInscriptionActivite.Text = "Activité(s) en relation avec cet adhérent";
             this.lblTxtInscriptionActivite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,7 +288,7 @@
             this.lblTxtListAdherents.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTxtListAdherents.Location = new System.Drawing.Point(3, 0);
             this.lblTxtListAdherents.Name = "lblTxtListAdherents";
-            this.lblTxtListAdherents.Size = new System.Drawing.Size(954, 30);
+            this.lblTxtListAdherents.Size = new System.Drawing.Size(1110, 30);
             this.lblTxtListAdherents.TabIndex = 4;
             this.lblTxtListAdherents.Text = "Liste des adhérents de Moto Club Millau Passion";
             this.lblTxtListAdherents.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,7 +305,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(954, 74);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1110, 74);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -313,7 +314,7 @@
             this.flowLayoutPanel1.Controls.Add(this.buttonRafraichirAdherent);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(787, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(943, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(164, 68);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -361,7 +362,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(778, 68);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(934, 68);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // buttonAjouterAdherent
@@ -436,6 +437,7 @@
             // 
             this.dataGridAdherent.AllowUserToAddRows = false;
             this.dataGridAdherent.AllowUserToDeleteRows = false;
+            this.dataGridAdherent.AllowUserToResizeRows = false;
             this.dataGridAdherent.AutoGenerateColumns = false;
             this.dataGridAdherent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridAdherent.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -471,7 +473,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridAdherent.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridAdherent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridAdherent.Size = new System.Drawing.Size(954, 256);
+            this.dataGridAdherent.Size = new System.Drawing.Size(1110, 256);
             this.dataGridAdherent.StandardTab = true;
             this.dataGridAdherent.TabIndex = 0;
             // 
@@ -646,6 +648,7 @@
             // 
             this.dataGridViewActiviteRelationAdherent.AllowUserToAddRows = false;
             this.dataGridViewActiviteRelationAdherent.AllowUserToDeleteRows = false;
+            this.dataGridViewActiviteRelationAdherent.AllowUserToResizeRows = false;
             this.dataGridViewActiviteRelationAdherent.AutoGenerateColumns = false;
             this.dataGridViewActiviteRelationAdherent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewActiviteRelationAdherent.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -671,7 +674,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewActiviteRelationAdherent.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewActiviteRelationAdherent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewActiviteRelationAdherent.Size = new System.Drawing.Size(954, 194);
+            this.dataGridViewActiviteRelationAdherent.Size = new System.Drawing.Size(1110, 194);
             this.dataGridViewActiviteRelationAdherent.StandardTab = true;
             this.dataGridViewActiviteRelationAdherent.TabIndex = 1;
             // 
@@ -762,7 +765,7 @@
             this.tabActivite.Location = new System.Drawing.Point(4, 22);
             this.tabActivite.Name = "tabActivite";
             this.tabActivite.Padding = new System.Windows.Forms.Padding(3);
-            this.tabActivite.Size = new System.Drawing.Size(966, 608);
+            this.tabActivite.Size = new System.Drawing.Size(1122, 608);
             this.tabActivite.TabIndex = 1;
             this.tabActivite.Text = "Liste des activités";
             // 
@@ -784,7 +787,7 @@
             this.tbLayoutPanelActivite.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tbLayoutPanelActivite.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tbLayoutPanelActivite.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tbLayoutPanelActivite.Size = new System.Drawing.Size(960, 602);
+            this.tbLayoutPanelActivite.Size = new System.Drawing.Size(1116, 602);
             this.tbLayoutPanelActivite.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -799,7 +802,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 74);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1110, 74);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -808,7 +811,7 @@
             this.flowLayoutPanel3.Controls.Add(this.buttonRafraichirActivite);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(787, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(943, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(164, 68);
             this.flowLayoutPanel3.TabIndex = 0;
@@ -854,10 +857,11 @@
             this.flowLayoutPanel4.Controls.Add(this.buttonSupprimerActivite);
             this.flowLayoutPanel4.Controls.Add(this.buttonInscrireAdherentActivite);
             this.flowLayoutPanel4.Controls.Add(this.buttonDesinscrireAdherentActivite);
+            this.flowLayoutPanel4.Controls.Add(this.buttonModifierInscriptionActivite);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(778, 68);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(934, 68);
             this.flowLayoutPanel4.TabIndex = 1;
             // 
             // buttonAjouterActivite
@@ -945,10 +949,28 @@
             this.buttonDesinscrireAdherentActivite.UseVisualStyleBackColor = false;
             this.buttonDesinscrireAdherentActivite.Click += new System.EventHandler(this.buttonDesinscrireAdherentActivite_Click);
             // 
+            // buttonModifierInscriptionActivite
+            // 
+            this.buttonModifierInscriptionActivite.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonModifierInscriptionActivite.Font = new System.Drawing.Font("MV Boli", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierInscriptionActivite.Image = global::MCMPWinForms.Properties.Resources.edit_modify_alter_icon_141930;
+            this.buttonModifierInscriptionActivite.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonModifierInscriptionActivite.Location = new System.Drawing.Point(768, 0);
+            this.buttonModifierInscriptionActivite.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.buttonModifierInscriptionActivite.Name = "buttonModifierInscriptionActivite";
+            this.buttonModifierInscriptionActivite.Size = new System.Drawing.Size(144, 64);
+            this.buttonModifierInscriptionActivite.TabIndex = 12;
+            this.buttonModifierInscriptionActivite.Text = "&Modifier inscription";
+            this.buttonModifierInscriptionActivite.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.buttonModifierInscriptionActivite, "Bouton pour modifier une inscription de l\'adhérent sélectionné");
+            this.buttonModifierInscriptionActivite.UseVisualStyleBackColor = false;
+            this.buttonModifierInscriptionActivite.Click += new System.EventHandler(this.buttonModifierInscriptionActivite_Click);
+            // 
             // dataGridViewListeActivite
             // 
             this.dataGridViewListeActivite.AllowUserToAddRows = false;
             this.dataGridViewListeActivite.AllowUserToDeleteRows = false;
+            this.dataGridViewListeActivite.AllowUserToResizeRows = false;
             this.dataGridViewListeActivite.AutoGenerateColumns = false;
             this.dataGridViewListeActivite.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewListeActivite.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -969,12 +991,13 @@
             this.idTypeDataGridViewTextBoxColumn1,
             this.fichierDataGridViewTextBoxColumn1});
             this.dataGridViewListeActivite.DataSource = this.activitesBindingSourceListeAct;
+            this.dataGridViewListeActivite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewListeActivite.Location = new System.Drawing.Point(3, 33);
             this.dataGridViewListeActivite.Name = "dataGridViewListeActivite";
             this.dataGridViewListeActivite.ReadOnly = true;
             this.dataGridViewListeActivite.RowHeadersVisible = false;
             this.dataGridViewListeActivite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewListeActivite.Size = new System.Drawing.Size(954, 256);
+            this.dataGridViewListeActivite.Size = new System.Drawing.Size(1110, 256);
             this.dataGridViewListeActivite.TabIndex = 4;
             // 
             // intituléDataGridViewTextBoxColumn1
@@ -1114,13 +1137,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(954, 194);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1110, 194);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // dataGridViewInscrits
             // 
             this.dataGridViewInscrits.AllowUserToAddRows = false;
             this.dataGridViewInscrits.AllowUserToDeleteRows = false;
+            this.dataGridViewInscrits.AllowUserToResizeRows = false;
             this.dataGridViewInscrits.AutoGenerateColumns = false;
             this.dataGridViewInscrits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewInscrits.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -1150,6 +1174,7 @@
             this.activéDataGridViewTextBoxColumn2,
             this.aProposDataGridViewTextBoxColumn2});
             this.dataGridViewInscrits.DataSource = this.adherentinscriptionBindingSource;
+            this.dataGridViewInscrits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewInscrits.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewInscrits.MultiSelect = false;
             this.dataGridViewInscrits.Name = "dataGridViewInscrits";
@@ -1157,7 +1182,7 @@
             this.dataGridViewInscrits.RowHeadersVisible = false;
             this.dataGridViewInscrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInscrits.Size = new System.Drawing.Size(471, 188);
+            this.dataGridViewInscrits.Size = new System.Drawing.Size(549, 188);
             this.dataGridViewInscrits.TabIndex = 5;
             this.dataGridViewInscrits.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInscrits_RowEnter);
             // 
@@ -1380,6 +1405,7 @@
             // 
             this.dataGridViewNonInscrits.AllowUserToAddRows = false;
             this.dataGridViewNonInscrits.AllowUserToDeleteRows = false;
+            this.dataGridViewNonInscrits.AllowUserToResizeRows = false;
             this.dataGridViewNonInscrits.AutoGenerateColumns = false;
             this.dataGridViewNonInscrits.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewNonInscrits.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -1405,14 +1431,15 @@
             this.activéDataGridViewTextBoxColumn1,
             this.aProposDataGridViewTextBoxColumn1});
             this.dataGridViewNonInscrits.DataSource = this.adherents2BindingSource;
-            this.dataGridViewNonInscrits.Location = new System.Drawing.Point(480, 3);
+            this.dataGridViewNonInscrits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewNonInscrits.Location = new System.Drawing.Point(558, 3);
             this.dataGridViewNonInscrits.MultiSelect = false;
             this.dataGridViewNonInscrits.Name = "dataGridViewNonInscrits";
             this.dataGridViewNonInscrits.ReadOnly = true;
             this.dataGridViewNonInscrits.RowHeadersVisible = false;
             this.dataGridViewNonInscrits.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewNonInscrits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewNonInscrits.Size = new System.Drawing.Size(471, 188);
+            this.dataGridViewNonInscrits.Size = new System.Drawing.Size(549, 188);
             this.dataGridViewNonInscrits.TabIndex = 6;
             this.dataGridViewNonInscrits.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNonInscrits_RowEnter);
             // 
@@ -1603,7 +1630,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 24);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1110, 24);
             this.tableLayoutPanel5.TabIndex = 9;
             // 
             // label3
@@ -1611,9 +1638,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(480, 0);
+            this.label3.Location = new System.Drawing.Point(558, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(471, 24);
+            this.label3.Size = new System.Drawing.Size(549, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Non-inscrit(s)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1625,7 +1652,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 24);
+            this.label1.Size = new System.Drawing.Size(549, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Inscrit(s) ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1641,7 +1668,7 @@
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(954, 24);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(1110, 24);
             this.flowLayoutPanel5.TabIndex = 10;
             // 
             // label2
@@ -1720,7 +1747,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(980, 640);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1136, 640);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // publiéDataGridViewTextBoxColumn
@@ -1846,12 +1873,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 640);
+            this.ClientSize = new System.Drawing.Size(1136, 640);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(996, 679);
-            this.MinimumSize = new System.Drawing.Size(996, 679);
+            this.MaximumSize = new System.Drawing.Size(1152, 679);
+            this.MinimumSize = new System.Drawing.Size(1152, 679);
             this.Name = "FormMain";
             this.Text = "Gestion - Moto Club Millau Passion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
@@ -2055,6 +2082,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fichierDataGridViewTextBoxColumn1;
         private cda27_bd2DataSetTableAdapters.activiteTableAdapter activiteTableAdapter1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonModifierInscriptionActivite;
     }
 }
 

@@ -145,6 +145,7 @@ namespace MCMPWinForms
                     MessageBoxIcon.Information);
                 return;
             }
+            /// Je vérifie que le Login entré n'existe pas dans la base de données par un "Count"
             int countNb = Convert.ToInt32(adherentsTableAdapter.Count(textBoxLogin.Text));
             if (countNb == 1)
             {
@@ -343,7 +344,7 @@ namespace MCMPWinForms
                 MessageBox.Show(Properties.Resources.STR_MESSAGE_ERREUR_APROPOS,
                     Properties.Resources.STR_TITRE_ERREUR_APROPOS,
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information););
+                    MessageBoxIcon.Information);
                 return;
             }
             else if (textBoxLogin.Text.Length > 30)

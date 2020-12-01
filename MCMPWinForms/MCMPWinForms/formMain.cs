@@ -28,11 +28,13 @@ namespace MCMPWinForms
             if (inscriptionsBindingSource.Count == 0)
             {
                 buttonDesinscrireAdherent.Enabled = false;
+                buttonModifierInscriptionActivite.Enabled = false;
             }
             /// Sinon activation du bouton
             else
             {
                 buttonDesinscrireAdherent.Enabled = true;
+                buttonModifierInscriptionActivite.Enabled = true;
             }
         }
 
@@ -327,6 +329,16 @@ namespace MCMPWinForms
                 /// Je rends invisible le bouton ajouter
                 frmDetailActivite.buttonAjouterActivite.Visible = false;
                 /// Mise des valeurs dans les TextBox et dateTimePicker correspondant à l'adhérent
+                /// 
+                int publier;
+                if (currentRow.Publié == 1)
+                {
+                   frmDetailActivite.checkBoxPublic.Checked = true;
+                }
+                else
+                {
+                    frmDetailActivite.checkBoxPublic.Checked = false;
+                }
                 frmDetailActivite.textBoxTarifInvite.Text = currentRow.Tarif_invité;
                 frmDetailActivite.textBoxTarifAdherent.Text = currentRow.Tarif_adhérent;
                 frmDetailActivite.textBoxIntituleAct.Text = currentRow.Intitulé;
@@ -464,6 +476,52 @@ namespace MCMPWinForms
             /// Je me repositionne sur l'activité précédemment séléctionnée
             activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", IdActivite);
         }
+        private void buttonModifierInscriptionActivite_Click(object sender, EventArgs e)
+        {
+            /// Récupération de la ligne courante Activité et des valeurs de ses colonnes dans une variable currentRow
+            cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
+            /// Je stock l'IdActivite de la la ligne courante de l'activité pour l'utilisation future
+            int IdActivite = currentRow.IdActivite;
+            /// Récupération de la ligne courante des inscriptions de l'activité et des valeurs de ses colonnes dans une variable currentRow2
+            cda27_bd2DataSet.adherentinscriptionRow currentRow2 = (cda27_bd2DataSet.adherentinscriptionRow)((DataRowView)adherentinscriptionBindingSource.Current).Row;
+            using (FormInscriptionActivite frmInscriptionActivite = new FormInscriptionActivite())
+            {
+                /// Envoie des valeurs des currentRow et currentRow2 dans des variables directement à la fenêtre fille
+                frmInscriptionActivite.IdActivite = currentRow.IdActivite;
+                frmInscriptionActivite.IdAdherent = currentRow2.IdAdherent;
+                frmInscriptionActivite.textBoxIntituleAct.Text = currentRow.Intitulé;
+                frmInscriptionActivite.textBoxDescription.Text = currentRow.Description;
+                frmInscriptionActivite.textBoxTarifAdherent.Text = currentRow.Tarif_adhérent;
+                frmInscriptionActivite.textBoxTarifInvite.Text = currentRow.Tarif_invité;
+                frmInscriptionActivite.dateTimePickerDateDebutAct.Value = currentRow.Date_de_début;
+                frmInscriptionActivite.dateTimePickerDateFinAct.Value = currentRow.Date_de_fin;
+                frmInscriptionActivite.dateTimePickerDateLimiteAct.Value = currentRow._Date_limite_d_inscription;
+                frmInscriptionActivite.textBoxLogin.Text = currentRow2.Login;
+                frmInscriptionActivite.textBoxNom.Text = currentRow2.Nom;
+                frmInscriptionActivite.textBoxPrenom.Text = currentRow2.Prénom;
+                frmInscriptionActivite.textBoxCylindrée.Text = currentRow2.Cylindrée;
+                /// Initialisation du textBox du nombre d'invité à la valeur de l'inscription de l'adhérent
+                frmInscriptionActivite.textBoxNombreInvite.Text = Convert.ToString(currentRow2.NbInvités);
+                /// Je nomme le bouton 
+                frmInscriptionActivite.buttonInscrireAdherentActivite.Text = "Modifier l'inscription de l'adhérent";
+                /// Je dis qu'une modification est en cours pour la fenêtre fille
+                frmInscriptionActivite.ModificationEnCours = true;
+                /// J'envoie le bindingSource à la fenêtre fille
+                frmInscriptionActivite.inscriptionAct = adherentinscriptionBindingSource;
+                /// Affichage de la fenêtre en mode Dialog 
+                frmInscriptionActivite.ShowDialog();
+                /// Si l'inscription se termine
+                if (frmInscriptionActivite.InscriptionFinie == 1)
+                {
+                    /// Je FillIntegral
+                    FillIntegral();
+                    /// Je me repositionne sur l'activité précédemment séléctionnée
+                    activitesBindingSourceListeAct.Position = activitesBindingSourceListeAct.Find("IdActivite", IdActivite);
+                    /// InscriptionFinie est à présent à 0
+                    frmInscriptionActivite.InscriptionFinie = 0;
+                }
+            }
+        }
         #endregion
 
         #region Gestion du checkbox de tri des activités par date
@@ -509,6 +567,8 @@ namespace MCMPWinForms
             /// J'active le bouton Inscrire et désactive le bouton Désinscrire
             buttonInscrireAdherentActivite.Enabled = true;
             buttonDesinscrireAdherentActivite.Enabled = false;
+            buttonModifierInscriptionActivite.Enabled = false;
+
 
         }
         /// <summary>
@@ -523,6 +583,8 @@ namespace MCMPWinForms
             /// Je désactive le bouton Inscrire et active le bouton Désinscrire
             buttonInscrireAdherentActivite.Enabled = false;
             buttonDesinscrireAdherentActivite.Enabled = true;
+            buttonModifierInscriptionActivite.Enabled = true;
+
         }
         #endregion
 
@@ -547,12 +609,15 @@ namespace MCMPWinForms
             {
                 /// Le bouton Désinscrire est actif
                 buttonDesinscrireAdherent.Enabled = true;
+                buttonModifierInscriptionActivite.Enabled = true;
+
             }
             /// Sinon
             else
             {
                 /// Le bouton est inactif
                 buttonDesinscrireAdherent.Enabled = false;
+                buttonModifierInscriptionActivite.Enabled = false;
             }
         }
         /// <summary>
@@ -634,18 +699,40 @@ namespace MCMPWinForms
                     /// Sinon je Fill tout court
                     this.activitesTableAdapter.Fill(this.cda27_bd2DataSet.activites);
                 }
-                /// Je récupère la ligne d'activité séléctionnée
-                cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
-                /// Je Fill les inscriptions des adherents avec l'IdActivite de la ligne séléctionnée
-                this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
-                /// Je Fill les adhérents non-inscrits 
-                this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
-                /// Je Fill les adherents
-                this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
-                /// Je récupère la ligne séléctionnée des adhérents
-                cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
-                /// Je Fill les inscriptions pour cet adhérent
-                this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
+                if (activitesBindingSourceListeAct.Current != null)
+                {
+                    /// Je récupère la ligne d'activité séléctionnée
+                    cda27_bd2DataSet.activitesRow currentRow = (cda27_bd2DataSet.activitesRow)((DataRowView)activitesBindingSourceListeAct.Current).Row;
+                    /// Je Fill les inscriptions des adherents avec l'IdActivite de la ligne séléctionnée
+                    this.adherentinscriptionTableAdapter.FillBy(this.cda27_bd2DataSet1.adherentinscription, currentRow.IdActivite);
+                    /// Je Fill les adhérents non-inscrits 
+                    this.adherents2TableAdapter.FillBy(this.cda27_bd2DataSet1.adherents2, currentRow.IdActivite);
+                    /// Je Fill les adherents
+                    this.adherentsTableAdapter.Fill(this.cda27_bd2DataSet.adherents);
+                    /// Je rends visible les datagrid inscrits et non inscrits car il y a une activité
+                    dataGridViewInscrits.Visible = true;
+                    dataGridViewNonInscrits.Visible = true;
+                }
+                /// Sinon je les rends invisible
+                else
+                {
+                    dataGridViewInscrits.Visible = false;
+                    dataGridViewNonInscrits.Visible = false;
+                }
+                if (adherentsBindingSource.Current != null)
+                {
+                    /// Je récupère la ligne séléctionnée des adhérents
+                    cda27_bd2DataSet.adherentsRow currentRow2 = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentsBindingSource.Current).Row;
+                    /// Je Fill les inscriptions pour cet adhérent
+                    this.inscriptionsTableAdapter.Fill(this.cda27_bd2DataSet.inscriptions, currentRow2.IdAdherent);
+                    /// Si il y a un adhérent alors je rends visible ses inscriptions
+                    dataGridViewActiviteRelationAdherent.Visible = true;
+                }
+                /// Sinon je les rends invisible
+                else
+                {
+                    dataGridViewActiviteRelationAdherent.Visible = false;
+                }
                 /// Je Clear les selections des inscrits et non inscrits
                 dataGridViewNonInscrits.ClearSelection();
                 dataGridViewInscrits.ClearSelection();
@@ -679,5 +766,7 @@ namespace MCMPWinForms
                 age--;
             return age;
         }
+
+        
     }
 }

@@ -59,10 +59,10 @@
             this.textBoxPrenom = new System.Windows.Forms.TextBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.textBoxCylindrée = new System.Windows.Forms.TextBox();
+            this.labelCylindree = new System.Windows.Forms.Label();
             this.buttonInscrireAdherentActivite = new System.Windows.Forms.Button();
             this.inscriptionTableAdapter1 = new MCMPWinForms.cda27_bd2DataSetTableAdapters.inscriptionTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelCylindree = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -424,6 +424,16 @@
             this.textBoxCylindrée.Size = new System.Drawing.Size(145, 26);
             this.textBoxCylindrée.TabIndex = 13;
             // 
+            // labelCylindree
+            // 
+            this.labelCylindree.AutoSize = true;
+            this.labelCylindree.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCylindree.Location = new System.Drawing.Point(156, 102);
+            this.labelCylindree.Name = "labelCylindree";
+            this.labelCylindree.Size = new System.Drawing.Size(54, 31);
+            this.labelCylindree.TabIndex = 14;
+            this.labelCylindree.Text = "CC";
+            // 
             // buttonInscrireAdherentActivite
             // 
             this.buttonInscrireAdherentActivite.BackColor = System.Drawing.Color.GhostWhite;
@@ -445,16 +455,6 @@
             // inscriptionTableAdapter1
             // 
             this.inscriptionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // labelCylindree
-            // 
-            this.labelCylindree.AutoSize = true;
-            this.labelCylindree.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCylindree.Location = new System.Drawing.Point(156, 102);
-            this.labelCylindree.Name = "labelCylindree";
-            this.labelCylindree.Size = new System.Drawing.Size(54, 31);
-            this.labelCylindree.TabIndex = 14;
-            this.labelCylindree.Text = "CC";
             // 
             // FormInscriptionActivite
             // 
@@ -482,7 +482,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button buttonInscrireAdherentActivite;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblDateDebutAct;
         private System.Windows.Forms.Label lblIntituleAct;
@@ -514,5 +513,6 @@
         private System.Windows.Forms.Button buttonFermerActivite;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label labelCylindree;
+        internal System.Windows.Forms.Button buttonInscrireAdherentActivite;
     }
 }

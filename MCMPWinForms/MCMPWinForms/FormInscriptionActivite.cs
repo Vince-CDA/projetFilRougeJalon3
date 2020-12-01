@@ -20,6 +20,9 @@ namespace MCMPWinForms
         public int IdAdherent { get; set; }
         public int IdActivite { get; set; }
         public int InscriptionFinie { get; set; }
+        public bool ModificationEnCours { get; set; }
+        public BindingSource inscriptionAct { set; get; }
+
         #endregion
 
         /// <summary>
@@ -39,42 +42,94 @@ namespace MCMPWinForms
         /// <param name="e"></param>
         private void buttonInscrireAdherentActivite_Click(object sender, EventArgs e)
         {
-            /// Verification du nombre d'invité
-            if (!IsNbInvite(textBoxNombreInvite.Text))
+            if (ModificationEnCours == true)
             {
-                /// Si l'expression régulière échoue, message : Nombre d'invité non valide
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_NBINVITE_NONVALIDE, 
-                    Properties.Resources.STR_TITRE_NBINVITE_NONVALIDE, 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Information);
+                /// Verification du nombre d'invité
+                if (!IsNbInvite(textBoxNombreInvite.Text))
+                {
+                    /// Si l'expression régulière échoue, message : Nombre d'invité non valide
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_NBINVITE_NONVALIDE,
+                        Properties.Resources.STR_TITRE_NBINVITE_NONVALIDE,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    /// Sinon, j'exécute la requête d'insertion avec la date du jour,
+                    /// L'IdAdherent précédemment extrait du FormMain et du BindingSource
+                    /// Et l'IdActivite
+                    /// 
+                    cda27_bd2DataSet.adherentinscriptionRow currentRow2 = (cda27_bd2DataSet.adherentinscriptionRow)((DataRowView)inscriptionAct.Current).Row;
+
+                    int nb = inscriptionTableAdapter1.Update(DateTime.Now,
+                        Convert.ToInt32(textBoxNombreInvite.Text),
+                        IdAdherent,
+                        IdActivite,
+                        currentRow2.IdInscription,
+                        currentRow2.DInscription,
+                        currentRow2.NbInvités,
+                        currentRow2.IdAdherent,
+                        currentRow2.IdActivite);
+                    /// Si la requête échoue
+                    if (nb == 0)
+                    {
+                        /// J'affiche un message d'echec
+                        MessageBox.Show(Properties.Resources.STR_MESSAGE_INSCRIPTION_FAIL,
+                            Properties.Resources.STR_TITRE_INSCRIPTION_FAIL,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        /// Je quitte l'évenement
+                        return;
+                    }
+                    /// L'inscription est finie, j'utiliserai la variable InscriptionFinie dans le FormMain
+                    InscriptionFinie = 1;
+                    /// Je ferme la fenêtre
+                    Close();
+                }
             }
             else
             {
-                /// Sinon, j'exécute la requête d'insertion avec la date du jour,
-                /// L'IdAdherent précédemment extrait du FormMain et du BindingSource
-                /// Et l'IdActivite
-                int nb = inscriptionTableAdapter1.Insert(DateTime.Now, 
-                    Convert.ToInt32(textBoxNombreInvite.Text), 
-                    IdAdherent, 
-                    IdActivite);
-                /// Si la requête échoue
-                if (nb == 0)
+
+            
+                /// Verification du nombre d'invité
+                if (!IsNbInvite(textBoxNombreInvite.Text))
                 {
-                    /// J'affiche un message d'echec
-                    MessageBox.Show(Properties.Resources.STR_MESSAGE_INSCRIPTION_FAIL,
-                        Properties.Resources.STR_TITRE_INSCRIPTION_FAIL,
-                        MessageBoxButtons.OK,
+                    /// Si l'expression régulière échoue, message : Nombre d'invité non valide
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_NBINVITE_NONVALIDE, 
+                        Properties.Resources.STR_TITRE_NBINVITE_NONVALIDE, 
+                        MessageBoxButtons.OK, 
                         MessageBoxIcon.Information);
-                    /// Je quitte l'évenement
-                    return;
                 }
-                /// L'inscription est finie, j'utiliserai la variable InscriptionFinie dans le FormMain
-                InscriptionFinie = 1;
-                /// Je ferme la fenêtre
-                Close();
+                else
+                {
+                    /// Sinon, j'exécute la requête d'insertion avec la date du jour,
+                    /// L'IdAdherent précédemment extrait du FormMain et du BindingSource
+                    /// Et l'IdActivite
+                    int nb = inscriptionTableAdapter1.Insert(DateTime.Now, 
+                        Convert.ToInt32(textBoxNombreInvite.Text), 
+                        IdAdherent, 
+                        IdActivite);
+                    /// Si la requête échoue
+                    if (nb == 0)
+                    {
+                        /// J'affiche un message d'echec
+                        MessageBox.Show(Properties.Resources.STR_MESSAGE_INSCRIPTION_FAIL,
+                            Properties.Resources.STR_TITRE_INSCRIPTION_FAIL,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        /// Je quitte l'évenement
+                        return;
+                    }
+                    /// L'inscription est finie, j'utiliserai la variable InscriptionFinie dans le FormMain
+                    InscriptionFinie = 1;
+                    /// Je ferme la fenêtre
+                    Close();
+                }
             }
         }
         #endregion
+
+
 
         #region Bouton fermeture de la fenêtre
         /// <summary>

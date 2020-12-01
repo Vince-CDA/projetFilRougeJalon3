@@ -73,6 +73,16 @@ namespace MCMPWinForms.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_modify_alter_icon_141930 {
+            get {
+                object obj = ResourceManager.GetObject("edit_modify_alter_icon_141930", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editer_act {
             get {
                 object obj = ResourceManager.GetObject("editer_act", resourceCulture);
