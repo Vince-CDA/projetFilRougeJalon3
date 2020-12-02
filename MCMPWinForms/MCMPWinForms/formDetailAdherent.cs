@@ -451,40 +451,51 @@ namespace MCMPWinForms
         {
             /// Je récupère la ligne adhérent du FormMain avec la variable BindingSource précédemment transférée (adherentbind)
             cda27_bd2DataSet.adherentsRow currentRow = (cda27_bd2DataSet.adherentsRow)((DataRowView)adherentbind.Current).Row;
-            /// Je supprime l'adhérent avec les valeurs de la ligne séléctionnée
-            int nb = adherentTableAdapter.Delete(currentRow.IdAdherent,
-                                        currentRow.Nom,
-                                        currentRow.Prénom,
-                                        currentRow.Date_de_naissance,
-                                        currentRow.Adresse,
-                                        null,
-                                        currentRow.Code_postale,
-                                        currentRow.Ville,
-                                        currentRow.Email,
-                                        currentRow.Téléphone,
-                                        currentRow._Date_d_adhésion,
-                                        currentRow.Organisateur,
-                                        currentRow.Admin,
-                                        currentRow.Login,
-                                        currentRow.Password,
-                                        currentRow.Cylindrée,
-                                        currentRow.Activé);
-            /// Si la requête n'a pas réussi
-            if (nb == 0)
+            /// J'affiche un message de confirmation pour cette suppression
+            DialogResult DiagResult = MessageBox.Show(String.Format(Properties.Resources.STR_MESSAGE_SUPPRESSION_ADHERENT, currentRow.Login),
+                String.Format(Properties.Resources.STR_TITRE_SUPPRESSION_ADHERENT, currentRow.Nom, currentRow.Prénom),
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button2
+                ); ;
+            /// Si l'utilisateur accepte la suppression
+            if (DiagResult == DialogResult.Yes)
             {
-                /// Message d'erreur
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL,
-                    Properties.Resources.STR_TITRE_SUPPRESSION_FAIL,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            /// Si la requête a réussi
-            else
-            {
-                /// Variable IsClose est à 1, elle me servira dans le FormMain
-                IsClose = true;
-                /// Je close la fenêtre
-                Close();
+                /// Je supprime l'adhérent avec les valeurs de la ligne séléctionnée
+                int nb = adherentTableAdapter.Delete(currentRow.IdAdherent,
+                                            currentRow.Nom,
+                                            currentRow.Prénom,
+                                            currentRow.Date_de_naissance,
+                                            currentRow.Adresse,
+                                            null,
+                                            currentRow.Code_postale,
+                                            currentRow.Ville,
+                                            currentRow.Email,
+                                            currentRow.Téléphone,
+                                            currentRow._Date_d_adhésion,
+                                            currentRow.Organisateur,
+                                            currentRow.Admin,
+                                            currentRow.Login,
+                                            currentRow.Password,
+                                            currentRow.Cylindrée,
+                                            currentRow.Activé);
+                /// Si la requête n'a pas réussi
+                if (nb == 0)
+                {
+                    /// Message d'erreur
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL,
+                        Properties.Resources.STR_TITRE_SUPPRESSION_FAIL,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                /// Si la requête a réussi
+                else
+                {
+                    /// Variable IsClose est à 1, elle me servira dans le FormMain
+                    IsClose = true;
+                    /// Je close la fenêtre
+                    Close();
+                }
             }
         }
         #endregion

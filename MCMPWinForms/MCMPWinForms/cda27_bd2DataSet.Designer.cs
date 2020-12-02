@@ -11718,7 +11718,7 @@ WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual cda27_bd2DataSet.adherentsDataTable GetDataBy(int IdActivite) {
+        public virtual cda27_bd2DataSet.adherentsDataTable GetDataBy1(int IdActivite) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdActivite));
             cda27_bd2DataSet.adherentsDataTable dataTable = new cda27_bd2DataSet.adherentsDataTable();
@@ -13310,7 +13310,7 @@ WHERE IdAdherent NOT IN (SELECT IdAdherent FROM inscriptions WHERE (IdActivite =
             this._commandCollection[1] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT IdActivite, Intitulé, `Date de début`, `Date de fin`, Description, `Tarif adhérent`, `Tarif invité`, `Date limite d'inscription`, IdAdherent, `Nom du responsable`, `Prénom du responsable`, IdType, Fichier, Publié, IntituleType FROM cda27_bd2.activites
-WHERE (`Date de début` >= :dateDebut) AND ( `Date de fin` <= :dateFin)";
+WHERE (`Date de début` >= :dateDebut) AND ( `Date de début` <= :dateFin)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "dateDebut";
@@ -13324,7 +13324,7 @@ WHERE (`Date de début` >= :dateDebut) AND ( `Date de fin` <= :dateFin)";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.DateTime;
             param.IsNullable = true;
-            param.SourceColumn = "Date de fin";
+            param.SourceColumn = "Date de début";
             this._commandCollection[1].Parameters.Add(param);
         }
         

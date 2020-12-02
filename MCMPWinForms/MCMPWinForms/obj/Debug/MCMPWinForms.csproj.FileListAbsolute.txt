@@ -25,3 +25,8 @@ C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\bin\Debug\Telerik.WinContr
 C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.formDetailAdherent.resources
 C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.formDetailActivite.resources
 C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.FormInscriptionActivite.resources
+C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\bin\Debug\MCMPWinForms.exe.manifest
+C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\bin\Debug\MCMPWinForms.application
+C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.TrustInfo.xml
+C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.exe.manifest
+C:\Users\vmund\source\repos\MCMPWinForms\MCMPWinForms\obj\Debug\MCMPWinForms.application
