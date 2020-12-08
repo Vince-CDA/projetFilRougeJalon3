@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MCMPWinForms
@@ -82,9 +76,9 @@ namespace MCMPWinForms
                 String.IsNullOrWhiteSpace(textBoxAPropos.Text))
             {
                 /// Message indiquant qu'un champs n'est pas saisie
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
-                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI, 
-                    MessageBoxButtons.OK, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI,
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI,
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 /// Je quitte l'évenement
                 return;
@@ -202,7 +196,7 @@ namespace MCMPWinForms
                     /// Message de succès
                     MessageBox.Show(String.Format(Properties.Resources.STR_MESSAGE_ADHERENT_BIEN_AJOUTE, textBoxNom.Text, textBoxPrenom.Text),
                         Properties.Resources.STR_TITRE_ADHERENT_BIEN_AJOUTE,
-                        MessageBoxButtons.OK, 
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     /// Mise en variable du LastInsert pour un positionnage dans le formMain (on transfert la variable chez la fenêtre mère)
                     LastInsert = adherentTableAdapter1.Adapter.InsertCommand.InsertId;

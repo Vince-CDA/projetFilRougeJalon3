@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MCMPWinForms
@@ -90,14 +84,14 @@ namespace MCMPWinForms
             else
             {
 
-            
+
                 /// Verification du nombre d'invité
                 if (!IsNbInvite(textBoxNombreInvite.Text))
                 {
                     /// Si l'expression régulière échoue, message : Nombre d'invité non valide
-                    MessageBox.Show(Properties.Resources.STR_MESSAGE_NBINVITE_NONVALIDE, 
-                        Properties.Resources.STR_TITRE_NBINVITE_NONVALIDE, 
-                        MessageBoxButtons.OK, 
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_NBINVITE_NONVALIDE,
+                        Properties.Resources.STR_TITRE_NBINVITE_NONVALIDE,
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
@@ -105,9 +99,9 @@ namespace MCMPWinForms
                     /// Sinon, j'exécute la requête d'insertion avec la date du jour,
                     /// L'IdAdherent précédemment extrait du FormMain et du BindingSource
                     /// Et l'IdActivite
-                    int nb = inscriptionTableAdapter1.Insert(DateTime.Now, 
-                        Convert.ToInt32(textBoxNombreInvite.Text), 
-                        IdAdherent, 
+                    int nb = inscriptionTableAdapter1.Insert(DateTime.Now,
+                        Convert.ToInt32(textBoxNombreInvite.Text),
+                        IdAdherent,
                         IdActivite);
                     /// Si la requête échoue
                     if (nb == 0)
@@ -140,10 +134,10 @@ namespace MCMPWinForms
         private void buttonFermerActivite_Click(object sender, EventArgs e)
         {
             /// Message de confirmation de fermeture
-            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_ANNULER_ET_FERMER, 
-                Properties.Resources.STR_TITRE_ANNULER_ET_FERMER, 
-                MessageBoxButtons.YesNo, 
-                MessageBoxIcon.Information, 
+            DialogResult DiagResult = MessageBox.Show(Properties.Resources.STR_MESSAGE_ANNULER_ET_FERMER,
+                Properties.Resources.STR_TITRE_ANNULER_ET_FERMER,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information,
                 MessageBoxDefaultButton.Button2);
             /// Si l'utilisateur séléctionne Oui
             if (DiagResult == DialogResult.Yes)
@@ -172,7 +166,7 @@ namespace MCMPWinForms
         /// <returns></returns>
         public static bool IsNbInvite(string nbinvite)
         {
-            if (nbinvite != null && nbinvite.Length < 5)  return Regex.IsMatch(nbinvite, motifPrix);
+            if (nbinvite != null && nbinvite.Length < 5) return Regex.IsMatch(nbinvite, motifPrix);
             else return false;
         }
         #endregion

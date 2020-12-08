@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Telerik.WinControls.UI;
 
 namespace MCMPWinForms
 {
@@ -141,7 +134,7 @@ namespace MCMPWinForms
                 formDetailAdherent.textBoxTelephone.Text = currentRow.Téléphone;
                 formDetailAdherent.textBoxLogin.Text = currentRow.Login;
                 formDetailAdherent.Login = currentRow.Login;
-                formDetailAdherent.textBoxAge.Text = Convert.ToString(CalculAge(currentRow.Date_de_naissance))+"ans";
+                formDetailAdherent.textBoxAge.Text = Convert.ToString(CalculAge(currentRow.Date_de_naissance)) + "ans";
                 /// Si la colonne organisateur est à 1 alors la checkBox prévue à cet effet est cochée
                 if (currentRow.Organisateur == 1)
                 {
@@ -333,7 +326,7 @@ namespace MCMPWinForms
                 int publier;
                 if (currentRow.Publié == 1)
                 {
-                   frmDetailActivite.checkBoxPublic.Checked = true;
+                    frmDetailActivite.checkBoxPublic.Checked = true;
                 }
                 else
                 {
@@ -767,6 +760,6 @@ namespace MCMPWinForms
             return age;
         }
 
-        
+
     }
 }

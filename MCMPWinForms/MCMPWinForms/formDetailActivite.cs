@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MCMPWinForms
@@ -53,7 +47,7 @@ namespace MCMPWinForms
             /// Si une modification est en cours, je me positionne sur le type d'activité de l'activité à modifier par son IdType
             if (ModifEnCours)
             {
-            typeactiviteBindingSource.Position = typeactiviteBindingSource.Find("IdType", IdType);
+                typeactiviteBindingSource.Position = typeactiviteBindingSource.Find("IdType", IdType);
             }
         }
         #endregion
@@ -71,13 +65,13 @@ namespace MCMPWinForms
             /// Publier vaut 1 ou 0 si il est coché ou non
             int publier = checkBoxPublic.Checked ? 1 : 0;
             /// Je vérifie les champs, si ils sont null ou comportent seulement des espaces
-            if (String.IsNullOrWhiteSpace(textBoxIntituleAct.Text) 
+            if (String.IsNullOrWhiteSpace(textBoxIntituleAct.Text)
                 || String.IsNullOrWhiteSpace(textBoxDescription.Text)
                 || String.IsNullOrWhiteSpace(textBoxTarifAdherent.Text)
                 || String.IsNullOrWhiteSpace(textBoxTarifInvite.Text))
             {
                 /// Message d'erreur de champs non remplis
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI,
                     Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -89,7 +83,7 @@ namespace MCMPWinForms
             /// Et si la date limite est supérieure à la date de début
             /// Et si la date limite est supérieure à la date de fin
             /// Alors dans cet ordre : Date du jour > Date limite > Date début > date de fin
-            if (dateTimePickerDateLimite.Value < DateTime.Now 
+            if (dateTimePickerDateLimite.Value < DateTime.Now
                 && dateTimePickerDateDebut.Value > dateTimePickerDateFin.Value
                 && dateTimePickerDateLimite.Value > dateTimePickerDateDebut.Value
                 && dateTimePickerDateLimite.Value > dateTimePickerDateFin.Value)
@@ -181,9 +175,9 @@ namespace MCMPWinForms
             {
                 /// Si ce n'est pas le cas j'affiche un message d'erreur
                 /// Les champs ne sont pas remplis
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI, 
-                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI, 
-                    MessageBoxButtons.OK, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_CHAMPS_NON_REMPLI,
+                    Properties.Resources.STR_TITRE_CHAMPS_NON_REMPLI,
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 /// Je quitte l'évenement
                 return;
@@ -199,9 +193,9 @@ namespace MCMPWinForms
                 && dateTimePickerDateLimite.Value > dateTimePickerDateFin.Value)
             {
                 /// Affichage d'un message "problème de chronologie des dates"
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_DATE_ACT_PROBLEME, 
-                    Properties.Resources.STR_TITRE_DATE_ACT_PROBLEME, 
-                    MessageBoxButtons.OK, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_DATE_ACT_PROBLEME,
+                    Properties.Resources.STR_TITRE_DATE_ACT_PROBLEME,
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 /// Je quitte l'évenement
                 return;
@@ -210,7 +204,7 @@ namespace MCMPWinForms
             else if (!IsPrix(textBoxTarifAdherent.Text) || !IsPrix(textBoxTarifInvite.Text))
             {
                 /// Si le test échoue, j'affiche un message d'erreur de tarif
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_TARIF_PROBLEME, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_TARIF_PROBLEME,
                     Properties.Resources.STR_TITRE_TARIF_PROBLEME,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -240,15 +234,15 @@ namespace MCMPWinForms
                 null,
                 publier,
                 currentRowAdh.IdActivite,
-                currentRowAdh.Intitulé, 
-                currentRowAdh.Date_de_début, 
-                currentRowAdh.Date_de_fin, 
-                currentRowAdh.Description, 
-                currentRowAdh.Tarif_adhérent, 
-                currentRowAdh.Tarif_invité, 
-                currentRowAdh._Date_limite_d_inscription, 
-                currentRowAdh.IdAdherent, 
-                currentRowAdh.IdType, 
+                currentRowAdh.Intitulé,
+                currentRowAdh.Date_de_début,
+                currentRowAdh.Date_de_fin,
+                currentRowAdh.Description,
+                currentRowAdh.Tarif_adhérent,
+                currentRowAdh.Tarif_invité,
+                currentRowAdh._Date_limite_d_inscription,
+                currentRowAdh.IdAdherent,
+                currentRowAdh.IdType,
                 currentRowAdh.Publié
                 );
 
@@ -256,7 +250,7 @@ namespace MCMPWinForms
             if (nb == 0)
             {
                 /// J'affiche un message : Mise à jour non réalisée
-                MessageBox.Show(Properties.Resources.STR_MESSAGE_MAJ_NON_REALISEE, 
+                MessageBox.Show(Properties.Resources.STR_MESSAGE_MAJ_NON_REALISEE,
                     Properties.Resources.STR_TITRE_MAJ_NON_REALISEE,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -270,12 +264,12 @@ namespace MCMPWinForms
                     Properties.Resources.STR_TITRE_MAJ_OK,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-            /// Je mets en variable l'IdActivité pour me repositionner dans le fenêtre main sur l'activité précédemment séléctionnée
-            LastInsert = currentRowAdh.IdActivite;
-            /// IsClose me servira pour savoir que la fenêtre va se fermer dans le FormMain
-            IsClose = true;
-            /// Je ferme la fenêtre
-            Close();
+                /// Je mets en variable l'IdActivité pour me repositionner dans le fenêtre main sur l'activité précédemment séléctionnée
+                LastInsert = currentRowAdh.IdActivite;
+                /// IsClose me servira pour savoir que la fenêtre va se fermer dans le FormMain
+                IsClose = true;
+                /// Je ferme la fenêtre
+                Close();
             }
         }
         #endregion
@@ -311,7 +305,7 @@ namespace MCMPWinForms
                 if (nb == 0)
                 {
                     /// J'affiche un message d'erreur de suppression
-                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL, 
+                    MessageBox.Show(Properties.Resources.STR_MESSAGE_SUPPRESSION_FAIL,
                         Properties.Resources.STR_TITRE_SUPPRESSION_FAIL,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -321,7 +315,7 @@ namespace MCMPWinForms
             {
                 /// Je quitte l'évenement
                 return;
-            } 
+            }
         }
         #endregion
 
@@ -339,7 +333,7 @@ namespace MCMPWinForms
             if (DiagResult == DialogResult.Yes)
             {
                 /// Je ferme la fenêtre
-               Close();
+                Close();
             }
             /// Sinon
             else
